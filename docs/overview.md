@@ -19,6 +19,3 @@ From your workstation open an RDP (Remote Desktop) session to the following host
 ## Getting Started
 
 This lab leverages Cisco dCloud ...
-
-test 
-
