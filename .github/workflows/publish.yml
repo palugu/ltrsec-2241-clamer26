@@ -29,6 +29,13 @@ jobs:
           role-to-assume: arn:aws:iam::963057650703:role/GitHubAction-MkDocsPublish
           aws-region: ${{ env.AWS_REGION }}
 
+      # The prebaked container ships with mkdocs + mkdocs-material + a small
+      # baseline of plugins, but not the lab-specific extras (glightbox,
+      # with-pdf, etc.). Install the full pinned list from requirements.txt
+      # so the build is reproducible and survives image refreshes.
+      - name: Install dependencies
+        run: pip install --no-cache-dir -r requirements.txt
+
       - name: Build
         run: mkdocs build --clean
 
