@@ -93,6 +93,23 @@ python scripts/process_markdown.py
 | `S4.T2.S2.1.2.heic`   | `s4-t2-s2-1-2.png`        | Scenario 4, Task 2, Step 2, picture 1, sub-image 2                 |
 | `Pre-configured-*.heic` | `pre-configured-*.png`  | Pre-configured Objects / AC rules diagrams (intro section)         |
 
+## PDF export (mkdocs-with-pdf)
+
+`mkdocs.yml` enables the `with-pdf` plugin by default
+(`enabled: !ENV [ENABLE_PDF_EXPORT, true]`). A `mkdocs build` produces both
+the HTML site and `site/pdf/document.pdf` (~125 pages, ~46 MB for the full
+six-scenario guide). Skip the PDF for quick iteration with
+`ENABLE_PDF_EXPORT=false mkdocs build` (or `mkdocs serve`, which the dev
+loop reads as `false`).
+
+A couple of mkdocs.yml details are load-bearing for the PDF flow:
+
+- `glightbox` is configured **before** `with-pdf` so the lightbox anchors are
+  already in place when with-pdf snapshots each page.
+- `docs/stylesheets/extra.css` carries a `@media print` block that forces the
+  Material content stack to render. Without it, Material's compiled CSS
+  silently clips the combined PDF document down to ~32 pages.
+
 ## Image presentation
 
 All figures are wrapped in `<figure markdown style="max-width:Xcm;">`. The CSS

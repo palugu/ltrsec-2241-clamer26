@@ -64,3 +64,59 @@
 [data-md-color-scheme="slate"] .md-typeset figure img {
     border-color: #aaaaaa;
 }
+
+/* ---------------------------------------------------------------------------
+ * PDF print overrides.
+ *
+ * Material for MkDocs is designed for a multi-page web layout: navigation,
+ * sidebars and content containers all rely on viewport sizing and CSS that
+ * doesn't translate to WeasyPrint's single-document model. When the
+ * mkdocs-with-pdf plugin concatenates every page into one HTML document and
+ * hands it to WeasyPrint, several Material rules silently clip the output
+ * (we measured the PDF dropping from ~120 pages to 32). These overrides
+ * force the article/content stack to render as a normal block flow at print
+ * time so all scenarios make it into the PDF.
+ * ------------------------------------------------------------------------- */
+@media print {
+    html,
+    body,
+    .md-main,
+    .md-main__inner,
+    .md-content,
+    .md-content__inner,
+    article,
+    section,
+    .md-typeset {
+        display: block !important;
+        visibility: visible !important;
+        max-height: none !important;
+        max-width: none !important;
+        height: auto !important;
+        overflow: visible !important;
+        position: static !important;
+        transform: none !important;
+    }
+
+    /* Hide all chrome — header, footer, sidebars, tabs, nav, copy buttons,
+       feedback widgets, dialogs and the cookie banner. */
+    .md-header,
+    .md-footer,
+    .md-sidebar,
+    .md-tabs,
+    .md-nav,
+    .md-clipboard,
+    .md-content__button,
+    .md-dialog,
+    .md-banner,
+    .md-feedback,
+    .md-consent,
+    .md-source {
+        display: none !important;
+    }
+
+    /* Keep figure frames at exactly the lab-guide width even when WeasyPrint
+       widens the printable area beyond the on-screen content column. */
+    .md-typeset figure {
+        page-break-inside: avoid;
+    }
+}

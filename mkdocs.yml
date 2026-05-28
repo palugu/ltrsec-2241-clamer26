@@ -41,12 +41,10 @@ extra_css:
 plugins:
   - search
   - awesome-nav
-  - with-pdf:
-      cover_subtitle: "Instructor-Led Labs"
-      cover_logo: template_assets/PDF_Event_General_Logo.svg
-      ordered_chapter_level: 1
-      copyright: Copyright &copy; Cisco
-      enabled: !ENV [ENABLE_PDF_EXPORT, false]  # Set to true or comment this line with # to enable lab guide export to PDF file
+  # glightbox must come BEFORE with-pdf so that the with-pdf plugin's
+  # `on_post_page` collects the page article *after* glightbox has already
+  # wrapped the screenshots in its anchor tags. Otherwise weasyprint
+  # produces a truncated PDF on large image-heavy pages.
   - glightbox:
       touchNavigation: true
       loop: false
@@ -60,6 +58,12 @@ plugins:
       - custom-skip-class-name
       auto_caption: true
       caption_position: top
+  - with-pdf:
+      cover_subtitle: "Instructor-Led Labs"
+      cover_logo: template_assets/PDF_Event_General_Logo.svg
+      ordered_chapter_level: 1
+      copyright: Copyright &copy; Cisco
+      enabled: !ENV [ENABLE_PDF_EXPORT, true]  # Set to true or comment this line with # to enable lab guide export to PDF file
   # - macros:
   #     include_yaml: 
   #       - data/vars_global.yaml
