@@ -2,6 +2,6 @@ nav:
 - Home: index.md
 - Lab:
   - Overview: overview.md
-  - Lab 1 - Getting Started: lab1_getting_started.md
+  - Scenario 1- Getting Started: lab1_getting_started.md
   - Conclusion: conclusion.md
 - Topologies: topologies.md
