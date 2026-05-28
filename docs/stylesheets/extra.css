@@ -28,3 +28,39 @@
     max-height: 500px; 
     overflow-y: auto;
 }
+
+/* Inline UI icons (e.g. deploy button, arrow buttons) inserted as
+   `![icon](...){ .inline-icon }`. Keep them at text size so they sit
+   nicely within sentences instead of breaking onto their own line. */
+.md-typeset img.inline-icon {
+    display: inline-block;
+    height: 1.25em;
+    width: auto;
+    vertical-align: middle;
+    margin: 0 0.15em;
+    border: 0;            /* icons should not have the figure frame */
+    box-shadow: none;
+}
+
+/* Screenshots are rendered as `<figure markdown style="max-width:Xcm;">`
+   so each image retains the sizing it had in the source DOCX (6-12 cm
+   for small dialogs, ~16 cm for full-width Deploy / topology screens).
+   The figure itself is centred; the image fills the figure responsively. */
+.md-typeset figure {
+    margin: 1em auto;
+}
+
+.md-typeset figure img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 1pt solid #6e6e6e;   /* 1pt frame matching the source doc */
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+/* Dark-mode: lighten the frame so it stays visible against the dark page. */
+[data-md-color-scheme="slate"] .md-typeset figure img {
+    border-color: #aaaaaa;
+}

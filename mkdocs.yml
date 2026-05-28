@@ -41,11 +41,11 @@ extra_css:
 plugins:
   - search
   - awesome-nav
-  - to-pdf:
+  - with-pdf:
       cover_subtitle: "Instructor-Led Labs"
       cover_logo: template_assets/PDF_Event_General_Logo.svg
       ordered_chapter_level: 1
-      copyright: Copyright &copy; Cisco 
+      copyright: Copyright &copy; Cisco
       enabled: !ENV [ENABLE_PDF_EXPORT, false]  # Set to true or comment this line with # to enable lab guide export to PDF file
   - glightbox:
       touchNavigation: true
