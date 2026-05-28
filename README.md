@@ -1,4 +1,4 @@
-# Lab Guide for Cisco Live Amsterdam 2026: LTRSEC-2241
+# Lab Guide for Cisco Live US 2026: LTRSEC-2241
 
 Web guide link: https://cl-ltr.ciscolabs.com/6693591399/
 
