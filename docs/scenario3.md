@@ -49,7 +49,7 @@ Enter the following details in the **Add Spoke** dialog box:
 
 4)  Click **Save** to add the Spoke into SD-WAN Topology
 
-<figure markdown style="max-width:9.2cm;">
+<figure markdown style="max-width:10.0cm;">
   ![screenshot](assets/screens/s3-t1-s2-3-1.png){ loading=lazy }
 </figure>
 
@@ -194,7 +194,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
 3)  View the progress of the deployment on the devices and **wait till
     the deployment is marked Completed** on the Deploy dialog
 
-<figure markdown style="max-width:10.2cm;">
+<figure markdown style="max-width:10.0cm;">
   ![screenshot](assets/screens/s3-t4.png){ loading=lazy }
 </figure>
 

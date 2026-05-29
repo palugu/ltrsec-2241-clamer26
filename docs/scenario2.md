@@ -92,11 +92,11 @@ In this step, you will learn to advertise this new network at Hub
 
     1.  Click on **Save** to update the object-group
 
-<figure markdown style="max-width:10.7cm;">
+<figure markdown style="max-width:10.0cm;">
   ![screenshot](assets/screens/s2-t2-s1-2-1.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:10.7cm;">
+<figure markdown style="max-width:10.0cm;">
   ![screenshot](assets/screens/s2-t2-s1-2-2.png){ loading=lazy }
 </figure>
 

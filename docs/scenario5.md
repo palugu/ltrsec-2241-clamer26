@@ -79,7 +79,7 @@ network that will be used to NAT 192.168.3.0/24. In this scenario,
     3.  **Available Network**: **Branch-4-NAT-Network** (pre-configured as `192.168.33.0/24` &mdash; hover the object to verify).
     4.  Click **OK** to add the route.
 
-<figure markdown style="max-width:7.0cm;">
+<figure markdown style="max-width:8.0cm;">
   ![screenshot](assets/screens/s5-t2-s1-3.png){ loading=lazy }
 </figure>
 
@@ -125,7 +125,7 @@ Enter the following details in the **Add Spoke** dialog box:
 
 4)  **Save:** Click on Save to add the Spoke into SD-WAN Topology
 
-<figure markdown style="max-width:8.9cm;">
+<figure markdown style="max-width:8.0cm;">
   ![screenshot](assets/screens/s5-t3-s2-3-1.png){ loading=lazy }
 </figure>
 
@@ -250,7 +250,7 @@ using NATed network.
 5.  You are back to NAT Policies page, Click on **Save** to save the
     policy
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/extracted/image198.jpeg){ loading=lazy }
 </figure>
 
@@ -447,7 +447,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
     an IP in 192.168.33.X/24 (blue box below) subnet as seen at Hub,
     **NGFW-HUB**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/extracted/image213.jpeg){ loading=lazy }
 </figure>
 

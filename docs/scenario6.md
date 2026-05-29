@@ -173,7 +173,7 @@ Observe the Log –
 **Congratulations!! You have successfully completed all the scenarios of
 the Lab!**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/extracted/image230.png){ loading=lazy }
 </figure>
 

@@ -68,7 +68,7 @@ following devices:
 - **H1**, **H2**, **H3** — workstations behind NGFW-HUB
 - **Wkst5** — Secure Client user
 
-<figure markdown style="max-width:16.1cm;">
+<figure markdown style="max-width:16.0cm;">
   ![Lab topology](assets/extracted/image3.png){ loading=lazy }
 </figure>
 
@@ -94,14 +94,14 @@ following devices:
 The Jumpbox (RDP `198.18.133.50`) can be used to access all the lab devices
 from a single user interface. A **Quick Launch** icon is placed on the desktop.
 
-<figure markdown style="max-width:13.3cm;">
+<figure markdown style="max-width:12.0cm;">
   ![Quick Launch icon on the Jumpbox desktop](assets/extracted/image4.jpeg){ loading=lazy }
 </figure>
 
 Clicking the **Quick Launch** icon launches the Cisco Secure Firewall Quick
 Launch application from which all the devices can be opened and accessed.
 
-<figure markdown style="max-width:16.1cm;">
+<figure markdown style="max-width:16.0cm;">
   ![Cisco Secure Firewall Quick Launch](assets/extracted/image5.png){ loading=lazy }
 </figure>
 
@@ -115,7 +115,7 @@ An object **Branch-Protected-Network** is defined with the override option to
 hold the protected networks. Scroll down on the object to see all the values
 configured behind each NGFW.
 
-<figure markdown style="max-width:8.9cm;">
+<figure markdown style="max-width:8.0cm;">
   ![Branch-Protected-Network object](assets/screens/pre-configured-branch-protected-network.png){ loading=lazy }
 </figure>
 
@@ -125,7 +125,7 @@ This object is in turn used in the pre-configured route map
 Map**. The route maps are used when configuring propagation of protected
 network routes to SD-WAN peers.
 
-<figure markdown style="max-width:15.7cm;">
+<figure markdown style="max-width:16.0cm;">
   ![Pre-configured route maps](assets/extracted/image7.jpeg){ loading=lazy }
 </figure>
 

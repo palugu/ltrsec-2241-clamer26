@@ -103,7 +103,7 @@ Enter the following details in the **Add Hub** dialog:
 
 1.  **Device**: click the drop-down and select the FTD **NGFW-HUB**.
 
-    <figure markdown style="max-width:9.6cm;">
+    <figure markdown style="max-width:10.0cm;">
       ![screenshot](assets/screens/s1-t1-s2-2-1.png){ loading=lazy }
     </figure>
 
@@ -121,7 +121,7 @@ Enter the following details in the **Add Hub** dialog:
         **outside** from the drop-down. Set the **Tunnel Source IP
         Address** to `20.1.101.101`.
 
-    <figure markdown style="max-width:9.6cm;">
+    <figure markdown style="max-width:10.0cm;">
       ![screenshot](assets/screens/s1-t1-s2-2-2.png){ loading=lazy }
     </figure>
 
@@ -133,7 +133,7 @@ Enter the following details in the **Add Hub** dialog:
         drop-down== to create one &mdash; the **Add Loopback Interface**
         dialog opens:
 
-        <figure markdown style="max-width:9.6cm;">
+        <figure markdown style="max-width:10.0cm;">
           ![screenshot](assets/screens/s1-t1-s2-3-1.png){ loading=lazy }
         </figure>
 
@@ -142,7 +142,7 @@ Enter the following details in the **Add Hub** dialog:
             1.  **Name**: `Hub_Tunnel_IP_1`
             2.  **Loopback ID**: `1`
 
-            <figure markdown style="max-width:9.6cm;">
+            <figure markdown style="max-width:10.0cm;">
               ![screenshot](assets/screens/s1-t1-s2-3-2.png){ loading=lazy }
             </figure>
 
@@ -151,7 +151,7 @@ Enter the following details in the **Add Hub** dialog:
             1.  **IP Type**: Use Static IP
             2.  **IP Address**: `169.254.10.1/32`
 
-            <figure markdown style="max-width:9.6cm;">
+            <figure markdown style="max-width:10.0cm;">
               ![screenshot](assets/screens/s1-t1-s2-3-3.png){ loading=lazy }
             </figure>
 
@@ -161,7 +161,7 @@ Enter the following details in the **Add Hub** dialog:
         **Borrow IP (IP unnumbered)** is now set to
         **Loopback1 (Hub_Tunnel_IP_1)**.
 
-        <figure markdown style="max-width:9.6cm;">
+        <figure markdown style="max-width:10.0cm;">
           ![screenshot](assets/screens/s1-t1-s2-3-4.png){ loading=lazy }
         </figure>
 
@@ -169,7 +169,7 @@ Enter the following details in the **Add Hub** dialog:
     save the DVTI. You will see a dialog confirming **Virtual Tunnel
     Interface Added** successfully &mdash; click **OK**.
 
-    <figure markdown style="max-width:9.8cm;">
+    <figure markdown style="max-width:10.0cm;">
       ![screenshot](assets/screens/s1-t1-s2-3-5.png){ loading=lazy }
     </figure>
 
@@ -186,7 +186,7 @@ Enter the following details in the **Add Hub** dialog:
     interfaces. ==Click the **+** icon next to the field== to create a
     new pool &mdash; the **New IPv4 Pool** dialog opens.
 
-    <figure markdown style="max-width:9.6cm;">
+    <figure markdown style="max-width:10.0cm;">
       ![screenshot](assets/screens/s1-t1-s2-4-1.png){ loading=lazy }
     </figure>
 
@@ -208,7 +208,7 @@ Enter the following details in the **Add Hub** dialog:
     Pool** to the pool you just created &mdash; **NGFW_Hub_IPv4_Pool_1**
     (use the drop-down if it isn't auto-populated).
 
-    <figure markdown style="max-width:9.5cm;">
+    <figure markdown style="max-width:10.0cm;">
       ![screenshot](assets/screens/s1-t1-s2-4-3.png){ loading=lazy }
     </figure>
 

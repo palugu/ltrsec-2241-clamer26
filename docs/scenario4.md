@@ -83,7 +83,7 @@ Enter the following details in the **Add Hub** dialog:
 1.  **Device**: click the drop-down and select the Hub FTD &mdash;
     **NGFW-HUB**.
 
-    <figure markdown style="max-width:9.6cm;">
+    <figure markdown style="max-width:10.0cm;">
       ![screenshot](assets/screens/s4-t2-s2-1-1.png){ loading=lazy }
     </figure>
 
@@ -102,7 +102,7 @@ Enter the following details in the **Add Hub** dialog:
         **outside** from the drop-down. Set the **Tunnel Source IP
         Address** to `20.1.101.101`.
 
-    <figure markdown style="max-width:9.6cm;">
+    <figure markdown style="max-width:10.0cm;">
       ![screenshot](assets/screens/s4-t2-s2-1-2.png){ loading=lazy }
     </figure>
 
@@ -114,7 +114,7 @@ Enter the following details in the **Add Hub** dialog:
         drop-down== to create one &mdash; the **Add Loopback Interface**
         dialog opens:
 
-        <figure markdown style="max-width:9.6cm;">
+        <figure markdown style="max-width:10.0cm;">
           ![screenshot](assets/screens/s4-t2-s2-2-1.png){ loading=lazy }
         </figure>
 
@@ -123,7 +123,7 @@ Enter the following details in the **Add Hub** dialog:
             1.  **Name**: `Hub_Tunnel_IP_2`
             2.  **Loopback ID**: `2`
 
-            <figure markdown style="max-width:9.6cm;">
+            <figure markdown style="max-width:10.0cm;">
               ![screenshot](assets/screens/s4-t2-s2-2-2.png){ loading=lazy }
             </figure>
 
@@ -132,7 +132,7 @@ Enter the following details in the **Add Hub** dialog:
             1.  **IP Type**: Use Static IP
             2.  **IP Address**: `169.254.20.1/32`
 
-            <figure markdown style="max-width:9.6cm;">
+            <figure markdown style="max-width:10.0cm;">
               ![screenshot](assets/screens/s4-t2-s2-2-3.png){ loading=lazy }
             </figure>
 
@@ -144,7 +144,7 @@ Enter the following details in the **Add Hub** dialog:
         You will see a dialog confirming **Virtual Tunnel Interface
         Added** successfully &mdash; click **OK**.
 
-        <figure markdown style="max-width:9.6cm;">
+        <figure markdown style="max-width:10.0cm;">
           ![screenshot](assets/screens/s4-t2-s2-2-4.png){ loading=lazy }
         </figure>
 
@@ -161,7 +161,7 @@ Enter the following details in the **Add Hub** dialog:
     interfaces. ==Click the **+** icon next to the field== to create
     a new pool &mdash; the **New IPv4 Pool** dialog opens.
 
-    <figure markdown style="max-width:9.6cm;">
+    <figure markdown style="max-width:10.0cm;">
       ![screenshot](assets/screens/s4-t2-s2-3-1.png){ loading=lazy }
     </figure>
 
@@ -175,7 +175,7 @@ Enter the following details in the **Add Hub** dialog:
     4.  **Allow Override**: leave disabled (default).
     5.  Click **Save** to create the pool.
 
-    <figure markdown style="max-width:10.7cm;">
+    <figure markdown style="max-width:10.0cm;">
       ![screenshot](assets/screens/s4-t2-s2-3-2.png){ loading=lazy }
     </figure>
 
@@ -183,7 +183,7 @@ Enter the following details in the **Add Hub** dialog:
     Pool** to the pool you just created &mdash; **NGFW_Hub_IPv4_Pool_2**
     (use the drop-down if it isn't auto-populated).
 
-    <figure markdown style="max-width:9.6cm;">
+    <figure markdown style="max-width:10.0cm;">
       ![screenshot](assets/screens/s4-t2-s2-3-3.png){ loading=lazy }
     </figure>
 
@@ -218,7 +218,7 @@ Enter the following details in the **Add Spoke** dialog box:
 
 4.  **Save:** Click on **Save** to add the Spoke into SD-WAN Topology.
 
-    <figure markdown style="max-width:8.9cm;">
+    <figure markdown style="max-width:8.0cm;">
       ![screenshot](assets/screens/s4-t2-s3-2-1.png){ loading=lazy }
     </figure>
 
@@ -409,7 +409,7 @@ Network behind Hub (**NGFW-HUB**) &mdash; 192.168.101.0/24 with a host
         ![icon](assets/extracted/image169.png){ .inline-icon .off-glb }
         icon at the top right of the **Events** table.
 
-        <figure markdown style="max-width:16.5cm;">
+        <figure markdown style="max-width:16.0cm;">
           ![screenshot](assets/screens/s4-t5-s2-2.png){ loading=lazy }
         </figure>
 
