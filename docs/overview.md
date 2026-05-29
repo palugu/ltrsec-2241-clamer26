@@ -149,3 +149,18 @@ The Access Control rules pre-configured at the **Spokes** are:
 <figure markdown style="max-width:16.0cm;">
   ![Spoke Access Control rules](assets/screens/pre-configured-spokes-ac.png){ loading=lazy }
 </figure>
+
+## You're All Set — Let's Begin
+
+The lab environment is ready and the supporting objects are in place. From
+here, head into the scenarios &mdash; each one builds on the previous, so
+working through them in order will give you the best picture of how the
+SD-WAN Wizard fits together end-to-end. Scenarios 5 and 6 are optional
+and can be tackled if time permits.
+
+If anything is unclear, a screenshot doesn't match what you see, or a step
+behaves differently in your pod, please flag it. Your feedback &mdash; even
+the small details &mdash; goes directly back into the next revision of this
+guide.
+
+Happy labbing!

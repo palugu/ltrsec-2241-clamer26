@@ -32,40 +32,49 @@ specific BGP configuration.
 
 In this lab task, you will learn how to create an IPSec VPN Tunnel
 between Branch and Hub Secure Firewall using SD-WAN Wizard in FMC
-(<https://198.18.133.201/>).  
-  
+(<https://198.18.133.201/>).
+
 Launch FMC by clicking **FMC Web** icon in Cisco Secure Firewall Quick
 Launch window.
-
-Enter the credentials (admin/dCloud123!).
 
 <figure markdown style="max-width:10.0cm;">
   ![screenshot](assets/extracted/image11.png){ loading=lazy }
 </figure>
 
+!!! warning "Certificate warning"
+    When you click **FMC Web**, if the browser displays
+    **"Your connection is not private"**, click **Advanced** and select
+    **Proceed to 198.18.133.201 (unsafe)** to continue.
+
+!!! info "FMC credentials"
+    Sign in with:
+
+    - **Username:** `admin`
+    - **Password:** `dCloud123!`
+
 ### Step 1: Create SD-WAN Topology
 
 To configure a new SD-WAN Topology, go to **Secure Connections \>
-Site-to-Site VPN & SD-WAN**
+Site-to-Site VPN & SD-WAN**.
 
 <figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/s1-t1-s1-1.png){ loading=lazy }
 </figure>
 
-Click **+ Add**
+Click **+ Add**.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s1-2.png){ loading=lazy }
 </figure>
 
-There are prerequisites to SD-WAN Topology. Click/hover on
-Prerequisites in Create VPN Topology Dialog to view the information.
+There are prerequisites to SD-WAN Topology. Click or hover on
+**Prerequisites** in the **Create VPN Topology** dialog to review them.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s1-2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/s1-t1-s1-3.png){ loading=lazy }
 </figure>
 
-Enter the following details in the pop-up:
+Enter the following details in the **Create VPN Topology** pop-up:
 
 1.  **Topology Name**: name the VPN topology as **Corp-SD-WAN-1**.
 
@@ -77,7 +86,7 @@ Enter the following details in the pop-up:
 3.  Click **Create**.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s1-3.png){ loading=lazy }
+  ![screenshot](assets/screens/s1-t1-s1-4.png){ loading=lazy }
 </figure>
 
 ### Step 2: SD-WAN Topology – Hub Configuration
@@ -92,10 +101,14 @@ device.
 
 Enter the following details in the **Add Hub** dialog:
 
-1.  **Device**: click the dropdown and select the FTD **NGFW-HUB**.
+1.  **Device**: click the drop-down and select the FTD **NGFW-HUB**.
 
-2.  **Dynamic Virtual Tunnel Interface (DVTI)**: click **+** adjacent
-    to the drop-down to create a DVTI. The **Add Virtual Tunnel
+    <figure markdown style="max-width:9.6cm;">
+      ![screenshot](assets/screens/s1-t1-s2-2-1.png){ loading=lazy }
+    </figure>
+
+2.  **Dynamic Virtual Tunnel Interface (DVTI)**: ==click the **+** icon
+    adjacent to the drop-down== to create a DVTI. The **Add Virtual Tunnel
     Interface** dialog opens. Fill it in:
 
     1.  **Tunnel Type**: pre-selected to *Dynamic* (greyed out).
@@ -108,11 +121,7 @@ Enter the following details in the **Add Hub** dialog:
         **outside** from the drop-down. Set the **Tunnel Source IP
         Address** to `20.1.101.101`.
 
-    <figure markdown style="max-width:6.6cm;">
-      ![screenshot](assets/screens/s1-t1-s2-2-1.png){ loading=lazy }
-    </figure>
-
-    <figure markdown style="max-width:7.7cm;">
+    <figure markdown style="max-width:9.6cm;">
       ![screenshot](assets/screens/s1-t1-s2-2-2.png){ loading=lazy }
     </figure>
 
@@ -120,19 +129,31 @@ Enter the following details in the **Add Hub** dialog:
     8.  **IP Address**: DVTI is a template interface and can't have a
         static IP &mdash; it must **Borrow IP (IP unnumbered)** from
         another interface (Cisco recommends a loopback, which never
-        goes down). Click **+** next to the **Select Interface**
-        drop-down to create one &mdash; the **Add Loopback Interface**
+        goes down). ==Click the **+** icon next to the **Select Interface**
+        drop-down== to create one &mdash; the **Add Loopback Interface**
         dialog opens:
+
+        <figure markdown style="max-width:9.6cm;">
+          ![screenshot](assets/screens/s1-t1-s2-3-1.png){ loading=lazy }
+        </figure>
 
         1.  In the **General** tab:
 
             1.  **Name**: `Hub_Tunnel_IP_1`
             2.  **Loopback ID**: `1`
 
+            <figure markdown style="max-width:9.6cm;">
+              ![screenshot](assets/screens/s1-t1-s2-3-2.png){ loading=lazy }
+            </figure>
+
         2.  In the **IPv4** tab:
 
             1.  **IP Type**: Use Static IP
             2.  **IP Address**: `169.254.10.1/32`
+
+            <figure markdown style="max-width:9.6cm;">
+              ![screenshot](assets/screens/s1-t1-s2-3-3.png){ loading=lazy }
+            </figure>
 
         3.  Click **OK** to save the loopback.
 
@@ -140,25 +161,13 @@ Enter the following details in the **Add Hub** dialog:
         **Borrow IP (IP unnumbered)** is now set to
         **Loopback1 (Hub_Tunnel_IP_1)**.
 
+        <figure markdown style="max-width:9.6cm;">
+          ![screenshot](assets/screens/s1-t1-s2-3-4.png){ loading=lazy }
+        </figure>
+
 3.  Click **OK** on the **Add Virtual Tunnel Interface** dialog to
     save the DVTI. You will see a dialog confirming **Virtual Tunnel
     Interface Added** successfully &mdash; click **OK**.
-
-    <figure markdown style="max-width:9.6cm;">
-      ![screenshot](assets/screens/s1-t1-s2-3-1.png){ loading=lazy }
-    </figure>
-
-    <figure markdown style="max-width:10.6cm;">
-      ![screenshot](assets/screens/s1-t1-s2-3-2.png){ loading=lazy }
-    </figure>
-
-    <figure markdown style="max-width:12.0cm;">
-      ![screenshot](assets/screens/s1-t1-s2-3-3.png){ loading=lazy }
-    </figure>
-
-    <figure markdown style="max-width:9.6cm;">
-      ![screenshot](assets/screens/s1-t1-s2-3-4.png){ loading=lazy }
-    </figure>
 
     <figure markdown style="max-width:9.8cm;">
       ![screenshot](assets/screens/s1-t1-s2-3-5.png){ loading=lazy }
@@ -174,8 +183,14 @@ Enter the following details in the **Add Hub** dialog:
 6.  **Spoke Tunnel IP Address Pool**: FMC auto-generates the static
     VTI interfaces on the spoke devices. This pool defines the IP
     range FMC draws from when assigning addresses to those sVTI
-    interfaces. Click the **+** icon next to the field to create a
-    new pool &mdash; the **New IPv4 Pool** dialog opens. Fill it in:
+    interfaces. ==Click the **+** icon next to the field== to create a
+    new pool &mdash; the **New IPv4 Pool** dialog opens.
+
+    <figure markdown style="max-width:9.6cm;">
+      ![screenshot](assets/screens/s1-t1-s2-4-1.png){ loading=lazy }
+    </figure>
+
+    Fill it in:
 
     1.  **Name**: `NGFW_Hub_IPv4_Pool_1`
     2.  **IPv4 Address Range**: `169.254.10.3-169.254.10.100`. FMC
@@ -185,21 +200,17 @@ Enter the following details in the **Add Hub** dialog:
     4.  **Allow Override**: leave disabled (default).
     5.  Click **Save** to create the pool.
 
-    <figure markdown style="max-width:9.6cm;">
-      ![screenshot](assets/screens/s1-t1-s2-4-1.png){ loading=lazy }
-    </figure>
-
     <figure markdown style="max-width:12.0cm;">
       ![screenshot](assets/screens/s1-t1-s2-4-2.png){ loading=lazy }
-    </figure>
-
-    <figure markdown style="max-width:9.5cm;">
-      ![screenshot](assets/screens/s1-t1-s2-4-3.png){ loading=lazy }
     </figure>
 
     Back on the **Add Hub** dialog, set **Spoke Tunnel IP Address
     Pool** to the pool you just created &mdash; **NGFW_Hub_IPv4_Pool_1**
     (use the drop-down if it isn't auto-populated).
+
+    <figure markdown style="max-width:9.5cm;">
+      ![screenshot](assets/screens/s1-t1-s2-4-3.png){ loading=lazy }
+    </figure>
 
 7.  All Hub inputs are now filled in. Click **Add** on the **Add Hub**
     dialog to save it and add the Hub to the SD-WAN topology. The row
@@ -223,32 +234,32 @@ Click **Add Spokes (Bulk Addition)** button in spokes step.
 
 Enter the following details in the **Add Bulk Spokes** dialog box:
 
-1)  **Devices**: Select **NGFW-B1** and **NGFW-B2** from the **Available
+1.  **Devices**: Select **NGFW-B1** and **NGFW-B2** from the **Available
     Devices**, click on **Add** button to move the devices to
     **Selected Devices**.
 
-2)  **Interface Name Pattern:** Ensure Interface Name Pattern field is
+2.  **Interface Name Pattern:** Ensure Interface Name Pattern field is
     set to **outside**. Using this name pattern, FMC automatically
     searches the devices for a matching interface, and these
     interfaces are selected as VPN interface for the selected spoke
     devices.
 
-3)  **Next:** Click on **Next** button
+3.  **Next:** Click on **Next** button.
 
-4)  **Add:** Once you click on Next button, FMC lists the selected
+    <figure markdown style="max-width:12.0cm;">
+      ![screenshot](assets/screens/s1-t1-s3-2-1.png){ loading=lazy }
+    </figure>
+
+4.  **Add:** Once you click on Next button, FMC lists the selected
     devices with Interfaces that matches the given name pattern.
     Review the selection and click on the **Add** button.
 
-5)  **Next:** Once you review the spokes, click on **Next** button to
-    move on to the next step
+    <figure markdown style="max-width:12.0cm;">
+      ![screenshot](assets/screens/s1-t1-s3-2-2.png){ loading=lazy }
+    </figure>
 
-<figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s1-t1-s3-2-1.png){ loading=lazy }
-</figure>
-
-<figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s1-t1-s3-2-2.png){ loading=lazy }
-</figure>
+5.  **Next:** Once you review the spokes, click on **Next** button to
+    move on to the next step.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s3-3.png){ loading=lazy }
@@ -362,31 +373,37 @@ pop-up dialog “**Click Finish to save your changes.**”
     on Spoke devices using the following steps:
 
     1.  Click **pencil/edit icon** in Site-to-Site VPN Listing page
-        which will open the SD-WAN Topology Wizard
+        which will open the SD-WAN Topology Wizard.
 
-    2.  Click on **edit** link in Spokes step
+        <figure markdown style="max-width:16.0cm;">
+          ![screenshot](assets/screens/s1-t1-s7-6-1.png){ loading=lazy }
+        </figure>
+
+    2.  Click on **edit** link in Spokes step.
+
+        <figure markdown style="max-width:16.0cm;">
+          ![screenshot](assets/screens/s1-t1-s7-6-2.png){ loading=lazy }
+        </figure>
 
     3.  Click **View Generated Tunnel Interfaces** button. This opens a
         dialog which shows Spoke devices with generated Static VTIs.
 
+        <figure markdown style="max-width:16.0cm;">
+          ![screenshot](assets/screens/s1-t1-s7-6-3.png){ loading=lazy }
+        </figure>
+
     4.  Click **OK** and then click **Cancel** to revert to Site-to-Site
-        VPN Listing page
+        VPN Listing page.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s7-5.png){ loading=lazy }
-</figure>
+        <figure markdown style="max-width:16.0cm;">
+          ![screenshot](assets/screens/s1-t1-s7-6-4.png){ loading=lazy }
+        </figure>
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s7-6-1.png){ loading=lazy }
-</figure>
-
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s7-6-2.png){ loading=lazy }
-</figure>
-
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s7-6-3.png){ loading=lazy }
-</figure>
+    !!! warning "Stay on track"
+        After reviewing the **Spoke Static VTI Summary**, click **OK** on
+        the dialog and then **Cancel** to return to the **Site-to-Site
+        VPN Listing** page. Do not click **Finish** or **Save**
+        &mdash; we don't want to alter the topology at this point.
 
 ## Task 2: Deploy to Hub and Spoke Devices
 
@@ -482,15 +499,15 @@ into BGP. These routes will then be advertised to the SD-WAN peers.
     3.  **Route Map**: **Advertise-Hub-Protected-Networks**
     4.  Click **OK** to save the settings.
 
-<figure markdown style="max-width:6.0cm;">
-  ![screenshot](assets/screens/s1-t3-s3-1.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s1-t3-s3-1-1.png){ loading=lazy }
+    </figure>
 
 3.  Click **Save** on top right to complete the configuration.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t3-s3-1-1.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s1-t3-s3-2.png){ loading=lazy }
+    </figure>
 
 ## Task 4: Configuring BGP Redistribution of Static Internal Routes at Spoke (NGFW-B1) to SD-WAN
 
@@ -582,7 +599,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     1.  **Enable IPv4**, review the AS Number defaults to **64512**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t5-s1-3.png){ loading=lazy }
+  ![screenshot](assets/screens/s1-t5-s1-4.png){ loading=lazy }
 </figure>
 
 ### Step 2: Configure redistribution of EIGRP routes
@@ -712,11 +729,11 @@ Network behind hub (**NGFW-HUB**) – 192.168.102.0/24 with a host
 
 1.  **Connect to B1H:** Open **Cisco Secure Firewall Quick Launch** from
     Taskbar and click on **B1H** which is present under **Linux VM
-    Access.** This opens **B1H’s** SSH session.
+    Access.** This opens **B1H's** SSH session.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t7-s3-2.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s1-t7-s3-1.png){ loading=lazy }
+    </figure>
 
 2.  **Verify Pings from Branch host to hosts behind Hub site.**
 
@@ -728,9 +745,9 @@ Network behind hub (**NGFW-HUB**) – 192.168.102.0/24 with a host
         Hub device NGFW-HUB and verify that you are getting the
         response.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t7-s3-3.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s1-t7-s3-2.png){ loading=lazy }
+    </figure>
 
 3.  **Verify SSH Connection**
 
@@ -738,17 +755,17 @@ Network behind hub (**NGFW-HUB**) – 192.168.102.0/24 with a host
         verify SSH access works. After successful connection, you may
         **exit**.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t7-s3-4.png){ loading=lazy }
-</figure>
+        <figure markdown style="max-width:16.0cm;">
+          ![screenshot](assets/screens/s1-t7-s3-3.png){ loading=lazy }
+        </figure>
 
-2.  **SSH** to **192.168.102.132** using password **C1sco12345** and
-    verify SSH access works. After successful connection, you may
-    **exit**.
+    2.  **SSH** to **192.168.102.132** using password **C1sco12345** and
+        verify SSH access works. After successful connection, you may
+        **exit**.
 
-<figure markdown style="max-width:16.5cm;">
-  ![screenshot](assets/extracted/image85.jpeg){ loading=lazy }
-</figure>
+        <figure markdown style="max-width:16.0cm;">
+          ![screenshot](assets/screens/s1-t7-s3-4.png){ loading=lazy }
+        </figure>
 
 ### Step 4: Verify the traffic flow over the VPN tunnel from Spoke (NGFW-B1) to Spoke (NGFW-B2)
 
@@ -760,11 +777,11 @@ Network behind spoke (**NGFW-B2**) – 192.168.2.0/24 with a host
 
 1.  **Connect to/Stay on B1H:** Open **Cisco Secure Firewall Quick
     Launch** and click on **B1H** which is present under **Linux VM
-    Access.** This opens **B1H’s** SSH session.
+    Access.** This opens **B1H's** SSH session.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t7-s3-2.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s1-t7-s4-1.png){ loading=lazy }
+    </figure>
 
 2.  **Verify Ping**
 
@@ -772,26 +789,27 @@ Network behind spoke (**NGFW-B2**) – 192.168.2.0/24 with a host
         spoke device NGFW-B2 and verify that you are getting the
         response.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t7-s4-1.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s1-t7-s4-2.png){ loading=lazy }
+    </figure>
 
 3.  **Verify SSH Connection**
 
     1.  **SSH** to **192.168.2.134** using password **C1sco12345** and
         verify SSH access works.
 
-Note: For any prompt, “Are you sure you want to continue connecting
-…?”, type “yes”.
+        !!! note "Host key prompt"
+            For any prompt **"Are you sure you want to continue
+            connecting...?"**, type **yes**.
 
-2.  After successful connection, you may **exit**.
+    2.  After successful connection, you may **exit**.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t7-s4-2.png){ loading=lazy }
-</figure>
+        <figure markdown style="max-width:16.0cm;">
+          ![screenshot](assets/screens/s1-t7-s4-3.png){ loading=lazy }
+        </figure>
 
-4.  You may close all opened the **PuTTY** sessions
+4.  You may close all opened the **PuTTY** sessions.
 
 You have successfully configured and verified the SD-WAN topology with
-one hub and multiple spokes!!!
+one hub and multiple spokes!
 
