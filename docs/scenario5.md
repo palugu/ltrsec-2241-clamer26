@@ -135,8 +135,8 @@ Enter the following details in the **Add Spoke** dialog box:
 
 ### Step 3: SD-WAN Topology - Finish
 
-Click on **Finish** button to save the topology. Click **OK** for the
-pop-up dialog “**Click Finish to save your changes.**”
+**Scroll down** and click the **Finish** button to save the topology.
+Click **OK** for the pop-up dialog *"Click Finish to save your changes."*
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s5-t3-s3-1.png){ loading=lazy }
@@ -415,20 +415,20 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
 
 1.  **Connect to B4H:** Open **Cisco Secure Firewall Quick Launch** and
     click on **B4H** which is present under **Linux VM Access.** This
-    opens **B4H**’s SSH session.
+    opens **B4H**'s SSH session.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t9-s3-1.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s5-t9-s3-1.png){ loading=lazy }
+    </figure>
 
 2.  **Verify Ping**
 
     1.  `ping 192.168.101.131 -c 5` which is the Host behind the
         Hub device NGFW-HUB and verify that you are getting the response
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t9-s3-2.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s5-t9-s3-2.png){ loading=lazy }
+    </figure>
 
 3.  **Verify SSH Connection**
 
@@ -436,9 +436,13 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
         verify SSH access works. After successful connection, you may
         **exit**.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t9-s3-3.png){ loading=lazy }
-</figure>
+    !!! note
+        For any prompt &mdash; *"Are you sure you want to continue
+        connecting…?"* &mdash; type `yes`.
+
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s5-t9-s3-3.png){ loading=lazy }
+    </figure>
 
 4.  Launch the Unified Events Viewer (UEV) on FMC in a new tab and
     navigate to **Events & Logs \> Analysis \> Unified Events.** Check
@@ -447,9 +451,9 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
     an IP in 192.168.33.X/24 (blue box below) subnet as seen at Hub,
     **NGFW-HUB**
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/extracted/image213.jpeg){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s5-t9-s3-4.png){ loading=lazy }
+    </figure>
 
 5.  You may close all opened the **PuTTY** sessions
 

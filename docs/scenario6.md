@@ -75,30 +75,31 @@ access from regions and countries of your own choice.
 
 3.  Click **pencil** icon at the middle to edit it
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-t1-s2-1.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s6-t1-s2-1.png){ loading=lazy }
+    </figure>
 
 4.  Click on **Access Interfaces** tab
 
-5.  In the **Service Access Control** section, Select the service access
-    object that was just created **Corp-RA-Locations**
+5.  You may **scroll down** and in the **Service Access Control** section,
+    select the service access object that was just created
+    **Corp-RA-Locations**
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-t1-s2-2-1.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s6-t1-s2-2-1.png){ loading=lazy }
+    </figure>
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-t1-s2-2-2.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s6-t1-s2-2-2.png){ loading=lazy }
+    </figure>
 
 6.  The service access object now displays the rules summary and default
     action. Ensure this is correct and click **Save** on top right to
     save the configuration.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-t1-s2-3.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s6-t1-s2-3.png){ loading=lazy }
+    </figure>
 
 ## Task 2: Deploy to Hub Device
 
@@ -133,32 +134,36 @@ the Hub and Spoke devices and deploy the configuration to the devices.
       
     Login using Credentials **admin/C1sco12345**.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-t3-s1-2.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s6-t3-s1-1.png){ loading=lazy }
+    </figure>
+
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s6-t3-s1-2.png){ loading=lazy }
+    </figure>
 
 2.  Click on Windows Start Button and Open Cisco Secure Client
     application by clicking on pinned Icon.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-t3-s1-3.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s6-t3-s1-3.png){ loading=lazy }
+    </figure>
 
-3.  Click on **Connect** with **Hub (SSL) IPv4** Profile. Choose
-    **Connect Anyway** on Security Warning dialog. The connection
-    attempt must have failed.
+3.  Click on **Connect** with **Hub (SSL) IPv4** Profile. Wait for a
+    few seconds and choose **Connect Anyway** on Security Warning
+    dialog. The connection attempt must have failed.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-t3-s1-4.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s6-t3-s1-4.png){ loading=lazy }
+    </figure>
 
 4.  Verify with Troubleshooting Logs. To validate blocked connections,
     navigate on FMC to **Troubleshooting \> Advanced \>
     Troubleshooting Logs**. Click on **View All**.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s6.png){ loading=lazy }
+    </figure>
 
 Observe the Log –
 
