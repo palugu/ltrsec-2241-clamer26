@@ -22,45 +22,38 @@ to Hub (**NGFW-HUB**) through the internal router (**CSRHR2**).
     and click on **CSRHR2** which is present under **CSR Access.**
     This opens a PuTTY window of **CSRHR2** (SSH session).
 
-2.  You may minimize Cisco Secure Firewall Quick Launch Window
+2.  You may minimize Cisco Secure Firewall Quick Launch Window.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s2-t1-s1-1.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s2-t1-s1-1.png){ loading=lazy }
+    </figure>
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s2-t1-s1-2.png){ loading=lazy }
-</figure>
+3.  Verify the current configuration of OSPF by executing
+    `show run | s router ospf`.
 
-3.  Verify the current configuration of OSPF by executing **show run \|
-    s router ospf**
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s2-t1-s1-2.png){ loading=lazy }
+    </figure>
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s2-t1-s1-3.png){ loading=lazy }
-</figure>
+4.  Add the new network in the router; the Hub device will then learn
+    it through OSPF.
 
-4.  Add the new network in router then Hub device will learn it through
-    OSPF
+    Commands all at once for copy/paste convenience &mdash;
 
-Commands all at once for copy-paste purpose –
+    ```text
+    configure terminal
+    router ospf 2
+    network 192.168.103.0 0.0.0.255 area 0
+    ```
 
-**configure terminal**
+    1.  Go to configuration &mdash; `configure terminal`
+    2.  Edit OSPF configuration &mdash; `router ospf 2`
+    3.  Add the network &mdash; `network 192.168.103.0 0.0.0.255 area 0`
+    4.  You may **close** the **CSRHR2** terminal now.
 
-**router ospf 2**
-
-**network 192.168.103.0 0.0.0.255 area 0**
-
-1.  Go to configuration – **configure terminal**
-
-2.  Edit OSPF configuration – **router ospf 2**
-
-3.  Add the network – **network 192.168.103.0 0.0.0.255 area 0**
-
-4.  You may **close** the **CSRHR2** terminal now
-
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s2-t1-s1-4.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s2-t1-s1-3.png){ loading=lazy }
+    </figure>
 
 5.  Verify the Hub device learnt this new network.
 
@@ -71,11 +64,11 @@ Commands all at once for copy-paste purpose –
     2.  **Command**: `show`
     3.  **Parameter**: Type the argument `route ospf`
     4.  Click **Execute** and review the new route (192.168.103.0)
-    learnt from adjacent CSRHR2 router as an OSPF route.
+        learnt from the adjacent CSRHR2 router as an OSPF route.
 
-<figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/extracted/image93.jpeg){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:12.0cm;">
+      ![screenshot](assets/screens/s2-t1-s1-4.png){ loading=lazy }
+    </figure>
 
 ## Task 2: Redistribution of New Network at Hub to SD-WAN spokes
 
@@ -184,40 +177,40 @@ Network behind spoke (**NGFW-B1**) – 192.168.1.0/24 with a host
 New network behind hub (**NGFW-HUB**) – 192.168.103.0/24 with host
 **192.168.103.141** (**H3**)
 
-1.  **Re/Connect to B1H:** Reopen the **B1H**’s SSH access from taskbar
-    from the previous scenario or open **Cisco Secure Firewall Quick
-    Launch** and click on **B1H** which is present under **Linux VM
-    Access.** This opens up **B1H**’s SSH session.
+1.  **Re/Connect to B1H:** Reopen the **B1H**'s SSH access from the
+    taskbar from the previous scenario, or open **Cisco Secure
+    Firewall Quick Launch** and click **B1H** under **Linux VM
+    Access**. This opens **B1H**'s SSH session.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t7-s3-2.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s2-t4-s3-1.png){ loading=lazy }
+    </figure>
 
 2.  **Verify Ping**
 
-    1.  `ping 192.168.103.141 -c 5` which is the Host behind the
-        Hub device NGFW-HUB and verify that you are getting the
+    1.  `ping 192.168.103.141 -c 5` which is the host behind the
+        Hub device NGFW-HUB &mdash; verify that you are getting a
         response.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s2-t4-s3-1.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s2-t4-s3-2.png){ loading=lazy }
+    </figure>
 
 3.  **Verify SSH Connection**
 
-    1.  **SSH** to **192.168.103.141**, using password **C1sco12345**
+    1.  **SSH** to **192.168.103.141** using password **C1sco12345**
         and verify SSH access works.
+    2.  After a successful connection, you may **exit**.
 
-Note: For any prompt, “Are you sure you want to continue connecting
-…?”, type “yes”.
+    !!! note
+        For any prompt &mdash; *"Are you sure you want to continue
+        connecting…?"* &mdash; type `yes`.
 
-2.  After successful connection, you may **exit**.
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s2-t4-s3-3.png){ loading=lazy }
+    </figure>
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s2-t4-s3-2.png){ loading=lazy }
-</figure>
-
-4.  You may close all opened the **PuTTY** sessions
+4.  You may close all opened **PuTTY** sessions.
 
 You have successfully configured and verified the SD-WAN topology with
 hub expansion!!!

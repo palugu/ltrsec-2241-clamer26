@@ -59,10 +59,10 @@ Enter the following details in the **Add Spoke** dialog box:
 
 ### Step 3: SD-WAN Topology - Finish
 
-Now, we are done with all the configuration required to add new branch
-in the SD-WAN Topology. Click **Finish** button to save the topology.
-Click **OK** for the pop-up dialog “**Click Finish to save your
-changes.**”
+Now, we are done with all the configuration required to add the new
+branch in the SD-WAN Topology. **Scroll down** and click the
+**Finish** button to save the topology. Click **OK** for the pop-up
+dialog *"Click Finish to save your changes."*
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t1-s3-1.png){ loading=lazy }
@@ -251,34 +251,38 @@ Network behind spoke (**NGFW-B3**) – 192.168.3.0/24 with a host
 Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
 **192.168.101.131** (**H1**)
 
-1.  **Connect to B3H:** Open **Cisco Secure Firewall Quick Launch** from
-    Desktop and click **B3H** which is present under **Linux VM
-    Access.** This opens **B3H’s** SSH session.
+1.  **Connect to B3H:** Open **Cisco Secure Firewall Quick Launch**
+    from the Desktop and click **B3H** under **Linux VM Access**. This
+    opens **B3H's** SSH session.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t5-s3-2.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s3-t5-s3-1.png){ loading=lazy }
+    </figure>
 
 2.  **Verify Ping**
 
-    1.  `ping 192.168.101.131 -c 5` which is the Host behind the
-        Hub device NGFW-HUB and verify that you are getting the response
+    1.  `ping 192.168.101.131 -c 5` &mdash; the host behind the Hub
+        device NGFW-HUB. Verify that you are getting a response.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t5-s3-3.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s3-t5-s3-2.png){ loading=lazy }
+    </figure>
 
 3.  **Verify SSH Connection**
 
-    1.  **SSH** to **192.168.101.131** using password **C1sco12345** and
-        verify SSH access works. After successful connection, you may
-        **exit**.
+    1.  **SSH** to **192.168.101.131** using password **C1sco12345**
+        and verify SSH access works. After a successful connection,
+        you may **exit**.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3.png){ loading=lazy }
-</figure>
+    !!! note
+        For any prompt &mdash; *"Are you sure you want to continue
+        connecting…?"* &mdash; type `yes`.
 
-4.  You may **close all** opened the **PuTTY** sessions
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s3-t5-s3-3.png){ loading=lazy }
+    </figure>
+
+4.  You may **close all** opened **PuTTY** sessions.
 
 You have successfully configured and verified the SD-WAN topology with
 Branch expansion!!!
