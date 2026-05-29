@@ -78,6 +78,14 @@
  * time so all scenarios make it into the PDF.
  * ------------------------------------------------------------------------- */
 @media print {
+    /* A4 page with tighter margins so more text/figure pairs fit per page.
+       Default WeasyPrint margin is around 2 cm on each side — shaving to
+       1.3 cm gives us ~3 extra cm of vertical room per page. */
+    @page {
+        size: A4;
+        margin: 1.3cm 1.2cm 1.5cm 1.2cm;
+    }
+
     html,
     body,
     .md-main,
@@ -114,9 +122,176 @@
         display: none !important;
     }
 
-    /* Keep figure frames at exactly the lab-guide width even when WeasyPrint
-       widens the printable area beyond the on-screen content column. */
+    /* ----- Page-break tuning to remove "considerable white space" -----
+       Earlier we set every figure to `page-break-inside: avoid;`, which made
+       WeasyPrint push any figure that didn't fit on the current page to the
+       next page — leaving large blank gaps (often half a page) at the bottom
+       of the prior page. With ~70 screenshots in Scenario 1 alone this
+       produced many nearly-empty pages.
+
+       The fixes below:
+        * cap figure height in print so a portrait dialog screenshot can't
+          consume more than ~70% of a printed page on its own,
+        * allow figures to break internally when truly necessary,
+        * glue the figure to the paragraph or list item that introduces it
+          (via `break-before: avoid` on the figure), so the caption text
+          isn't orphaned on the previous page, and
+        * tighten vertical rhythm so several small items share a page. */
     .md-typeset figure {
+        page-break-inside: auto;
+        break-inside: auto;
+        margin: 0.6em auto;
+    }
+
+    /* Limit very tall portrait screenshots so they don't single-handedly
+       force a page break. A4 content area is ~26 cm tall after margin
+       reduction; 14 cm leaves ~12 cm of room for the surrounding
+       paragraph, sub-list and footer so text+figure groups share a page. */
+    .md-typeset figure img {
+        max-height: 14cm;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* The glightbox plugin wraps every figure with empty `<p></p>` tags
+       (`<p></p><figure>…</figure><p></p>`). Those empty paragraphs both
+       add vertical whitespace and break adjacent-sibling selectors. Strip
+       them out for print. */
+    .md-typeset p:empty {
+        display: none;
+        margin: 0;
+        padding: 0;
+        height: 0;
+    }
+
+    /* Glue every figure to whatever introduces it so a one-line caption
+       isn't stranded on its own page while the screenshot moves to the
+       next. We have to enumerate several patterns because glightbox adds
+       empty `<p>` siblings that break the simple `p + figure` rule. */
+    .md-typeset figure,
+    .md-typeset li figure,
+    .md-typeset p + figure,
+    .md-typeset p + ol,
+    .md-typeset p + ul,
+    .md-typeset p + pre,
+    .md-typeset p + div.admonition,
+    .md-typeset h1 + figure,
+    .md-typeset h2 + figure,
+    .md-typeset h3 + figure,
+    .md-typeset h4 + figure,
+    .md-typeset h5 + figure,
+    .md-typeset h6 + figure,
+    .md-typeset li > p + figure {
+        page-break-before: avoid;
+        break-before: avoid;
+    }
+
+    /* Generic safety net: every paragraph and list item should try to
+       stay attached to whatever follows it. In a step-by-step lab guide
+       a paragraph almost never ends a logical section — it introduces a
+       screenshot, list, code block or admonition. This nudges WeasyPrint
+       to push the paragraph forward when the next element doesn't fit
+       on the current page, instead of leaving the paragraph stranded. */
+    .md-typeset p,
+    .md-typeset li > p,
+    .md-typeset li {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+
+    /* -----------------------------------------------------------------
+     * Override `mkdocs-with-pdf` plugin's own _paging.scss defaults.
+     *
+     * The plugin ships rules that try to keep lists, images and other
+     * block elements indivisible:
+     *     article            { page-break-before: always; min-height: 100vh; }
+     *     img                { page-break-after: avoid; page-break-inside: avoid; }
+     *     a, blockquote,
+     *     table, ul, ol      { page-break-before: avoid; page-break-inside: avoid; }
+     *     pre, dt + dd       { page-break-before: avoid; }
+     *
+     * The list rules in particular are the main reason the PDF still
+     * has half-empty pages: long nested `<ol>` lists (Step 2 of Task 1
+     * has 9 numbered items with embedded figures and sub-lists) are
+     * forced to "stay together", so the whole list gets pushed to the
+     * next page whenever its first items don't fit on the current one,
+     * leaving an empty gap behind.
+     * `min-height: 100vh` on every article also pads the LAST page of
+     * each scenario up to a full viewport height even when the content
+     * is short, which is responsible for several of the half-blank
+     * pages we saw.
+     *
+     * We restore sensible defaults: lists can break naturally, images
+     * still avoid splitting (they're atomic anyway) but don't force a
+     * break after, and articles take only as much space as their
+     * content needs.
+     * --------------------------------------------------------------- */
+    .md-typeset article,
+    article {
+        min-height: 0 !important;
+    }
+    .md-typeset ul,
+    .md-typeset ol,
+    .md-typeset table,
+    .md-typeset blockquote,
+    article ul,
+    article ol,
+    article table,
+    article blockquote {
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+    }
+    .md-typeset img,
+    article img {
+        page-break-after: auto !important;
+        break-after: auto !important;
+    }
+
+    /* Headings never sit at the bottom of a page on their own. */
+    .md-typeset h1,
+    .md-typeset h2,
+    .md-typeset h3,
+    .md-typeset h4,
+    .md-typeset h5,
+    .md-typeset h6 {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+
+    /* Prevent single-line orphans/widows. */
+    .md-typeset p,
+    .md-typeset li {
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* Tighten spacing in print to fit more content per page without it
+       feeling cramped on screen. */
+    .md-typeset h1,
+    .md-typeset h2,
+    .md-typeset h3,
+    .md-typeset h4 {
+        margin-top: 0.8em;
+        margin-bottom: 0.4em;
+    }
+    .md-typeset ul,
+    .md-typeset ol {
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+    }
+    .md-typeset li {
+        margin-bottom: 0.2em;
+    }
+    .md-typeset .admonition,
+    .md-typeset details {
+        margin: 0.6em 0;
         page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    .md-typeset pre {
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 }
