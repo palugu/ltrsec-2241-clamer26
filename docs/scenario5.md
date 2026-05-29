@@ -16,9 +16,9 @@ BGP overlay network.
   ![screenshot](assets/screens/s5-edited.png){ loading=lazy }
 </figure>
 
-## Task 1: Check spoke is having overlap network
+## 5.1 Check spoke is having overlap network
 
-### Step 1: Verify Routes on Hub (NGFW-B4)
+### 5.1.1 Verify Routes on Hub (NGFW-B4)
 
 In this step, you can verify the protected network at spoke NGFW-B4
 overlaps with other spoke NGFW-B3.
@@ -39,14 +39,14 @@ overlaps with other spoke NGFW-B3.
   ![screenshot](assets/screens/s5-t1-s1-1.png){ loading=lazy }
 </figure>
 
-## Task 2: Choose a NAT network and Add Static Route for it
+## 5.2 Choose a NAT network and Add Static Route for it
 
 The overlapping networking cannot be advertised to SD-WAN as they will
 not be installed. For this lab section, choose a non-overlapping
 network that will be used to NAT 192.168.3.0/24. In this scenario,
 192.168.33.0/24 is chosen as the NAT network.
 
-### Step 1: Add Static route for NAT network
+### 5.2.1 Add Static route for NAT network
 
 1.  Edit the device **NGFW-B4** by navigating to **Devices \> Device
     Management \> Edit NGFW-B4**
@@ -89,9 +89,9 @@ network that will be used to NAT 192.168.3.0/24. In this scenario,
   ![screenshot](assets/screens/s5-t2-s1-4.png){ loading=lazy }
 </figure>
 
-## Task 3: Configuring SD-WAN Topology to include new Spoke (NGFW-B4)
+## 5.3 Configuring SD-WAN Topology to include new Spoke (NGFW-B4)
 
-### Step 1: Edit SD-WAN Topology
+### 5.3.1 Edit SD-WAN Topology
 
 To edit SD-WAN Topology, go to **Secure Connections \> Site-to-Site
 VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
@@ -100,7 +100,7 @@ VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
   ![screenshot](assets/screens/s5-t3-s1-1.png){ loading=lazy }
 </figure>
 
-### Step 2: SD-WAN Topology – Add Spoke Configuration
+### 5.3.2 SD-WAN Topology – Add Spoke Configuration
 
 Click on **Edit** at **Spokes** step to add the new Spoke into SD-WAN.
 
@@ -133,7 +133,7 @@ Enter the following details in the **Add Spoke** dialog box:
   ![screenshot](assets/screens/s5-t3-s2-3-2.png){ loading=lazy }
 </figure>
 
-### Step 3: SD-WAN Topology - Finish
+### 5.3.3 SD-WAN Topology - Finish
 
 **Scroll down** and click the **Finish** button to save the topology.
 Click **OK** for the pop-up dialog *"Click Finish to save your changes."*
@@ -159,7 +159,7 @@ Click **OK** for the pop-up dialog *"Click Finish to save your changes."*
   ![screenshot](assets/screens/s5-t3-s3-3.png){ loading=lazy }
 </figure>
 
-## Task 4: Deploy to Hub and Spoke Devices
+## 5.4 Deploy to Hub and Spoke Devices
 
 In this step, you will review all the configuration changes done on
 the Hub and Spoke devices and deploy the configuration to the devices.
@@ -181,12 +181,12 @@ the Hub and Spoke devices and deploy the configuration to the devices.
   ![screenshot](assets/screens/s5-t4.png){ loading=lazy }
 </figure>
 
-## Task 5: Configuring NAT policy for protected network at Spoke (NGFW-B4)
+## 5.5 Configuring NAT policy for protected network at Spoke (NGFW-B4)
 
 In this task, you will configure NAT policy to hide protected network
 using NATed network.
 
-### Step 1: Add NAT Policy
+### 5.5.1 Add NAT Policy
 
 In this step, a new NAT policy is created.
 
@@ -212,7 +212,7 @@ In this step, a new NAT policy is created.
   ![screenshot](assets/screens/s5-t5-s1-3.png){ loading=lazy }
 </figure>
 
-### Step 2: Add Rule
+### 5.5.2 Add Rule
 
 In this step, you will configure NAT rule to hide protected network
 using NATed network.
@@ -254,7 +254,7 @@ using NATed network.
   ![screenshot](assets/extracted/image198.jpeg){ loading=lazy }
 </figure>
 
-## Task 6: Deploy to Spoke Device
+## 5.6 Deploy to Spoke Device
 
 In this step, you will review all the configuration changes done on
 the Hub and Spoke devices and deploy the configuration to the devices.
@@ -276,9 +276,9 @@ the Hub and Spoke devices and deploy the configuration to the devices.
   ![screenshot](assets/screens/s5-t6.png){ loading=lazy }
 </figure>
 
-## Task 7: Configuring BGP Redistribution of NAT network at Spoke (NGFW-B4) to SD-WAN
+## 5.7 Configuring BGP Redistribution of NAT network at Spoke (NGFW-B4) to SD-WAN
 
-### Step 1: Enable BGP on Spoke device
+### 5.7.1 Enable BGP on Spoke device
 
 In this step, you will enable BGP on Spoke device (**NGFW-B4**) with
 same autonomous number as mentioned in SD-WAN Topology.
@@ -308,7 +308,7 @@ same autonomous number as mentioned in SD-WAN Topology.
   ![screenshot](assets/screens/s5-t7-s1-3.png){ loading=lazy }
 </figure>
 
-### Step 2: Configure redistribution of Static (NAT network) routes
+### 5.7.2 Configure redistribution of Static (NAT network) routes
 
 In this step, you will enable redistribution of Static routes into
 BGP. These routes will then be advertised to the SD-WAN peers.
@@ -337,7 +337,7 @@ BGP. These routes will then be advertised to the SD-WAN peers.
   ![screenshot](assets/screens/s5-t7-s2-3.png){ loading=lazy }
 </figure>
 
-## Task 8: Deploy to Spoke Device
+## 5.8 Deploy to Spoke Device
 
 In this step, you will review all the configuration changes done on
 the Hub and Spoke devices and deploy the configuration to the devices.
@@ -359,9 +359,9 @@ the Hub and Spoke devices and deploy the configuration to the devices.
   ![screenshot](assets/screens/s5-t8.png){ loading=lazy }
 </figure>
 
-## Task 9: Verify the traffic flow over the VPN tunnel from Spoke (NGFW-B4) to Hub (NGFW-HUB)
+## 5.9 Verify the traffic flow over the VPN tunnel from Spoke (NGFW-B4) to Hub (NGFW-HUB)
 
-### Step 1: Verify Site-to-Site VPN Tunnels
+### 5.9.1 Verify Site-to-Site VPN Tunnels
 
 In this step, you will verify the VTI tunnels between the spokes and
 hub devices.
@@ -382,7 +382,7 @@ and Check that the tunnels are up as shown below.
   ![screenshot](assets/screens/s5-t9-s1-2.png){ loading=lazy }
 </figure>
 
-### Step 2: Verify Routes on Hub (NGFW-HUB)
+### 5.9.2 Verify Routes on Hub (NGFW-HUB)
 
 In this step, you can verify the BGP and other routes at the Hub.
 
@@ -405,7 +405,7 @@ In this step, you can verify the BGP and other routes at the Hub.
   ![screenshot](assets/screens/s5-t9-s2-1.png){ loading=lazy }
 </figure>
 
-### Step 3: Verify traffic between protected networks behind spoke (NGFW-B4) and hub (NGFW-HUB)
+### 5.9.3 Verify traffic between protected networks behind spoke (NGFW-B4) and hub (NGFW-HUB)
 
 Network behind spoke (**NGFW-B4**) – 192.168.3.0/24 with a host
 **192.168.3.166** (**B4H**)

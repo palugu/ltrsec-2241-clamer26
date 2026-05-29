@@ -11,9 +11,9 @@ to configure and redistribute it into BGP overlay routing section.
   ![screenshot](assets/screens/s2.png){ loading=lazy }
 </figure>
 
-## Task 1: Add network behind Hub
+## 2.1 Add network behind Hub
 
-### Step 1: Advertise new network by internal router to Hub
+### 2.1.1 Advertise new network by internal router to Hub
 
 In this step, you will advertise this new network (192.168.103.0/24)
 to Hub (**NGFW-HUB**) through the internal router (**CSRHR2**).
@@ -70,12 +70,12 @@ to Hub (**NGFW-HUB**) through the internal router (**CSRHR2**).
       ![screenshot](assets/screens/s2-t1-s1-4.png){ loading=lazy }
     </figure>
 
-## Task 2: Redistribution of New Network at Hub to SD-WAN spokes
+## 2.2 Redistribution of New Network at Hub to SD-WAN spokes
 
 In this step, you will learn to advertise this new network at Hub
 (**NGFW-HUB**) to the spokes through SD-WAN via BGP.
 
-### Step 1: Edit Redistribution of OSPF on Hub device
+### 2.2.1 Edit Redistribution of OSPF on Hub device
 
 1.  BGP Configuration uses object-group **Hub-Protected-Networks** which
     should be edited with new network.
@@ -100,7 +100,7 @@ In this step, you will learn to advertise this new network at Hub
   ![screenshot](assets/screens/s2-t2-s1-2-2.png){ loading=lazy }
 </figure>
 
-## Task 3: Deploy to Hub and Spoke Devices
+## 2.3 Deploy to Hub and Spoke Devices
 
 In this step, you will review all the configuration changes done on
 the Hub and Spoke devices and deploy the configuration to the devices.
@@ -122,9 +122,9 @@ the Hub and Spoke devices and deploy the configuration to the devices.
   ![screenshot](assets/screens/s2-t3.png){ loading=lazy }
 </figure>
 
-## Task 4: Verify the traffic flow over the VPN tunnel from Spoke to Hub
+## 2.4 Verify the traffic flow over the VPN tunnel from Spoke to Hub
 
-### Step 1: Verify Routes on Spoke, NGFW-B1
+### 2.4.1 Verify Routes on Spoke, NGFW-B1
 
 In this step, you will verify the BGP and other connected and
 redistributed routes at the Hub.
@@ -148,7 +148,7 @@ redistributed routes at the Hub.
   ![screenshot](assets/screens/s2-t4-s1-1.png){ loading=lazy }
 </figure>
 
-### Step 2: Verify Routes on Spoke, NGFW-B2
+### 2.4.2 Verify Routes on Spoke, NGFW-B2
 
 1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**.
 
@@ -169,7 +169,7 @@ redistributed routes at the Hub.
   ![screenshot](assets/extracted/image99.jpeg){ loading=lazy }
 </figure>
 
-### Step 3: Verify traffic between protected networks behind spoke (NGFW-B1) and hub (NGFW-HUB)
+### 2.4.3 Verify traffic between protected networks behind spoke (NGFW-B1) and hub (NGFW-HUB)
 
 Network behind spoke (**NGFW-B1**) – 192.168.1.0/24 with a host
 **192.168.1.133** (**B1H**)

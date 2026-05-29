@@ -15,13 +15,13 @@ configure a new SD-WAN Topology for ISP2.
   ![screenshot](assets/screens/s4-edited.png){ loading=lazy }
 </figure>
 
-## Task 1: Enable ISP2 at Spoke (NGFW-B3)
+## 4.1 Enable ISP2 at Spoke (NGFW-B3)
 
 For this lab section, the ISP2 Link is intentionally kept
 disabled/shut and needs to be enabled. This is to simulate the ISP2
 link up in real-time for the lab.
 
-### Step 1: Bring up ISP2
+### 4.1.1 Bring up ISP2
 
 1.  Edit the device **NGFW-B3** by navigating to **Devices \> Device
     Management \> Edit NGFW-B3**
@@ -51,9 +51,9 @@ link up in real-time for the lab.
       ![screenshot](assets/screens/s4-t1-s1-4.png){ loading=lazy }
     </figure>
 
-## Task 2: Configuring SD-WAN Topology between Spoke with ISP2 and Headquarters (Hub) using DVTI on Hub
+## 4.2 Configuring SD-WAN Topology between Spoke with ISP2 and Headquarters (Hub) using DVTI on Hub
 
-### Step 1: Create SD-WAN Topology
+### 4.2.1 Create SD-WAN Topology
 
 Go to **Secure Connections \> Site-to-Site VPN & SD-WAN** Click
 **Add** button at top right
@@ -73,7 +73,7 @@ Enter the following details in the pop-up:
   ![screenshot](assets/screens/s4-t2-s1-1.png){ loading=lazy }
 </figure>
 
-### Step 2: SD-WAN Topology – Hub Configuration
+### 4.2.2 SD-WAN Topology – Hub Configuration
 
 Once the SD-WAN Topology is created, SD-WAN Wizard page will open.
 Click the **Add Hub** button in Hubs section to add the Hub device.
@@ -196,7 +196,7 @@ Enter the following details in the **Add Hub** dialog:
       ![screenshot](assets/screens/s4-t2-s2-4.png){ loading=lazy }
     </figure>
 
-### Step 3: SD-WAN Topology – Add Spoke Configuration
+### 4.2.3 SD-WAN Topology – Add Spoke Configuration
 
 **Add Spoke Dialog** assists you to add one Spoke Device with simple
 steps.
@@ -228,7 +228,7 @@ Enter the following details in the **Add Spoke** dialog box:
       ![screenshot](assets/screens/s4-t2-s3-2-2.png){ loading=lazy }
     </figure>
 
-### Step 4: SD-WAN Topology: Authentication Settings
+### 4.2.4 SD-WAN Topology: Authentication Settings
 
 In this step, you will configure pre-shared key authentication with
 manual key. Leave the Transform Sets and IKEv2 Policies as per default
@@ -247,7 +247,7 @@ selection.
   ![screenshot](assets/screens/s4-t2-s4-1.png){ loading=lazy }
 </figure>
 
-### Step 5: SD-WAN Topology – Add Tunnel Interfaces to Security Zone
+### 4.2.5 SD-WAN Topology – Add Tunnel Interfaces to Security Zone
 
 Click on the **Spoke Tunnel Interface Security Zone** drop-down and
 select **Tunnel_Zone**.
@@ -256,7 +256,7 @@ select **Tunnel_Zone**.
   ![screenshot](assets/screens/s4-t2-s5-1.png){ loading=lazy }
 </figure>
 
-### Step 6: SD-WAN Topology – Configure BGP routing
+### 4.2.6 SD-WAN Topology – Configure BGP routing
 
 Enter the following in **SD-WAN Settings**
 
@@ -286,7 +286,7 @@ Enter the following in **SD-WAN Settings**
   ![screenshot](assets/screens/s4-t2-s6-1.png){ loading=lazy }
 </figure>
 
-### Step 7: SD-WAN Topology - Finish
+### 4.2.7 SD-WAN Topology - Finish
 
 Now, we are done with all the configuration in the SD-WAN Topology.
 **Scroll down** and click the **Finish** button to save the topology.
@@ -313,13 +313,13 @@ changes."*
       ![screenshot](assets/screens/s4-t2-s7-3.png){ loading=lazy }
     </figure>
 
-## Task 3: Configure ECMP over the primary and secondary VTI interfaces
+## 4.3 Configure ECMP over the primary and secondary VTI interfaces
 
 In this step, you will configure ECMP on the primary and secondary
 Static VTI interfaces on the Branch for redundancy and load balancing
 VPN traffic.
 
-### Step 1: Configure ECMP Zone on Spoke NGFW-B3
+### 4.3.1 Configure ECMP Zone on Spoke NGFW-B3
 
 1.  Navigate to **Devices \> Device Management \> Edit NGFW-B3**, click
     the **Routing** tab, then click **ECMP** on the left Table of
@@ -351,7 +351,7 @@ VPN traffic.
       ![screenshot](assets/screens/s4-t3-s1-3.png){ loading=lazy }
     </figure>
 
-## Task 4: Deploy to Hub and Spoke Devices
+## 4.4 Deploy to Hub and Spoke Devices
 
 In this step, you will review all the configuration changes done on
 the Hub and Spoke devices and deploy the configuration to the devices.
@@ -373,9 +373,9 @@ the Hub and Spoke devices and deploy the configuration to the devices.
   ![screenshot](assets/screens/s4-t4-1.png){ loading=lazy }
 </figure>
 
-## Task 5: Verify the traffic distribution across dual ISP links
+## 4.5 Verify the traffic distribution across dual ISP links
 
-### Step 1: Verify Site-to-Site VPN Tunnels
+### 4.5.1 Verify Site-to-Site VPN Tunnels
 
 Go to **Insights & Reports -\> VPN dashboards -\> Site-to-Site VPN**
 and Check that the tunnels are up in the Site-to-Site Monitoring
@@ -387,7 +387,7 @@ status to be updated fully.
   ![screenshot](assets/screens/s4-t5-s1-1.png){ loading=lazy }
 </figure>
 
-### Step 2: Verify traffic between protected networks behind spoke (NGFW-B3) and hub (NGFW-HUB)
+### 4.5.2 Verify traffic between protected networks behind spoke (NGFW-B3) and hub (NGFW-HUB)
 
 Verify the traffic distribution across dual ISP by sending traffic
 from hosts behind the NGFW-B3 to hosts behind the NGFW-HUB.

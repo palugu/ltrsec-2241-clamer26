@@ -28,7 +28,7 @@ specific BGP configuration.
   ![screenshot](assets/screens/s1.png){ loading=lazy }
 </figure>
 
-## Task 1: Configuring SD-WAN Topology between Branches (Spokes) and Headquarters (Hub) using DVTI on Hub
+## 1.1 Configuring SD-WAN Topology between Branches (Spokes) and Headquarters (Hub) using DVTI on Hub
 
 In this lab task, you will learn how to create an IPSec VPN Tunnel
 between Branch and Hub Secure Firewall using SD-WAN Wizard in FMC
@@ -52,7 +52,7 @@ Launch window.
     - **Username:** `admin`
     - **Password:** `dCloud123!`
 
-### Step 1: Create SD-WAN Topology
+### 1.1.1 Create SD-WAN Topology
 
 To configure a new SD-WAN Topology, go to **Secure Connections \>
 Site-to-Site VPN & SD-WAN**.
@@ -89,7 +89,7 @@ Enter the following details in the **Create VPN Topology** pop-up:
   ![screenshot](assets/screens/s1-t1-s1-4.png){ loading=lazy }
 </figure>
 
-### Step 2: SD-WAN Topology – Hub Configuration
+### 1.1.2 SD-WAN Topology – Hub Configuration
 
 This opens the SD-WAN Wizard page.  
 Click **Add Hub** on the right in **Hubs** section to add the Hub
@@ -221,7 +221,7 @@ Enter the following details in the **Add Hub** dialog:
       ![screenshot](assets/screens/s1-t1-s2-5.png){ loading=lazy }
     </figure>
 
-### Step 3: SD-WAN Topology – Bulk Spoke Configuration
+### 1.1.3 SD-WAN Topology – Bulk Spoke Configuration
 
 **Add Bulk Spoke Dialog** allows admins to add more than one Spoke
 Device with simple intuitive workflow.
@@ -265,7 +265,7 @@ Enter the following details in the **Add Bulk Spokes** dialog box:
   ![screenshot](assets/screens/s1-t1-s3-3.png){ loading=lazy }
 </figure>
 
-### Step 4: SD-WAN Topology - Authentication Settings
+### 1.1.4 SD-WAN Topology - Authentication Settings
 
 This lab task uses system-defined defaults for IKE, IPsec etc., to
 reduce administrator overhead for configuration though these settings
@@ -284,7 +284,7 @@ authentication with manual key.
   ![screenshot](assets/screens/s1-t1-s4-1.png){ loading=lazy }
 </figure>
 
-### Step 5: SD-WAN Topology – Add Tunnel Interfaces to Security Zone Automatically
+### 1.1.5 SD-WAN Topology – Add Tunnel Interfaces to Security Zone Automatically
 
 This section contains the configuration that simplifies the management
 of AC policy rules for Tunnel interfaces and BGP for overlay routing.
@@ -301,7 +301,7 @@ select **Tunnel_Zone**.
   ![screenshot](assets/screens/s1-t1-s5-1.png){ loading=lazy }
 </figure>
 
-### Step 6: SD-WAN Topology – Configure BGP routing
+### 1.1.6 SD-WAN Topology – Configure BGP routing
 
 In this step, BGP is configured between Hub and Spoke devices to allow
 traffic to be sent through the VPN tunnel. For reference, static
@@ -338,7 +338,7 @@ Enter the following in **SD-WAN Settings**
   ![screenshot](assets/screens/s1-t1-s6-1.png){ loading=lazy }
 </figure>
 
-### Step 7: SD-WAN Topology - Finish
+### 1.1.7 SD-WAN Topology - Finish
 
 Now, we are done with all the configuration in the SD-WAN Topology.
 Click on **Finish** button to save the topology. Click **OK** for the
@@ -405,7 +405,7 @@ pop-up dialog “**Click Finish to save your changes.**”
         VPN Listing** page. Do not click **Finish** or **Save**
         &mdash; we don't want to alter the topology at this point.
 
-## Task 2: Deploy to Hub and Spoke Devices
+## 1.2 Deploy to Hub and Spoke Devices
 
 In this step, you will review all the configuration changes done on
 the Hub and Spoke devices and deploy the configuration to the devices.
@@ -427,9 +427,9 @@ the Hub and Spoke devices and deploy the configuration to the devices.
   ![screenshot](assets/extracted/image57.jpeg){ loading=lazy }
 </figure>
 
-## Task 3: Configuring BGP Redistribution of EIGRP/OSPF Internal Routes at Hub to SD-WAN
+## 1.3 Configuring BGP Redistribution of EIGRP/OSPF Internal Routes at Hub to SD-WAN
 
-### Step 1: Enable BGP on Hub device
+### 1.3.1 Enable BGP on Hub device
 
 In this step, you will enable BGP on hub device with same autonomous
 number as mentioned in SD-WAN Topology.
@@ -459,7 +459,7 @@ number as mentioned in SD-WAN Topology.
   ![screenshot](assets/screens/s1-t3-s1-3.png){ loading=lazy }
 </figure>
 
-### Step 2: Configure redistribution of OSPF routes
+### 1.3.2 Configure redistribution of OSPF routes
 
 In this step, you will enable redistribution of OSPF learnt routes
 into BGP. These routes will then be advertised to the SD-WAN peers.
@@ -483,7 +483,7 @@ into BGP. These routes will then be advertised to the SD-WAN peers.
   ![screenshot](assets/screens/s1-t3-s2-2.png){ loading=lazy }
 </figure>
 
-### Step 3: Configure redistribution of EIGRP routes
+### 1.3.3 Configure redistribution of EIGRP routes
 
 In this step, you will enable redistribution of EIGRP learnt routes
 into BGP. These routes will then be advertised to the SD-WAN peers.
@@ -509,9 +509,9 @@ into BGP. These routes will then be advertised to the SD-WAN peers.
       ![screenshot](assets/screens/s1-t3-s3-2.png){ loading=lazy }
     </figure>
 
-## Task 4: Configuring BGP Redistribution of Static Internal Routes at Spoke (NGFW-B1) to SD-WAN
+## 1.4 Configuring BGP Redistribution of Static Internal Routes at Spoke (NGFW-B1) to SD-WAN
 
-### Step 1: Enable BGP on Spoke device
+### 1.4.1 Enable BGP on Spoke device
 
 In this step, you will enable BGP on Spoke device (**NGFW-B1**) with
 same autonomous number as mentioned in SD-WAN Topology.
@@ -541,7 +541,7 @@ same autonomous number as mentioned in SD-WAN Topology.
   ![screenshot](assets/screens/s1-t4-s1-3.png){ loading=lazy }
 </figure>
 
-### Step 2: Configure redistribution of Static routes
+### 1.4.2 Configure redistribution of Static routes
 
 In this step, you will enable redistribution of Static routes into
 BGP. These routes will then be advertised to the SD-WAN peers.
@@ -570,9 +570,9 @@ BGP. These routes will then be advertised to the SD-WAN peers.
   ![screenshot](assets/screens/s1-t4-s2-3.png){ loading=lazy }
 </figure>
 
-## Task 5: Configuring BGP Redistribution of EIGRP Internal Routes at Spoke (NGFW-B2) to SD-WAN
+## 1.5 Configuring BGP Redistribution of EIGRP Internal Routes at Spoke (NGFW-B2) to SD-WAN
 
-### Step 1: Enable BGP on Spoke device
+### 1.5.1 Enable BGP on Spoke device
 
 In this step, you will enable BGP on Spoke device (**NGFW-B2**) with
 same autonomous number as mentioned in SD-WAN Topology.
@@ -602,7 +602,7 @@ same autonomous number as mentioned in SD-WAN Topology.
   ![screenshot](assets/screens/s1-t5-s1-4.png){ loading=lazy }
 </figure>
 
-### Step 2: Configure redistribution of EIGRP routes
+### 1.5.2 Configure redistribution of EIGRP routes
 
 In this step, you will enable redistribution of EIGRP routes into BGP.
 These routes will then be advertised to the SD-WAN peers.
@@ -632,7 +632,7 @@ These routes will then be advertised to the SD-WAN peers.
   ![screenshot](assets/screens/s1-t5-s2-3.png){ loading=lazy }
 </figure>
 
-## Task 6: Deploy to Hub and Spoke Devices
+## 1.6 Deploy to Hub and Spoke Devices
 
 In this step, you will review all the configuration changes done on
 the Hub and Spoke devices and deploy the configuration to the devices.
@@ -654,9 +654,9 @@ the Hub and Spoke devices and deploy the configuration to the devices.
   ![screenshot](assets/extracted/image77.jpeg){ loading=lazy }
 </figure>
 
-## Task 7: Verify the traffic flow over the VPN tunnel from Spokes to Hub
+## 1.7 Verify the traffic flow over the VPN tunnel from Spokes to Hub
 
-### Step 1: Verify Site-to-Site VPN Tunnels
+### 1.7.1 Verify Site-to-Site VPN Tunnels
 
 In this step, verify the VTI tunnels between the spokes and hub
 devices.
@@ -679,7 +679,7 @@ Summary** dashboard to view this page:
   ![screenshot](assets/screens/s1-t7-s1-2.png){ loading=lazy }
 </figure>
 
-### Step 2: Verify Routes on Hub (NGFW-HUB)
+### 1.7.2 Verify Routes on Hub (NGFW-HUB)
 
 When SD-WAN Topology is deployed to Hubs and Spokes, BGP commands are
 auto generated and deployed to the devices. In this step, verify the
@@ -716,7 +716,7 @@ BGP and other configured and learnt routes at the Hub.
   ![screenshot](assets/screens/s1-t7-s2-2.png){ loading=lazy }
 </figure>
 
-### Step 3: Verify traffic between protected networks behind spoke (NGFW-B1) and hub (NGFW-HUB)
+### 1.7.3 Verify traffic between protected networks behind spoke (NGFW-B1) and hub (NGFW-HUB)
 
 Network behind spoke (**NGFW-B1**) – 192.168.1.0/24 with a host
 **192.168.1.133** (**B1H**)
@@ -767,7 +767,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.102.0/24 with a host
           ![screenshot](assets/screens/s1-t7-s3-4.png){ loading=lazy }
         </figure>
 
-### Step 4: Verify the traffic flow over the VPN tunnel from Spoke (NGFW-B1) to Spoke (NGFW-B2)
+### 1.7.4 Verify the traffic flow over the VPN tunnel from Spoke (NGFW-B1) to Spoke (NGFW-B2)
 
 Network behind spoke (**NGFW-B1**) – 192.168.1.0/24 with a host
 **192.168.1.133** (**B1H**)

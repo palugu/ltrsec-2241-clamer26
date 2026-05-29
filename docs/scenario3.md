@@ -12,9 +12,9 @@ redistribute its routes into BGP overlay routing.
   ![screenshot](assets/screens/s3-edited.png){ loading=lazy }
 </figure>
 
-## Task 1: Configuring SD-WAN Topology to include new Spoke (NGFW-B3)
+## 3.1 Configuring SD-WAN Topology to include new Spoke (NGFW-B3)
 
-### Step 1: Edit SD-WAN Topology
+### 3.1.1 Edit SD-WAN Topology
 
 To edit SD-WAN Topology, go to **Secure Connections \> Site-to-Site
 VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
@@ -23,7 +23,7 @@ VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
   ![screenshot](assets/screens/s3-t1-s1-1.png){ loading=lazy }
 </figure>
 
-### Step 2: SD-WAN Topology – Add Spoke Configuration
+### 3.1.2 SD-WAN Topology – Add Spoke Configuration
 
 Click on **Edit** at **Spokes** step to add the new Spoke into SD-WAN.
 
@@ -57,7 +57,7 @@ Enter the following details in the **Add Spoke** dialog box:
   ![screenshot](assets/screens/s3-t1-s2-3-2.png){ loading=lazy }
 </figure>
 
-### Step 3: SD-WAN Topology - Finish
+### 3.1.3 SD-WAN Topology - Finish
 
 Now, we are done with all the configuration required to add the new
 branch in the SD-WAN Topology. **Scroll down** and click the
@@ -86,7 +86,7 @@ dialog *"Click Finish to save your changes."*
   ![screenshot](assets/screens/s3-t1-s3-3.png){ loading=lazy }
 </figure>
 
-## Task 2: Deploy to Hub and Spoke Devices
+## 3.2 Deploy to Hub and Spoke Devices
 
 In this step, you will review all the configuration changes done on
 the Hub and Spoke devices and deploy the configuration to the devices.
@@ -108,9 +108,9 @@ the Hub and Spoke devices and deploy the configuration to the devices.
   ![screenshot](assets/screens/s3-t2.png){ loading=lazy }
 </figure>
 
-## Task 3: Configuring BGP Redistribution of OSPF Internal Routes at Spoke (NGFW-B3) to SD-WAN
+## 3.3 Configuring BGP Redistribution of OSPF Internal Routes at Spoke (NGFW-B3) to SD-WAN
 
-### Step 1: Enable BGP on Spoke device
+### 3.3.1 Enable BGP on Spoke device
 
 In this step, you will enable BGP on Spoke device (**NGFW-B3**) with
 same autonomous number as mentioned in SD-WAN Topology.
@@ -140,7 +140,7 @@ same autonomous number as mentioned in SD-WAN Topology.
   ![screenshot](assets/screens/s3-t3-s1-3.png){ loading=lazy }
 </figure>
 
-### Step 2: Configure redistribution of OSPF routes
+### 3.3.2 Configure redistribution of OSPF routes
 
 In this step, you will enable redistribution of OSPF routes into BGP.
 These routes will then be advertised to the SD-WAN peers.
@@ -176,7 +176,7 @@ These routes will then be advertised to the SD-WAN peers.
   ![screenshot](assets/screens/s3-t3-s2-3.png){ loading=lazy }
 </figure>
 
-## Task 4: Deploy to Hub and Spoke Devices
+## 3.4 Deploy to Hub and Spoke Devices
 
 In this step, you will review all the configuration changes done on
 the Hub and Spoke devices and deploy the configuration to the devices.
@@ -198,9 +198,9 @@ the Hub and Spoke devices and deploy the configuration to the devices.
   ![screenshot](assets/screens/s3-t4.png){ loading=lazy }
 </figure>
 
-## Task 5: Verify the traffic flow over the VPN tunnel from Spoke to Hub
+## 3.5 Verify the traffic flow over the VPN tunnel from Spoke to Hub
 
-### Step 1: Verify Site-to-Site VPN Tunnels
+### 3.5.1 Verify Site-to-Site VPN Tunnels
 
 In this step, you will verify the VTI tunnels between the spokes and
 hub devices.
@@ -221,7 +221,7 @@ and Check that the tunnels are up as shown below.
   ![screenshot](assets/screens/s3-t5-s1-2.png){ loading=lazy }
 </figure>
 
-### Step 2: Verify Routes on Hub (NGFW-HUB)
+### 3.5.2 Verify Routes on Hub (NGFW-HUB)
 
 In this step, you can verify the BGP and other routes at the Hub.
 
@@ -243,7 +243,7 @@ In this step, you can verify the BGP and other routes at the Hub.
   ![screenshot](assets/screens/s3-t5-s2-1.png){ loading=lazy }
 </figure>
 
-### Step 3: Verify traffic between protected networks behind spoke (NGFW-B3) and hub (NGFW-HUB)
+### 3.5.3 Verify traffic between protected networks behind spoke (NGFW-B3) and hub (NGFW-HUB)
 
 Network behind spoke (**NGFW-B3**) – 192.168.3.0/24 with a host
 **192.168.3.141** (**B3H**)

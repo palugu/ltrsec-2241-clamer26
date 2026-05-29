@@ -13,7 +13,7 @@ these location-based criteria are blocked before authentication.
   ![screenshot](assets/screens/s6-edited.png){ loading=lazy }
 </figure>
 
-## Task 1: Configuring Service Access Rules on Hub (NGFW-HUB)
+## 6.1 Configuring Service Access Rules on Hub (NGFW-HUB)
 
 In this activity you will learn to configure service access rules
 which define the controls for remote access sessions.  
@@ -23,7 +23,7 @@ lab section walks you through steps to restrict the access from the
 US. You can use the same steps in your production deployment to block
 access from regions and countries of your own choice.
 
-### Step 1: Create Service Access Object
+### 6.1.1 Create Service Access Object
 
 1.  Navigate to **Objects \> Access List \> Service Access** and Click
     **Add Service Access Object**
@@ -65,7 +65,7 @@ access from regions and countries of your own choice.
   ![screenshot](assets/screens/s6-t1-s1-5.png){ loading=lazy }
 </figure>
 
-### Step 2: Apply the Service Object Configuration in RAVPN
+### 6.1.2 Apply the Service Object Configuration in RAVPN
 
 1.  Navigate to Remote Access VPN configuration in **Secure Connections
     \> Remote Access VPN**
@@ -101,7 +101,7 @@ access from regions and countries of your own choice.
       ![screenshot](assets/screens/s6-t1-s2-3.png){ loading=lazy }
     </figure>
 
-## Task 2: Deploy to Hub Device
+## 6.2 Deploy to Hub Device
 
 In this step, you will review all the configuration changes done on
 the Hub and Spoke devices and deploy the configuration to the devices.
@@ -123,9 +123,9 @@ the Hub and Spoke devices and deploy the configuration to the devices.
   ![screenshot](assets/screens/s6-t2.png){ loading=lazy }
 </figure>
 
-## Task 3: Verify the Remote Access from Secure Client
+## 6.3 Verify the Remote Access from Secure Client
 
-### Step 1: Verify remote access client session
+### 6.3.1 Verify remote access client session
 
 1.  **Connect to Workstation:** Open **Cisco Secure Firewall Quick
     Launch** from Desktop and click **Wkst5** which is present under
@@ -172,8 +172,8 @@ Observe the Log –
 
 !!! note
 
-    Please wait for few minutes after testing RAVPN in Step 3 to
-    ensure the deny events are populated on the FMC.
+    Please wait for few minutes after testing RAVPN in step 3 above
+    to ensure the deny events are populated on the FMC.
 
 **Congratulations!! You have successfully completed all the scenarios of
 the Lab!**
