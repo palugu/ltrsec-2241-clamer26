@@ -25,7 +25,7 @@ specific BGP configuration.
 ## Network Diagram
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.png){ loading=lazy }
 </figure>
 
 ## 1.1 Configuring SD-WAN Topology between Branches (Spokes) and Headquarters (Hub) using DVTI on Hub
@@ -58,20 +58,20 @@ To configure a new SD-WAN Topology, go to **Secure Connections \>
 Site-to-Site VPN & SD-WAN**.
 
 <figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s1-t1-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.1.1.png){ loading=lazy }
 </figure>
 
 Click **+ Add**.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.1.2.png){ loading=lazy }
 </figure>
 
 There are prerequisites to SD-WAN Topology. Click or hover on
 **Prerequisites** in the **Create VPN Topology** dialog to review them.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s1-3.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.1.3.png){ loading=lazy }
 </figure>
 
 Enter the following details in the **Create VPN Topology** pop-up:
@@ -86,7 +86,7 @@ Enter the following details in the **Create VPN Topology** pop-up:
 3.  Click **Create**.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s1-4.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.1.4.png){ loading=lazy }
 </figure>
 
 ### 1.1.2 SD-WAN Topology – Hub Configuration
@@ -96,7 +96,7 @@ Click **Add Hub** on the right in **Hubs** section to add the Hub
 device.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.2.1.png){ loading=lazy }
 </figure>
 
 Enter the following details in the **Add Hub** dialog:
@@ -104,7 +104,7 @@ Enter the following details in the **Add Hub** dialog:
 1.  **Device**: click the drop-down and select the FTD **NGFW-HUB**.
 
     <figure markdown style="max-width:10.0cm;">
-      ![screenshot](assets/screens/s1-t1-s2-2-1.png){ loading=lazy }
+      ![screenshot](assets/screens/1.1.2.2.1.png){ loading=lazy }
     </figure>
 
 2.  **Dynamic Virtual Tunnel Interface (DVTI)**: ==click the **+** icon
@@ -122,7 +122,7 @@ Enter the following details in the **Add Hub** dialog:
         Address** to `20.1.101.101`.
 
     <figure markdown style="max-width:10.0cm;">
-      ![screenshot](assets/screens/s1-t1-s2-2-2.png){ loading=lazy }
+      ![screenshot](assets/screens/1.1.2.2.2.png){ loading=lazy }
     </figure>
 
     7.  **IPsec Tunnel Mode**: leave as IPv4 (default).
@@ -134,7 +134,7 @@ Enter the following details in the **Add Hub** dialog:
         dialog opens:
 
         <figure markdown style="max-width:10.0cm;">
-          ![screenshot](assets/screens/s1-t1-s2-3-1.png){ loading=lazy }
+          ![screenshot](assets/screens/1.1.2.3.1.png){ loading=lazy }
         </figure>
 
         1.  In the **General** tab:
@@ -143,7 +143,7 @@ Enter the following details in the **Add Hub** dialog:
             2.  **Loopback ID**: `1`
 
             <figure markdown style="max-width:10.0cm;">
-              ![screenshot](assets/screens/s1-t1-s2-3-2.png){ loading=lazy }
+              ![screenshot](assets/screens/1.1.2.3.2.png){ loading=lazy }
             </figure>
 
         2.  In the **IPv4** tab:
@@ -152,7 +152,7 @@ Enter the following details in the **Add Hub** dialog:
             2.  **IP Address**: `169.254.10.1/32`
 
             <figure markdown style="max-width:10.0cm;">
-              ![screenshot](assets/screens/s1-t1-s2-3-3.png){ loading=lazy }
+              ![screenshot](assets/screens/1.1.2.3.3.png){ loading=lazy }
             </figure>
 
         3.  Click **OK** to save the loopback.
@@ -162,7 +162,7 @@ Enter the following details in the **Add Hub** dialog:
         **Loopback1 (Hub_Tunnel_IP_1)**.
 
         <figure markdown style="max-width:10.0cm;">
-          ![screenshot](assets/screens/s1-t1-s2-3-4.png){ loading=lazy }
+          ![screenshot](assets/screens/1.1.2.3.4.png){ loading=lazy }
         </figure>
 
 3.  Click **OK** on the **Add Virtual Tunnel Interface** dialog to
@@ -170,7 +170,7 @@ Enter the following details in the **Add Hub** dialog:
     Interface Added** successfully &mdash; click **OK**.
 
     <figure markdown style="max-width:10.0cm;">
-      ![screenshot](assets/screens/s1-t1-s2-3-5.png){ loading=lazy }
+      ![screenshot](assets/screens/1.1.2.3.5.png){ loading=lazy }
     </figure>
 
 4.  Back in the **Add Hub** dialog, confirm the DVTI is automatically
@@ -187,7 +187,7 @@ Enter the following details in the **Add Hub** dialog:
     new pool &mdash; the **New IPv4 Pool** dialog opens.
 
     <figure markdown style="max-width:10.0cm;">
-      ![screenshot](assets/screens/s1-t1-s2-4-1.png){ loading=lazy }
+      ![screenshot](assets/screens/1.1.2.4.1.png){ loading=lazy }
     </figure>
 
     Fill it in:
@@ -201,7 +201,7 @@ Enter the following details in the **Add Hub** dialog:
     5.  Click **Save** to create the pool.
 
     <figure markdown style="max-width:12.0cm;">
-      ![screenshot](assets/screens/s1-t1-s2-4-2.png){ loading=lazy }
+      ![screenshot](assets/screens/1.1.2.4.2.png){ loading=lazy }
     </figure>
 
     Back on the **Add Hub** dialog, set **Spoke Tunnel IP Address
@@ -209,7 +209,7 @@ Enter the following details in the **Add Hub** dialog:
     (use the drop-down if it isn't auto-populated).
 
     <figure markdown style="max-width:10.0cm;">
-      ![screenshot](assets/screens/s1-t1-s2-4-3.png){ loading=lazy }
+      ![screenshot](assets/screens/1.1.2.4.3.png){ loading=lazy }
     </figure>
 
 7.  All Hub inputs are now filled in. Click **Add** on the **Add Hub**
@@ -218,7 +218,7 @@ Enter the following details in the **Add Hub** dialog:
     Topology Wizard**. Click **Next** to proceed.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s1-t1-s2-5.png){ loading=lazy }
+      ![screenshot](assets/screens/1.1.2.5.png){ loading=lazy }
     </figure>
 
 ### 1.1.3 SD-WAN Topology – Bulk Spoke Configuration
@@ -229,7 +229,7 @@ Device with simple intuitive workflow.
 Click **Add Spokes (Bulk Addition)** button in spokes step.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s3-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.3.1.png){ loading=lazy }
 </figure>
 
 Enter the following details in the **Add Bulk Spokes** dialog box:
@@ -247,7 +247,7 @@ Enter the following details in the **Add Bulk Spokes** dialog box:
 3.  **Next:** Click on **Next** button.
 
     <figure markdown style="max-width:12.0cm;">
-      ![screenshot](assets/screens/s1-t1-s3-2-1.png){ loading=lazy }
+      ![screenshot](assets/screens/1.1.3.2.1.png){ loading=lazy }
     </figure>
 
 4.  **Add:** Once you click on Next button, FMC lists the selected
@@ -255,14 +255,14 @@ Enter the following details in the **Add Bulk Spokes** dialog box:
     Review the selection and click on the **Add** button.
 
     <figure markdown style="max-width:12.0cm;">
-      ![screenshot](assets/screens/s1-t1-s3-2-2.png){ loading=lazy }
+      ![screenshot](assets/screens/1.1.3.2.2.png){ loading=lazy }
     </figure>
 
 5.  **Next:** Once you review the spokes, click on **Next** button to
     move on to the next step.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s3-3.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.3.3.png){ loading=lazy }
 </figure>
 
 ### 1.1.4 SD-WAN Topology - Authentication Settings
@@ -281,7 +281,7 @@ authentication with manual key.
 4.  Click on **Next** button to save the settings
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s4-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.4.1.png){ loading=lazy }
 </figure>
 
 ### 1.1.5 SD-WAN Topology – Add Tunnel Interfaces to Security Zone Automatically
@@ -298,7 +298,7 @@ Click on the **Spoke Tunnel Interface Security Zone** drop-down and
 select **Tunnel_Zone**.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s5-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.5.1.png){ loading=lazy }
 </figure>
 
 ### 1.1.6 SD-WAN Topology – Configure BGP routing
@@ -335,7 +335,7 @@ Enter the following in **SD-WAN Settings**
     Settings.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s6-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.6.1.png){ loading=lazy }
 </figure>
 
 ### 1.1.7 SD-WAN Topology - Finish
@@ -345,11 +345,11 @@ Click on **Finish** button to save the topology. Click **OK** for the
 pop-up dialog “**Click Finish to save your changes.**”
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s7-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.7.1.png){ loading=lazy }
 </figure>
 
 <figure markdown style="max-width:10.0cm;">
-  ![screenshot](assets/screens/s1-t1-s7-2.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.7.2.png){ loading=lazy }
 </figure>
 
 1.  Once configured, **Site-to-Site** VPN listing page shows the new
@@ -357,7 +357,7 @@ pop-up dialog “**Click Finish to save your changes.**”
     Site-to-Site VPN & SD-WAN.**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s7-3.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.7.3.png){ loading=lazy }
 </figure>
 
 2.  Expand the **Corp-SD-WAN-1** node to view all the tunnels in the
@@ -366,7 +366,7 @@ pop-up dialog “**Click Finish to save your changes.**”
     color.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s7-4.png){ loading=lazy }
+  ![screenshot](assets/screens/1.1.7.4.png){ loading=lazy }
 </figure>
 
 3.  Verify the Name and IP address of auto generated Static VTI Tunnels
@@ -376,27 +376,27 @@ pop-up dialog “**Click Finish to save your changes.**”
         which will open the SD-WAN Topology Wizard.
 
         <figure markdown style="max-width:16.0cm;">
-          ![screenshot](assets/screens/s1-t1-s7-6-1.png){ loading=lazy }
+          ![screenshot](assets/screens/1.1.7.6.1.png){ loading=lazy }
         </figure>
 
     2.  Click on **edit** link in Spokes step.
 
         <figure markdown style="max-width:16.0cm;">
-          ![screenshot](assets/screens/s1-t1-s7-6-2.png){ loading=lazy }
+          ![screenshot](assets/screens/1.1.7.6.2.png){ loading=lazy }
         </figure>
 
     3.  Click **View Generated Tunnel Interfaces** button. This opens a
         dialog which shows Spoke devices with generated Static VTIs.
 
         <figure markdown style="max-width:16.0cm;">
-          ![screenshot](assets/screens/s1-t1-s7-6-3.png){ loading=lazy }
+          ![screenshot](assets/screens/1.1.7.6.3.png){ loading=lazy }
         </figure>
 
     4.  Click **OK** and then click **Cancel** to revert to Site-to-Site
         VPN Listing page.
 
         <figure markdown style="max-width:16.0cm;">
-          ![screenshot](assets/screens/s1-t1-s7-6-4.png){ loading=lazy }
+          ![screenshot](assets/screens/1.1.7.6.4.png){ loading=lazy }
         </figure>
 
     !!! warning "Stay on track"
@@ -438,7 +438,7 @@ number as mentioned in SD-WAN Topology.
     Management \> Edit NGFW-HUB**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t3-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.3.1.1.png){ loading=lazy }
 </figure>
 
 2.  Click on the **Routing** tab \> scroll down the left menu and click on the
@@ -448,7 +448,7 @@ number as mentioned in SD-WAN Topology.
     2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t3-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/1.3.1.2.png){ loading=lazy }
 </figure>
 
 3.  Click on the **BGP IPv4** routing option
@@ -456,7 +456,7 @@ number as mentioned in SD-WAN Topology.
     1.  **Enable IPv4**, review the AS Number defaults to **64512**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t3-s1-3.png){ loading=lazy }
+  ![screenshot](assets/screens/1.3.1.3.png){ loading=lazy }
 </figure>
 
 ### 1.3.2 Configure redistribution of OSPF routes
@@ -468,7 +468,7 @@ into BGP. These routes will then be advertised to the SD-WAN peers.
     **Add**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t3-s2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.3.2.1.png){ loading=lazy }
 </figure>
 
 2.  This launches the **Add Redistribution** dialog. Fill it in as
@@ -480,7 +480,7 @@ into BGP. These routes will then be advertised to the SD-WAN peers.
     4.  Click **OK** to save the settings.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t3-s2-2.png){ loading=lazy }
+  ![screenshot](assets/screens/1.3.2.2.png){ loading=lazy }
 </figure>
 
 ### 1.3.3 Configure redistribution of EIGRP routes
@@ -500,13 +500,13 @@ into BGP. These routes will then be advertised to the SD-WAN peers.
     4.  Click **OK** to save the settings.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s1-t3-s3-1-1.png){ loading=lazy }
+      ![screenshot](assets/screens/1.3.3.1.1.png){ loading=lazy }
     </figure>
 
 3.  Click **Save** on top right to complete the configuration.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s1-t3-s3-2.png){ loading=lazy }
+      ![screenshot](assets/screens/1.3.3.2.png){ loading=lazy }
     </figure>
 
 ## 1.4 Configuring BGP Redistribution of Static Internal Routes at Spoke (NGFW-B1) to SD-WAN
@@ -520,7 +520,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     Management \> Edit NGFW-B1**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t4-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.4.1.1.png){ loading=lazy }
 </figure>
 
 2.  Click on the **Routing** tab \> click on the **BGP** button under
@@ -530,7 +530,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t4-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/1.4.1.2.png){ loading=lazy }
 </figure>
 
 3.  Click on the **BGP IPv4** routing option
@@ -538,7 +538,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     1.  **Enable IPv4**, review the AS Number defaults to **64512**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t4-s1-3.png){ loading=lazy }
+  ![screenshot](assets/screens/1.4.1.3.png){ loading=lazy }
 </figure>
 
 ### 1.4.2 Configure redistribution of Static routes
@@ -550,7 +550,7 @@ BGP. These routes will then be advertised to the SD-WAN peers.
     **Add**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t4-s2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.4.2.1.png){ loading=lazy }
 </figure>
 
 2.  This launches the **Add Redistribution** dialog. Fill it in as
@@ -561,13 +561,13 @@ BGP. These routes will then be advertised to the SD-WAN peers.
     3.  Click **OK** to save the settings.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t4-s2-2.png){ loading=lazy }
+  ![screenshot](assets/screens/1.4.2.2.png){ loading=lazy }
 </figure>
 
 3.  Click **Save** on top right to complete the configuration.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t4-s2-3.png){ loading=lazy }
+  ![screenshot](assets/screens/1.4.2.3.png){ loading=lazy }
 </figure>
 
 ## 1.5 Configuring BGP Redistribution of EIGRP Internal Routes at Spoke (NGFW-B2) to SD-WAN
@@ -581,7 +581,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     Management \> Edit NGFW-B2**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t5-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.5.1.1.png){ loading=lazy }
 </figure>
 
 2.  Click on the **Routing** tab \> click on the **BGP** button under
@@ -591,7 +591,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t5-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/1.5.1.2.png){ loading=lazy }
 </figure>
 
 3.  Click on the **BGP IPv4** routing option
@@ -599,7 +599,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     1.  **Enable IPv4**, review the AS Number defaults to **64512**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t5-s1-4.png){ loading=lazy }
+  ![screenshot](assets/screens/1.5.1.4.png){ loading=lazy }
 </figure>
 
 ### 1.5.2 Configure redistribution of EIGRP routes
@@ -611,7 +611,7 @@ These routes will then be advertised to the SD-WAN peers.
     **Add**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t5-s2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.5.2.1.png){ loading=lazy }
 </figure>
 
 2.  This launches the **Add Redistribution** dialog. Fill it in as
@@ -623,13 +623,13 @@ These routes will then be advertised to the SD-WAN peers.
     4.  Click **OK** to save the settings.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t5-s2-2.png){ loading=lazy }
+  ![screenshot](assets/screens/1.5.2.2.png){ loading=lazy }
 </figure>
 
 3.  Click **Save** on top right to complete the configuration.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t5-s2-3.png){ loading=lazy }
+  ![screenshot](assets/screens/1.5.2.3.png){ loading=lazy }
 </figure>
 
 ## 1.6 Deploy to Hub and Spoke Devices
@@ -667,7 +667,7 @@ to reload the tunnels status if tunnel has not come up yet. Wait for
 few seconds for tunnel status to be updated fully.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t7-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.7.1.1.png){ loading=lazy }
 </figure>
 
 Go to **Insights & Reports -\> VPN dashboards -\> Site-to-Site VPN**
@@ -676,7 +676,7 @@ and Check that the tunnels are up as shown below. You can also click
 Summary** dashboard to view this page:
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t7-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/1.7.1.2.png){ loading=lazy }
 </figure>
 
 ### 1.7.2 Verify Routes on Hub (NGFW-HUB)
@@ -701,7 +701,7 @@ BGP and other configured and learnt routes at the Hub.
     BGP
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t7-s2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.7.2.1.png){ loading=lazy }
 </figure>
 
 5.  Scroll through routes output and Verify internal routes learnt from
@@ -713,7 +713,7 @@ BGP and other configured and learnt routes at the Hub.
     and 192.168.2.0/255.255.255.0) got distributed over BGP (**B**)
 
 <figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s1-t7-s2-2.png){ loading=lazy }
+  ![screenshot](assets/screens/1.7.2.2.png){ loading=lazy }
 </figure>
 
 ### 1.7.3 Verify traffic between protected networks behind spoke (NGFW-B1) and hub (NGFW-HUB)
@@ -732,7 +732,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.102.0/24 with a host
     Access.** This opens **B1H's** SSH session.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s1-t7-s3-1.png){ loading=lazy }
+      ![screenshot](assets/screens/1.7.3.1.png){ loading=lazy }
     </figure>
 
 2.  **Verify Pings from Branch host to hosts behind Hub site.**
@@ -746,7 +746,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.102.0/24 with a host
         response.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s1-t7-s3-2.png){ loading=lazy }
+      ![screenshot](assets/screens/1.7.3.2.png){ loading=lazy }
     </figure>
 
 3.  **Verify SSH Connection**
@@ -756,7 +756,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.102.0/24 with a host
         **exit**.
 
         <figure markdown style="max-width:16.0cm;">
-          ![screenshot](assets/screens/s1-t7-s3-3.png){ loading=lazy }
+          ![screenshot](assets/screens/1.7.3.3.png){ loading=lazy }
         </figure>
 
     2.  **SSH** to **192.168.102.132** using password **C1sco12345** and
@@ -764,7 +764,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.102.0/24 with a host
         **exit**.
 
         <figure markdown style="max-width:16.0cm;">
-          ![screenshot](assets/screens/s1-t7-s3-4.png){ loading=lazy }
+          ![screenshot](assets/screens/1.7.3.4.png){ loading=lazy }
         </figure>
 
 ### 1.7.4 Verify the traffic flow over the VPN tunnel from Spoke (NGFW-B1) to Spoke (NGFW-B2)
@@ -780,7 +780,7 @@ Network behind spoke (**NGFW-B2**) – 192.168.2.0/24 with a host
     Access.** This opens **B1H's** SSH session.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s1-t7-s4-1.png){ loading=lazy }
+      ![screenshot](assets/screens/1.7.4.1.png){ loading=lazy }
     </figure>
 
 2.  **Verify Ping**
@@ -790,7 +790,7 @@ Network behind spoke (**NGFW-B2**) – 192.168.2.0/24 with a host
         response.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s1-t7-s4-2.png){ loading=lazy }
+      ![screenshot](assets/screens/1.7.4.2.png){ loading=lazy }
     </figure>
 
 3.  **Verify SSH Connection**
@@ -805,7 +805,7 @@ Network behind spoke (**NGFW-B2**) – 192.168.2.0/24 with a host
     2.  After successful connection, you may **exit**.
 
         <figure markdown style="max-width:16.0cm;">
-          ![screenshot](assets/screens/s1-t7-s4-3.png){ loading=lazy }
+          ![screenshot](assets/screens/1.7.4.3.png){ loading=lazy }
         </figure>
 
 4.  You may close all opened the **PuTTY** sessions.

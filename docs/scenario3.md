@@ -9,7 +9,7 @@ redistribute its routes into BGP overlay routing.
 ## Network Diagram
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-edited.png){ loading=lazy }
+  ![screenshot](assets/screens/3.png){ loading=lazy }
 </figure>
 
 ## 3.1 Configuring SD-WAN Topology to include new Spoke (NGFW-B3)
@@ -20,7 +20,7 @@ To edit SD-WAN Topology, go to **Secure Connections \> Site-to-Site
 VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t1-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/3.1.1.1.png){ loading=lazy }
 </figure>
 
 ### 3.1.2 SD-WAN Topology – Add Spoke Configuration
@@ -28,13 +28,13 @@ VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
 Click on **Edit** at **Spokes** step to add the new Spoke into SD-WAN.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t1-s2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/3.1.2.1.png){ loading=lazy }
 </figure>
 
 Click on **Add Spoke**.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t1-s2-2.png){ loading=lazy }
+  ![screenshot](assets/screens/3.1.2.2.png){ loading=lazy }
 </figure>
 
 Enter the following details in the **Add Spoke** dialog box:
@@ -50,11 +50,11 @@ Enter the following details in the **Add Spoke** dialog box:
 4)  Click **Save** to add the Spoke into SD-WAN Topology
 
 <figure markdown style="max-width:10.0cm;">
-  ![screenshot](assets/screens/s3-t1-s2-3-1.png){ loading=lazy }
+  ![screenshot](assets/screens/3.1.2.3.1.png){ loading=lazy }
 </figure>
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t1-s2-3-2.png){ loading=lazy }
+  ![screenshot](assets/screens/3.1.2.3.2.png){ loading=lazy }
 </figure>
 
 ### 3.1.3 SD-WAN Topology - Finish
@@ -65,7 +65,7 @@ branch in the SD-WAN Topology. **Scroll down** and click the
 dialog *"Click Finish to save your changes."*
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t1-s3-1.png){ loading=lazy }
+  ![screenshot](assets/screens/3.1.3.1.png){ loading=lazy }
 </figure>
 
 1.  Once configured, **Site-to-Site** VPN listing page shows the new
@@ -73,7 +73,7 @@ dialog *"Click Finish to save your changes."*
     Site-to-Site VPN & SD-WAN.**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t1-s3-2.png){ loading=lazy }
+  ![screenshot](assets/screens/3.1.3.2.png){ loading=lazy }
 </figure>
 
 2.  Expand the **Corp-SD-WAN-1** node to view all the tunnels in the
@@ -83,7 +83,7 @@ dialog *"Click Finish to save your changes."*
     color.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t1-s3-3.png){ loading=lazy }
+  ![screenshot](assets/screens/3.1.3.3.png){ loading=lazy }
 </figure>
 
 ## 3.2 Deploy to Hub and Spoke Devices
@@ -105,7 +105,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     the deployment is marked Completed** on the Deploy dialog
 
 <figure markdown style="max-width:10.0cm;">
-  ![screenshot](assets/screens/s3-t2.png){ loading=lazy }
+  ![screenshot](assets/screens/3.2.png){ loading=lazy }
 </figure>
 
 ## 3.3 Configuring BGP Redistribution of OSPF Internal Routes at Spoke (NGFW-B3) to SD-WAN
@@ -119,7 +119,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     Management \> Edit NGFW-B3**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t3-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/3.3.1.1.png){ loading=lazy }
 </figure>
 
 2.  Click on the **Routing** tab \> click the **BGP** button under
@@ -129,7 +129,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t3-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/3.3.1.2.png){ loading=lazy }
 </figure>
 
 3.  Click on the **BGP IPv4** routing option
@@ -137,7 +137,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     1.  **Enable IPv4**, review the AS Number defaults to **64512**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t3-s1-3.png){ loading=lazy }
+  ![screenshot](assets/screens/3.3.1.3.png){ loading=lazy }
 </figure>
 
 ### 3.3.2 Configure redistribution of OSPF routes
@@ -149,7 +149,7 @@ These routes will then be advertised to the SD-WAN peers.
     **Add**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t3-s2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/3.3.2.1.png){ loading=lazy }
 </figure>
 
 2.  This launches the **Add Redistribution** dialog. Fill it in as
@@ -167,13 +167,13 @@ These routes will then be advertised to the SD-WAN peers.
     Click **OK** to save the settings.
 
 <figure markdown style="max-width:6.0cm;">
-  ![screenshot](assets/screens/s3-t3-s2-2.png){ loading=lazy }
+  ![screenshot](assets/screens/3.3.2.2.png){ loading=lazy }
 </figure>
 
 3.  Click **Save** on top right to complete the configuration.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t3-s2-3.png){ loading=lazy }
+  ![screenshot](assets/screens/3.3.2.3.png){ loading=lazy }
 </figure>
 
 ## 3.4 Deploy to Hub and Spoke Devices
@@ -195,7 +195,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     the deployment is marked Completed** on the Deploy dialog
 
 <figure markdown style="max-width:10.0cm;">
-  ![screenshot](assets/screens/s3-t4.png){ loading=lazy }
+  ![screenshot](assets/screens/3.4.png){ loading=lazy }
 </figure>
 
 ## 3.5 Verify the traffic flow over the VPN tunnel from Spoke to Hub
@@ -211,14 +211,14 @@ to reload the tunnels status if tunnel has not come up yet. Wait for
 few seconds for tunnel status to be updated fully.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t5-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/3.5.1.1.png){ loading=lazy }
 </figure>
 
 Go to **Insights & Reports -\> VPN dashboards -\> Site-to-Site VPN**
 and Check that the tunnels are up as shown below.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s3-t5-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/3.5.1.2.png){ loading=lazy }
 </figure>
 
 ### 3.5.2 Verify Routes on Hub (NGFW-HUB)
@@ -240,7 +240,7 @@ In this step, you can verify the BGP and other routes at the Hub.
 4.  Verify the new route from spoke is redistributed over BGP
 
 <figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s3-t5-s2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/3.5.2.1.png){ loading=lazy }
 </figure>
 
 ### 3.5.3 Verify traffic between protected networks behind spoke (NGFW-B3) and hub (NGFW-HUB)
@@ -256,7 +256,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
     opens **B3H's** SSH session.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s3-t5-s3-1.png){ loading=lazy }
+      ![screenshot](assets/screens/3.5.3.1.png){ loading=lazy }
     </figure>
 
 2.  **Verify Ping**
@@ -265,7 +265,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
         device NGFW-HUB. Verify that you are getting a response.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s3-t5-s3-2.png){ loading=lazy }
+      ![screenshot](assets/screens/3.5.3.2.png){ loading=lazy }
     </figure>
 
 3.  **Verify SSH Connection**
@@ -279,7 +279,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
         connecting…?"* &mdash; type `yes`.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s3-t5-s3-3.png){ loading=lazy }
+      ![screenshot](assets/screens/3.5.3.3.png){ loading=lazy }
     </figure>
 
 4.  You may **close all** opened **PuTTY** sessions.

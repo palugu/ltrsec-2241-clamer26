@@ -8,7 +8,7 @@ to configure and redistribute it into BGP overlay routing section.
 ## Network Diagram
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s2.png){ loading=lazy }
+  ![screenshot](assets/screens/2.png){ loading=lazy }
 </figure>
 
 ## 2.1 Add network behind Hub
@@ -25,14 +25,14 @@ to Hub (**NGFW-HUB**) through the internal router (**CSRHR2**).
 2.  You may minimize Cisco Secure Firewall Quick Launch Window.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s2-t1-s1-1.png){ loading=lazy }
+      ![screenshot](assets/screens/2.1.1.1.png){ loading=lazy }
     </figure>
 
 3.  Verify the current configuration of OSPF by executing
     `show run | s router ospf`.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s2-t1-s1-2.png){ loading=lazy }
+      ![screenshot](assets/screens/2.1.1.2.png){ loading=lazy }
     </figure>
 
 4.  Add the new network in the router; the Hub device will then learn
@@ -52,7 +52,7 @@ to Hub (**NGFW-HUB**) through the internal router (**CSRHR2**).
     4.  You may **close** the **CSRHR2** terminal now.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s2-t1-s1-3.png){ loading=lazy }
+      ![screenshot](assets/screens/2.1.1.3.png){ loading=lazy }
     </figure>
 
 5.  Verify the Hub device learnt this new network.
@@ -67,7 +67,7 @@ to Hub (**NGFW-HUB**) through the internal router (**CSRHR2**).
         learnt from the adjacent CSRHR2 router as an OSPF route.
 
     <figure markdown style="max-width:12.0cm;">
-      ![screenshot](assets/screens/s2-t1-s1-4.png){ loading=lazy }
+      ![screenshot](assets/screens/2.1.1.4.png){ loading=lazy }
     </figure>
 
 ## 2.2 Redistribution of New Network at Hub to SD-WAN spokes
@@ -85,7 +85,7 @@ In this step, you will learn to advertise this new network at Hub
 3.  **Edit** (pencil icon) object-group named **Hub-Protected-Networks**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s2-t2-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/2.2.1.1.png){ loading=lazy }
 </figure>
 
 4.  Enter network **192.168.103.0/24** and Click **Add**
@@ -93,11 +93,11 @@ In this step, you will learn to advertise this new network at Hub
     1.  Click on **Save** to update the object-group
 
 <figure markdown style="max-width:10.0cm;">
-  ![screenshot](assets/screens/s2-t2-s1-2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/2.2.1.2.1.png){ loading=lazy }
 </figure>
 
 <figure markdown style="max-width:10.0cm;">
-  ![screenshot](assets/screens/s2-t2-s1-2-2.png){ loading=lazy }
+  ![screenshot](assets/screens/2.2.1.2.2.png){ loading=lazy }
 </figure>
 
 ## 2.3 Deploy to Hub and Spoke Devices
@@ -119,7 +119,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     the deployment is marked Completed** on the Deploy dialog
 
 <figure markdown style="max-width:10.0cm;">
-  ![screenshot](assets/screens/s2-t3.png){ loading=lazy }
+  ![screenshot](assets/screens/2.3.png){ loading=lazy }
 </figure>
 
 ## 2.4 Verify the traffic flow over the VPN tunnel from Spoke to Hub
@@ -145,7 +145,7 @@ redistributed routes at the Hub.
     BGP
 
 <figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s2-t4-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/2.4.1.1.png){ loading=lazy }
 </figure>
 
 ### 2.4.2 Verify Routes on Spoke, NGFW-B2
@@ -183,7 +183,7 @@ New network behind hub (**NGFW-HUB**) – 192.168.103.0/24 with host
     Access**. This opens **B1H**'s SSH session.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s2-t4-s3-1.png){ loading=lazy }
+      ![screenshot](assets/screens/2.4.3.1.png){ loading=lazy }
     </figure>
 
 2.  **Verify Ping**
@@ -193,7 +193,7 @@ New network behind hub (**NGFW-HUB**) – 192.168.103.0/24 with host
         response.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s2-t4-s3-2.png){ loading=lazy }
+      ![screenshot](assets/screens/2.4.3.2.png){ loading=lazy }
     </figure>
 
 3.  **Verify SSH Connection**
@@ -207,7 +207,7 @@ New network behind hub (**NGFW-HUB**) – 192.168.103.0/24 with host
         connecting…?"* &mdash; type `yes`.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s2-t4-s3-3.png){ loading=lazy }
+      ![screenshot](assets/screens/2.4.3.3.png){ loading=lazy }
     </figure>
 
 4.  You may close all opened **PuTTY** sessions.

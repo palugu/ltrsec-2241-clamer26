@@ -15,7 +15,13 @@ In this session you have:
 
 ## Related sessions at Cisco Live
 
-- [BRKSEC-2095](https://www.ciscolive.com/global/learn/sessions/session-catalog.html?search=BRKSEC-2095#/) — Securing the SD-WAN with Cisco Secure Firewall
+Beyond this lab, the following Cisco Live sessions go deeper into Secure
+Firewall SD-WAN, branch automation, and adjacent VPN topics:
+
+- [BRKSEC-3058](https://www.ciscolive.com/global/learn/sessions/session-catalog.html?search=BRKSEC-3058#/) — Advanced SD-WAN design with Cisco Secure Firewall
+- [CTF-2011](https://www.ciscolive.com/global/learn/sessions/session-catalog.html?search=CTF-2011#/) — Firewall SD-WAN 10.0 in Four Steps with Advanced Architectures
+- [LABSEC-2008](https://www.ciscolive.com/global/learn/sessions/session-catalog.html?search=LABSEC-2008#/) — SD-WAN and Site-to-Site VPN on Secure Firewall
+- [BRKSEC-2981](https://www.ciscolive.com/global/learn/sessions/session-catalog.html?search=BRKSEC-2981#/) — Secure Firewall Branch Automated and Scaled: Zero to Hero in 60 mins
 - [LTRSEC-2241](https://www.ciscolive.com/global/learn/sessions/session-catalog.html?search=LTRSEC-2241#/) — This lab session
 
 ## Feedback

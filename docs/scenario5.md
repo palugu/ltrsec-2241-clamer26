@@ -13,7 +13,7 @@ BGP overlay network.
 ## Network Diagram
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-edited.png){ loading=lazy }
+  ![screenshot](assets/screens/5.png){ loading=lazy }
 </figure>
 
 ## 5.1 Check spoke is having overlap network
@@ -36,7 +36,7 @@ overlaps with other spoke NGFW-B3.
     (192.168.3.0) as **NGFW-B3**
 
 <figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s5-t1-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/5.1.1.1.png){ loading=lazy }
 </figure>
 
 ## 5.2 Choose a NAT network and Add Static Route for it
@@ -52,7 +52,7 @@ network that will be used to NAT 192.168.3.0/24. In this scenario,
     Management \> Edit NGFW-B4**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t2-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/5.2.1.1.png){ loading=lazy }
 </figure>
 
 2.  Click on the **Routing** tab \> Click on **Static Route** button
@@ -68,7 +68,7 @@ network that will be used to NAT 192.168.3.0/24. In this scenario,
             respond to.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t2-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/5.2.1.2.png){ loading=lazy }
 </figure>
 
 3.  The **Add Static Route Configuration** dialog opens. Fill it in
@@ -80,13 +80,13 @@ network that will be used to NAT 192.168.3.0/24. In this scenario,
     4.  Click **OK** to add the route.
 
 <figure markdown style="max-width:8.0cm;">
-  ![screenshot](assets/screens/s5-t2-s1-3.png){ loading=lazy }
+  ![screenshot](assets/screens/5.2.1.3.png){ loading=lazy }
 </figure>
 
 4.  Click **Save** to save the changes
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t2-s1-4.png){ loading=lazy }
+  ![screenshot](assets/screens/5.2.1.4.png){ loading=lazy }
 </figure>
 
 ## 5.3 Configuring SD-WAN Topology to include new Spoke (NGFW-B4)
@@ -97,7 +97,7 @@ To edit SD-WAN Topology, go to **Secure Connections \> Site-to-Site
 VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t3-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/5.3.1.1.png){ loading=lazy }
 </figure>
 
 ### 5.3.2 SD-WAN Topology – Add Spoke Configuration
@@ -105,13 +105,13 @@ VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
 Click on **Edit** at **Spokes** step to add the new Spoke into SD-WAN.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t3-s2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/5.3.2.1.png){ loading=lazy }
 </figure>
 
 Click on **Add Spoke**.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t3-s2-2.png){ loading=lazy }
+  ![screenshot](assets/screens/5.3.2.2.png){ loading=lazy }
 </figure>
 
 Enter the following details in the **Add Spoke** dialog box:
@@ -126,11 +126,11 @@ Enter the following details in the **Add Spoke** dialog box:
 4)  **Save:** Click on Save to add the Spoke into SD-WAN Topology
 
 <figure markdown style="max-width:8.0cm;">
-  ![screenshot](assets/screens/s5-t3-s2-3-1.png){ loading=lazy }
+  ![screenshot](assets/screens/5.3.2.3.1.png){ loading=lazy }
 </figure>
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t3-s2-3-2.png){ loading=lazy }
+  ![screenshot](assets/screens/5.3.2.3.2.png){ loading=lazy }
 </figure>
 
 ### 5.3.3 SD-WAN Topology - Finish
@@ -139,14 +139,14 @@ Enter the following details in the **Add Spoke** dialog box:
 Click **OK** for the pop-up dialog *"Click Finish to save your changes."*
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t3-s3-1.png){ loading=lazy }
+  ![screenshot](assets/screens/5.3.3.1.png){ loading=lazy }
 </figure>
 
 1.  You can view the SD-WAN topology in the Site-to-Site VPN listing
     page: **Secure Connections \> Site-to-Site VPN & SD-WAN.**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t3-s3-2.png){ loading=lazy }
+  ![screenshot](assets/screens/5.3.3.2.png){ loading=lazy }
 </figure>
 
 2.  Expand the **Corp-SD-WAN-1** node to view all the tunnels in the
@@ -156,7 +156,7 @@ Click **OK** for the pop-up dialog *"Click Finish to save your changes."*
     and the new spoke tunnel shows in Amber color.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t3-s3-3.png){ loading=lazy }
+  ![screenshot](assets/screens/5.3.3.3.png){ loading=lazy }
 </figure>
 
 ## 5.4 Deploy to Hub and Spoke Devices
@@ -178,7 +178,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     the deployment is marked Completed** on the Deploy dialog
 
 <figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s5-t4.png){ loading=lazy }
+  ![screenshot](assets/screens/5.4.png){ loading=lazy }
 </figure>
 
 ## 5.5 Configuring NAT policy for protected network at Spoke (NGFW-B4)
@@ -193,13 +193,13 @@ In this step, a new NAT policy is created.
 1.  Navigate to **Policies \> Network policies \> NAT**
 
 <figure markdown style="max-width:6.0cm;">
-  ![screenshot](assets/screens/s5-t5-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/5.5.1.1.png){ loading=lazy }
 </figure>
 
 2.  Click on the **New Policy** button
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t5-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/5.5.1.2.png){ loading=lazy }
 </figure>
 
 3.  The **New Policy** dialog opens. Fill it in as follows:
@@ -209,7 +209,7 @@ In this step, a new NAT policy is created.
     3.  Click **Save**.
 
 <figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s5-t5-s1-3.png){ loading=lazy }
+  ![screenshot](assets/screens/5.5.1.3.png){ loading=lazy }
 </figure>
 
 ### 5.5.2 Add Rule
@@ -220,7 +220,7 @@ using NATed network.
 1.  Click on **Add Rule**
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s5-t5-s2-1.png){ loading=lazy }
+      ![screenshot](assets/screens/5.5.2.1.png){ loading=lazy }
     </figure>
 
 2.  The **Add NAT Rule** dialog opens. In the General section, set:
@@ -235,7 +235,7 @@ using NATed network.
     2.  **Destination Interface Objects**: Leave as **any** (default).
 
     <figure markdown style="max-width:12.0cm;">
-      ![screenshot](assets/screens/s5-t5-s2-2.png){ loading=lazy }
+      ![screenshot](assets/screens/5.5.2.2.png){ loading=lazy }
     </figure>
 
 3.  Click the **Translation** tab and set:
@@ -247,14 +247,14 @@ using NATed network.
     3.  Click **OK** to add the rule.
 
     <figure markdown style="max-width:12.0cm;">
-      ![screenshot](assets/screens/s5-t5-s2-3.png){ loading=lazy }
+      ![screenshot](assets/screens/5.5.2.3.png){ loading=lazy }
     </figure>
 
 4.  You are back to NAT Policies page, click on **Save** to save the
     policy.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s5-t5-s2-4.png){ loading=lazy }
+      ![screenshot](assets/screens/5.5.2.4.png){ loading=lazy }
     </figure>
 
 ## 5.6 Deploy to Spoke Device
@@ -276,7 +276,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     the deployment is marked Completed** on the Deploy dialog
 
 <figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s5-t6.png){ loading=lazy }
+  ![screenshot](assets/screens/5.6.png){ loading=lazy }
 </figure>
 
 ## 5.7 Configuring BGP Redistribution of NAT network at Spoke (NGFW-B4) to SD-WAN
@@ -290,7 +290,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     Management \> Edit NGFW-B4**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t7-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/5.7.1.1.png){ loading=lazy }
 </figure>
 
 2.  Click on the **Routing** tab \> click on the **BGP** button under
@@ -300,7 +300,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t7-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/5.7.1.2.png){ loading=lazy }
 </figure>
 
 3.  Click on the **BGP IPv4** routing option
@@ -308,7 +308,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     1.  **Enable IPv4**, review the AS Number defaults to **64512**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t7-s1-3.png){ loading=lazy }
+  ![screenshot](assets/screens/5.7.1.3.png){ loading=lazy }
 </figure>
 
 ### 5.7.2 Configure redistribution of Static (NAT network) routes
@@ -320,7 +320,7 @@ BGP. These routes will then be advertised to the SD-WAN peers.
     **Add**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t7-s2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/5.7.2.1.png){ loading=lazy }
 </figure>
 
 2.  This launches the **Add Redistribution** dialog. Fill it in as
@@ -331,13 +331,13 @@ BGP. These routes will then be advertised to the SD-WAN peers.
     3.  Click **OK** to save the settings.
 
 <figure markdown style="max-width:6.0cm;">
-  ![screenshot](assets/screens/s5-t7-s2-2.png){ loading=lazy }
+  ![screenshot](assets/screens/5.7.2.2.png){ loading=lazy }
 </figure>
 
 3.  Click on **Save** to complete the configuration
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t7-s2-3.png){ loading=lazy }
+  ![screenshot](assets/screens/5.7.2.3.png){ loading=lazy }
 </figure>
 
 ## 5.8 Deploy to Spoke Device
@@ -359,7 +359,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     the deployment is marked Completed** on the Deploy dialog
 
 <figure markdown style="max-width:10.0cm;">
-  ![screenshot](assets/screens/s5-t8.png){ loading=lazy }
+  ![screenshot](assets/screens/5.8.png){ loading=lazy }
 </figure>
 
 ## 5.9 Verify the traffic flow over the VPN tunnel from Spoke (NGFW-B4) to Hub (NGFW-HUB)
@@ -375,14 +375,14 @@ to reload the tunnels status if tunnel has not come up yet. Wait for
 few seconds for tunnel status to be updated fully.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t9-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/5.9.1.1.png){ loading=lazy }
 </figure>
 
 Go to **Insights & Reports -\> VPN dashboards -\> Site-to-Site VPN**
 and Check that the tunnels are up as shown below.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5-t9-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/5.9.1.2.png){ loading=lazy }
 </figure>
 
 ### 5.9.2 Verify Routes on Hub (NGFW-HUB)
@@ -405,7 +405,7 @@ In this step, you can verify the BGP and other routes at the Hub.
     redistributed over BGP
 
 <figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s5-t9-s2-1.png){ loading=lazy }
+  ![screenshot](assets/screens/5.9.2.1.png){ loading=lazy }
 </figure>
 
 ### 5.9.3 Verify traffic between protected networks behind spoke (NGFW-B4) and hub (NGFW-HUB)
@@ -421,7 +421,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
     opens **B4H**'s SSH session.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s5-t9-s3-1.png){ loading=lazy }
+      ![screenshot](assets/screens/5.9.3.1.png){ loading=lazy }
     </figure>
 
 2.  **Verify Ping**
@@ -430,7 +430,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
         Hub device NGFW-HUB and verify that you are getting the response
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s5-t9-s3-2.png){ loading=lazy }
+      ![screenshot](assets/screens/5.9.3.2.png){ loading=lazy }
     </figure>
 
 3.  **Verify SSH Connection**
@@ -444,7 +444,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
         connecting…?"* &mdash; type `yes`.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s5-t9-s3-3.png){ loading=lazy }
+      ![screenshot](assets/screens/5.9.3.3.png){ loading=lazy }
     </figure>
 
 4.  Launch the Unified Events Viewer (UEV) on FMC in a new tab and
@@ -455,7 +455,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
     **NGFW-HUB**
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s5-t9-s3-4.png){ loading=lazy }
+      ![screenshot](assets/screens/5.9.3.4.png){ loading=lazy }
     </figure>
 
 5.  You may close all opened the **PuTTY** sessions

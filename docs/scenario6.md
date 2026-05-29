@@ -10,7 +10,7 @@ these location-based criteria are blocked before authentication.
 ## Network Diagram
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-edited.png){ loading=lazy }
+  ![screenshot](assets/screens/6.png){ loading=lazy }
 </figure>
 
 ## 6.1 Configuring Service Access Rules on Hub (NGFW-HUB)
@@ -29,14 +29,14 @@ access from regions and countries of your own choice.
     **Add Service Access Object**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-t1-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/6.1.1.1.png){ loading=lazy }
 </figure>
 
 2.  The **Add Service Access Object** dialog opens. Enter the
     **Name** as `Corp-RA-Locations`, then click **Add Rule**.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-t1-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/6.1.1.2.png){ loading=lazy }
 </figure>
 
 3.  The **Add Service Access Rule** dialog opens. Fill it in as
@@ -48,7 +48,7 @@ access from regions and countries of your own choice.
     4.  Click **Add** to create the rule.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-t1-s1-3.png){ loading=lazy }
+  ![screenshot](assets/screens/6.1.1.3.png){ loading=lazy }
 </figure>
 
 4.  Choose the Default Action: **Allow All Countries**. This action
@@ -58,11 +58,11 @@ access from regions and countries of your own choice.
 5.  Click **Save** to save the Service Access Rule.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-t1-s1-4.png){ loading=lazy }
+  ![screenshot](assets/screens/6.1.1.4.png){ loading=lazy }
 </figure>
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s6-t1-s1-5.png){ loading=lazy }
+  ![screenshot](assets/screens/6.1.1.5.png){ loading=lazy }
 </figure>
 
 ### 6.1.2 Apply the Service Object Configuration in RAVPN
@@ -76,7 +76,7 @@ access from regions and countries of your own choice.
 3.  Click **pencil** icon at the middle to edit it
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s6-t1-s2-1.png){ loading=lazy }
+      ![screenshot](assets/screens/6.1.2.1.png){ loading=lazy }
     </figure>
 
 4.  Click on **Access Interfaces** tab
@@ -86,11 +86,11 @@ access from regions and countries of your own choice.
     **Corp-RA-Locations**
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s6-t1-s2-2-1.png){ loading=lazy }
+      ![screenshot](assets/screens/6.1.2.2.1.png){ loading=lazy }
     </figure>
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s6-t1-s2-2-2.png){ loading=lazy }
+      ![screenshot](assets/screens/6.1.2.2.2.png){ loading=lazy }
     </figure>
 
 6.  The service access object now displays the rules summary and default
@@ -98,7 +98,7 @@ access from regions and countries of your own choice.
     save the configuration.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s6-t1-s2-3.png){ loading=lazy }
+      ![screenshot](assets/screens/6.1.2.3.png){ loading=lazy }
     </figure>
 
 ## 6.2 Deploy to Hub Device
@@ -120,7 +120,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     the deployment is marked Completed** on the Deploy dialog
 
 <figure markdown style="max-width:10.0cm;">
-  ![screenshot](assets/screens/s6-t2.png){ loading=lazy }
+  ![screenshot](assets/screens/6.2.png){ loading=lazy }
 </figure>
 
 ## 6.3 Verify the Remote Access from Secure Client
@@ -135,14 +135,14 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     Login using Credentials **admin/C1sco12345**.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s6-t3-s1-1.png){ loading=lazy }
+      ![screenshot](assets/screens/6.3.1.1.png){ loading=lazy }
     </figure>
 
 2.  Click on Windows Start Button and Open Cisco Secure Client
     application by clicking on pinned Icon.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s6-t3-s1-2.png){ loading=lazy }
+      ![screenshot](assets/screens/6.3.1.2.png){ loading=lazy }
     </figure>
 
 3.  Click on **Connect** with **Hub (SSL) IPv4** Profile. Wait for a
@@ -150,7 +150,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     dialog. The connection attempt must have failed.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s6-t3-s1-3.png){ loading=lazy }
+      ![screenshot](assets/screens/6.3.1.3.png){ loading=lazy }
     </figure>
 
 4.  Verify with Troubleshooting Logs. To validate blocked connections,
@@ -158,7 +158,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     Troubleshooting Logs**. Click on **View All**.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s6-t3-s1-4.png){ loading=lazy }
+      ![screenshot](assets/screens/6.3.1.4.png){ loading=lazy }
     </figure>
 
 Observe the Log –

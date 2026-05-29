@@ -12,7 +12,7 @@ configure a new SD-WAN Topology for ISP2.
 ## Network Diagram
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s4-edited.png){ loading=lazy }
+  ![screenshot](assets/screens/4.png){ loading=lazy }
 </figure>
 
 ## 4.1 Enable ISP2 at Spoke (NGFW-B3)
@@ -27,7 +27,7 @@ link up in real-time for the lab.
     Management \> Edit NGFW-B3**
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s4-t1-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/4.1.1.1.png){ loading=lazy }
 </figure>
 
 2.  On the **Interfaces** tab Click the **Edit** for
@@ -35,20 +35,20 @@ link up in real-time for the lab.
     **outside_2**. This opens the Edit Physical Interface dialogue
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s4-t1-s1-2.png){ loading=lazy }
+  ![screenshot](assets/screens/4.1.1.2.png){ loading=lazy }
 </figure>
 
 3.  Click on **Enabled** and click **OK**.
 
     <figure markdown style="max-width:12.0cm;">
-      ![screenshot](assets/screens/s4-t1-s1-3.png){ loading=lazy }
+      ![screenshot](assets/screens/4.1.1.3.png){ loading=lazy }
     </figure>
 
 4.  This brings us back to the **Interfaces** tab &mdash; click **Save**
     on the top right.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s4-t1-s1-4.png){ loading=lazy }
+      ![screenshot](assets/screens/4.1.1.4.png){ loading=lazy }
     </figure>
 
 ## 4.2 Configuring SD-WAN Topology between Spoke with ISP2 and Headquarters (Hub) using DVTI on Hub
@@ -70,7 +70,7 @@ Enter the following details in the pop-up:
 3.  Click **Create**.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s4-t2-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/4.2.1.1.png){ loading=lazy }
 </figure>
 
 ### 4.2.2 SD-WAN Topology – Hub Configuration
@@ -84,7 +84,7 @@ Enter the following details in the **Add Hub** dialog:
     **NGFW-HUB**.
 
     <figure markdown style="max-width:10.0cm;">
-      ![screenshot](assets/screens/s4-t2-s2-1-1.png){ loading=lazy }
+      ![screenshot](assets/screens/4.2.2.1.1.png){ loading=lazy }
     </figure>
 
 2.  **Dynamic Virtual Tunnel Interface (DVTI)**: ==click the **+** icon
@@ -103,7 +103,7 @@ Enter the following details in the **Add Hub** dialog:
         Address** to `20.1.101.101`.
 
     <figure markdown style="max-width:10.0cm;">
-      ![screenshot](assets/screens/s4-t2-s2-1-2.png){ loading=lazy }
+      ![screenshot](assets/screens/4.2.2.1.2.png){ loading=lazy }
     </figure>
 
     7.  **IPsec Tunnel Mode**: leave as IPv4 (default).
@@ -115,7 +115,7 @@ Enter the following details in the **Add Hub** dialog:
         dialog opens:
 
         <figure markdown style="max-width:10.0cm;">
-          ![screenshot](assets/screens/s4-t2-s2-2-1.png){ loading=lazy }
+          ![screenshot](assets/screens/4.2.2.2.1.png){ loading=lazy }
         </figure>
 
         1.  In the **General** tab:
@@ -124,7 +124,7 @@ Enter the following details in the **Add Hub** dialog:
             2.  **Loopback ID**: `2`
 
             <figure markdown style="max-width:10.0cm;">
-              ![screenshot](assets/screens/s4-t2-s2-2-2.png){ loading=lazy }
+              ![screenshot](assets/screens/4.2.2.2.2.png){ loading=lazy }
             </figure>
 
         2.  In the **IPv4** tab:
@@ -133,7 +133,7 @@ Enter the following details in the **Add Hub** dialog:
             2.  **IP Address**: `169.254.20.1/32`
 
             <figure markdown style="max-width:10.0cm;">
-              ![screenshot](assets/screens/s4-t2-s2-2-3.png){ loading=lazy }
+              ![screenshot](assets/screens/4.2.2.2.3.png){ loading=lazy }
             </figure>
 
         3.  Click **OK** to save the loopback.
@@ -145,7 +145,7 @@ Enter the following details in the **Add Hub** dialog:
         Added** successfully &mdash; click **OK**.
 
         <figure markdown style="max-width:10.0cm;">
-          ![screenshot](assets/screens/s4-t2-s2-2-4.png){ loading=lazy }
+          ![screenshot](assets/screens/4.2.2.2.4.png){ loading=lazy }
         </figure>
 
 3.  Back in the **Add Hub** dialog, confirm the DVTI is automatically
@@ -162,7 +162,7 @@ Enter the following details in the **Add Hub** dialog:
     a new pool &mdash; the **New IPv4 Pool** dialog opens.
 
     <figure markdown style="max-width:10.0cm;">
-      ![screenshot](assets/screens/s4-t2-s2-3-1.png){ loading=lazy }
+      ![screenshot](assets/screens/4.2.2.3.1.png){ loading=lazy }
     </figure>
 
     Fill it in:
@@ -176,7 +176,7 @@ Enter the following details in the **Add Hub** dialog:
     5.  Click **Save** to create the pool.
 
     <figure markdown style="max-width:10.0cm;">
-      ![screenshot](assets/screens/s4-t2-s2-3-2.png){ loading=lazy }
+      ![screenshot](assets/screens/4.2.2.3.2.png){ loading=lazy }
     </figure>
 
 6.  Back in the **Add Hub** dialog, set **Spoke Tunnel IP Address
@@ -184,7 +184,7 @@ Enter the following details in the **Add Hub** dialog:
     (use the drop-down if it isn't auto-populated).
 
     <figure markdown style="max-width:10.0cm;">
-      ![screenshot](assets/screens/s4-t2-s2-3-3.png){ loading=lazy }
+      ![screenshot](assets/screens/4.2.2.3.3.png){ loading=lazy }
     </figure>
 
 7.  All Hub inputs are now filled in. Click **Add** on the **Add Hub**
@@ -193,7 +193,7 @@ Enter the following details in the **Add Hub** dialog:
     Topology Wizard**. Click **Next** to proceed.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s4-t2-s2-4.png){ loading=lazy }
+      ![screenshot](assets/screens/4.2.2.4.png){ loading=lazy }
     </figure>
 
 ### 4.2.3 SD-WAN Topology – Add Spoke Configuration
@@ -204,7 +204,7 @@ steps.
 Click on **Add Spoke** button in the spokes step.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s4-t2-s3-1.png){ loading=lazy }
+  ![screenshot](assets/screens/4.2.3.1.png){ loading=lazy }
 </figure>
 
 Enter the following details in the **Add Spoke** dialog box:
@@ -219,13 +219,13 @@ Enter the following details in the **Add Spoke** dialog box:
 4.  **Save:** Click on **Save** to add the Spoke into SD-WAN Topology.
 
     <figure markdown style="max-width:8.0cm;">
-      ![screenshot](assets/screens/s4-t2-s3-2-1.png){ loading=lazy }
+      ![screenshot](assets/screens/4.2.3.2.1.png){ loading=lazy }
     </figure>
 
 5.  Click on **Next** button to proceed.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s4-t2-s3-2-2.png){ loading=lazy }
+      ![screenshot](assets/screens/4.2.3.2.2.png){ loading=lazy }
     </figure>
 
 ### 4.2.4 SD-WAN Topology: Authentication Settings
@@ -244,7 +244,7 @@ selection.
 4.  Click on **Next** button to save the settings
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s4-t2-s4-1.png){ loading=lazy }
+  ![screenshot](assets/screens/4.2.4.1.png){ loading=lazy }
 </figure>
 
 ### 4.2.5 SD-WAN Topology – Add Tunnel Interfaces to Security Zone
@@ -253,7 +253,7 @@ Click on the **Spoke Tunnel Interface Security Zone** drop-down and
 select **Tunnel_Zone**.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s4-t2-s5-1.png){ loading=lazy }
+  ![screenshot](assets/screens/4.2.5.1.png){ loading=lazy }
 </figure>
 
 ### 4.2.6 SD-WAN Topology – Configure BGP routing
@@ -283,7 +283,7 @@ Enter the following in **SD-WAN Settings**
     Settings.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s4-t2-s6-1.png){ loading=lazy }
+  ![screenshot](assets/screens/4.2.6.1.png){ loading=lazy }
 </figure>
 
 ### 4.2.7 SD-WAN Topology - Finish
@@ -294,7 +294,7 @@ Click **OK** for the pop-up dialog *"Click Finish to save your
 changes."*
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s4-t2-s7-1.png){ loading=lazy }
+  ![screenshot](assets/screens/4.2.7.1.png){ loading=lazy }
 </figure>
 
 1.  Once configured, the **Site-to-Site** VPN listing page shows the
@@ -302,7 +302,7 @@ changes."*
     Site-to-Site VPN & SD-WAN**.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s4-t2-s7-2.png){ loading=lazy }
+      ![screenshot](assets/screens/4.2.7.2.png){ loading=lazy }
     </figure>
 
 2.  Expand the **Corp-SD-WAN-2** node to view the tunnel in the
@@ -310,7 +310,7 @@ changes."*
     **Deployment Pending** and the spoke tunnel shows in amber colour.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s4-t2-s7-3.png){ loading=lazy }
+      ![screenshot](assets/screens/4.2.7.3.png){ loading=lazy }
     </figure>
 
 ## 4.3 Configure ECMP over the primary and secondary VTI interfaces
@@ -326,7 +326,7 @@ VPN traffic.
     Contents view.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s4-t3-s1-1.png){ loading=lazy }
+      ![screenshot](assets/screens/4.3.1.1.png){ loading=lazy }
     </figure>
 
 2.  Click the **Add** button on the top to launch the **Add ECMP**
@@ -341,14 +341,14 @@ VPN traffic.
 5.  Click **OK** to save the ECMP zone.
 
     <figure markdown style="max-width:12.0cm;">
-      ![screenshot](assets/screens/s4-t3-s1-2.png){ loading=lazy }
+      ![screenshot](assets/screens/4.3.1.2.png){ loading=lazy }
     </figure>
 
 6.  View the **ZONE_INET** and **ZONE_VTI** zones listed on the ECMP
     page. Click the top **Save** button to save the changes.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s4-t3-s1-3.png){ loading=lazy }
+      ![screenshot](assets/screens/4.3.1.3.png){ loading=lazy }
     </figure>
 
 ## 4.4 Deploy to Hub and Spoke Devices
@@ -370,7 +370,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     the deployment is marked Completed** on the Deploy dialog
 
 <figure markdown style="max-width:10.0cm;">
-  ![screenshot](assets/screens/s4-t4-1.png){ loading=lazy }
+  ![screenshot](assets/screens/4.4.1.png){ loading=lazy }
 </figure>
 
 ## 4.5 Verify the traffic distribution across dual ISP links
@@ -384,7 +384,7 @@ status if tunnel has not come up yet. Wait for few seconds for tunnel
 status to be updated fully.
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s4-t5-s1-1.png){ loading=lazy }
+  ![screenshot](assets/screens/4.5.1.1.png){ loading=lazy }
 </figure>
 
 ### 4.5.2 Verify traffic between protected networks behind spoke (NGFW-B3) and hub (NGFW-HUB)
@@ -410,7 +410,7 @@ Network behind Hub (**NGFW-HUB**) &mdash; 192.168.101.0/24 with a host
         icon at the top right of the **Events** table.
 
         <figure markdown style="max-width:16.0cm;">
-          ![screenshot](assets/screens/s4-t5-s2-2.png){ loading=lazy }
+          ![screenshot](assets/screens/4.5.2.2.png){ loading=lazy }
         </figure>
 
         The Columns are arranged in alphabetical order. By scrolling,
@@ -428,13 +428,13 @@ Network behind Hub (**NGFW-HUB**) &mdash; 192.168.101.0/24 with a host
         dragging the separation line on each column header.
 
         <figure markdown style="max-width:16.0cm;">
-          ![screenshot](assets/screens/s4-t5-s2-1.png){ loading=lazy }
+          ![screenshot](assets/screens/4.5.2.1.png){ loading=lazy }
         </figure>
 
     3.  Click **Go Live** to enter Live View.
 
         <figure markdown style="max-width:16.0cm;">
-          ![screenshot](assets/screens/s4-t5-s2-3.png){ loading=lazy }
+          ![screenshot](assets/screens/4.5.2.3.png){ loading=lazy }
         </figure>
 
 2.  **Connect to B3H:** Open **Cisco Secure Firewall Quick Launch**
@@ -452,13 +452,13 @@ Network behind Hub (**NGFW-HUB**) &mdash; 192.168.101.0/24 with a host
         connection events popping up.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s4-t5-s2-4.png){ loading=lazy }
+      ![screenshot](assets/screens/4.5.2.4.png){ loading=lazy }
     </figure>
 
 4.  Navigate to FMC to view the events.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s4-t5-s2-5.png){ loading=lazy }
+      ![screenshot](assets/screens/4.5.2.5.png){ loading=lazy }
     </figure>
 
     Observe the following:
