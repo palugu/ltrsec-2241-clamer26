@@ -136,7 +136,7 @@ The Access Control rules pre-configured at the **Hub** are:
 - **Rule 3** — Permit any traffic between Spokes
 - **Rule 4** — Remote access users' traffic accessing networks behind Hub
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![Hub Access Control rules](assets/screens/pre-configured-hub-ac.png){ loading=lazy }
 </figure>
 
@@ -146,6 +146,6 @@ The Access Control rules pre-configured at the **Spokes** are:
 - **Rule 2** — Permit inbound traffic from any to networks behind Spokes through tunnel
 - **Rule 3** — Permit any traffic between Spokes
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![Spoke Access Control rules](assets/screens/pre-configured-spokes-ac.png){ loading=lazy }
 </figure>

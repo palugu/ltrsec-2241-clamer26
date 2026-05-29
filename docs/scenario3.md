@@ -8,7 +8,7 @@ redistribute its routes into BGP overlay routing.
 
 ## Network Diagram
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-edited.png){ loading=lazy }
 </figure>
 
@@ -19,7 +19,7 @@ redistribute its routes into BGP overlay routing.
 To edit SD-WAN Topology, go to **Secure Connections \> Site-to-Site
 VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t1-s1-1.png){ loading=lazy }
 </figure>
 
@@ -27,13 +27,13 @@ VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
 
 Click on **Edit** at **Spokes** step to add the new Spoke into SD-WAN.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t1-s2-1.png){ loading=lazy }
 </figure>
 
 Click on **Add Spoke**.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t1-s2-2.png){ loading=lazy }
 </figure>
 
@@ -53,7 +53,7 @@ Enter the following details in the **Add Spoke** dialog box:
   ![screenshot](assets/screens/s3-t1-s2-3-1.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t1-s2-3-2.png){ loading=lazy }
 </figure>
 
@@ -64,7 +64,7 @@ in the SD-WAN Topology. Click **Finish** button to save the topology.
 Click **OK** for the pop-up dialog “**Click Finish to save your
 changes.**”
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t1-s3-1.png){ loading=lazy }
 </figure>
 
@@ -72,7 +72,7 @@ changes.**”
     SD-WAN topology on the same page i.e. on **Secure Connections \>
     Site-to-Site VPN & SD-WAN.**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t1-s3-2.png){ loading=lazy }
 </figure>
 
@@ -82,7 +82,7 @@ changes.**”
     **Deployment Pending** and the new spoke tunnel shows in Amber
     color.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t1-s3-3.png){ loading=lazy }
 </figure>
 
@@ -118,7 +118,7 @@ same autonomous number as mentioned in SD-WAN Topology.
 1.  Edit the device **NGFW-B3** by navigating to **Devices \> Device
     Management \> Edit NGFW-B3**
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t3-s1-1.png){ loading=lazy }
 </figure>
 
@@ -130,7 +130,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     2.  **Autonomous System Number:** Enter **64512** as BGP AS number,
         same as specified in SD-WAN Topology
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t3-s1-2.png){ loading=lazy }
 </figure>
 
@@ -138,7 +138,7 @@ same autonomous number as mentioned in SD-WAN Topology.
 
     1.  **Enable IPv4**, review the AS Number defaults to **64512**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t3-s1-3.png){ loading=lazy }
 </figure>
 
@@ -150,7 +150,7 @@ These routes will then be advertised to the SD-WAN peers.
 1.  In **BGP IPv4** settings click on **Redistribution** tab and then
     **Add**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t3-s2-1.png){ loading=lazy }
 </figure>
 
@@ -175,7 +175,7 @@ These routes will then be advertised to the SD-WAN peers.
 
 3.  Click **Save** on top right to complete the configuration.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t3-s2-3.png){ loading=lazy }
 </figure>
 
@@ -213,14 +213,14 @@ Check that the tunnels are up as shown below. You may use **Refresh**
 to reload the tunnels status if tunnel has not come up yet. Wait for
 few seconds for tunnel status to be updated fully.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t5-s1-1.png){ loading=lazy }
 </figure>
 
 Go to **Insights & Reports -\> VPN dashboards -\> Site-to-Site VPN**
 and Check that the tunnels are up as shown below.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t5-s1-2.png){ loading=lazy }
 </figure>
 
@@ -268,7 +268,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
     1.  `ping 192.168.101.131 -c 5` which is the Host behind the
         Hub device NGFW-HUB and verify that you are getting the response
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t5-s3-3.png){ loading=lazy }
 </figure>
 
@@ -278,7 +278,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
         verify SSH access works. After successful connection, you may
         **exit**.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3.png){ loading=lazy }
 </figure>
 

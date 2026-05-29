@@ -24,7 +24,7 @@ specific BGP configuration.
 
 ## Network Diagram
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1.png){ loading=lazy }
 </figure>
 
@@ -54,14 +54,14 @@ Site-to-Site VPN & SD-WAN**
 
 Click **+ Add**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s1-2.png){ loading=lazy }
 </figure>
 
 There are prerequisites to SD-WAN Topology. Click/hover on
 Prerequisites in Create VPN Topology Dialog to view the information.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s1-2-1.png){ loading=lazy }
 </figure>
 
@@ -77,7 +77,7 @@ Enter the following details in the pop-up:
 
 3)  Click **Create**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s1-3.png){ loading=lazy }
 </figure>
 
@@ -87,7 +87,7 @@ This opens the SD-WAN Wizard page.
 Click **Add Hub** on the right in **Hubs** section to add the Hub
 device.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s2-1.png){ loading=lazy }
 </figure>
 
@@ -160,19 +160,19 @@ Enter the following details:
     the DVTI. You will see a dialog confirming **Virtual Tunnel
     Interface Added** successfully. Click **OK.**
 
-<figure markdown style="max-width:15.4cm;">
+<figure markdown style="max-width:9.6cm;">
   ![screenshot](assets/screens/s1-t1-s2-3-1.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:15.4cm;">
+<figure markdown style="max-width:10.6cm;">
   ![screenshot](assets/screens/s1-t1-s2-3-2.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:15.4cm;">
+<figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/s1-t1-s2-3-3.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:14.0cm;">
+<figure markdown style="max-width:9.6cm;">
   ![screenshot](assets/screens/s1-t1-s2-3-4.png){ loading=lazy }
 </figure>
 
@@ -212,15 +212,15 @@ Enter the following details:
 
 8)  
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:9.6cm;">
   ![screenshot](assets/screens/s1-t1-s2-4-1.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/s1-t1-s2-4-2.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:9.5cm;">
   ![screenshot](assets/screens/s1-t1-s2-4-3.png){ loading=lazy }
 </figure>
 
@@ -238,7 +238,7 @@ Within **Add Hub’s**
     **Hubs** section of the **SD-WAN Topology Wizard**. Click **Next**
     to proceed.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s2-5.png){ loading=lazy }
 </figure>
 
@@ -249,7 +249,7 @@ Device with simple intuitive workflow.
 
 Click **Add Spokes (Bulk Addition)** button in spokes step.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s3-1.png){ loading=lazy }
 </figure>
 
@@ -274,15 +274,15 @@ Enter the following details in the **Add Bulk Spokes** dialog box:
 5)  **Next:** Once you review the spokes, click on **Next** button to
     move on to the next step
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/s1-t1-s3-2-1.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/s1-t1-s3-2-2.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s3-3.png){ loading=lazy }
 </figure>
 
@@ -301,7 +301,7 @@ authentication with manual key.
 
 4.  Click on **Next** button to save the settings
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s4-1.png){ loading=lazy }
 </figure>
 
@@ -318,7 +318,7 @@ which can be used to define AC rule.
 Click on the **Spoke Tunnel Interface Security Zone** drop-down and
 select **Tunnel_Zone**.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s5-1.png){ loading=lazy }
 </figure>
 
@@ -357,7 +357,7 @@ Enter the following in **SD-WAN Settings**
 6)  **Next**: Click on **Next** button to save the changes in SD-WAN
     Settings.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s6-1.png){ loading=lazy }
 </figure>
 
@@ -367,7 +367,7 @@ Now, we are done with all the configuration in the SD-WAN Topology.
 Click on **Finish** button to save the topology. Click **OK** for the
 pop-up dialog “**Click Finish to save your changes.**”
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s7-1.png){ loading=lazy }
 </figure>
 
@@ -379,7 +379,7 @@ pop-up dialog “**Click Finish to save your changes.**”
     SD-WAN topology on the same page i.e. on **Secure Connections \>
     Site-to-Site VPN & SD-WAN.**
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s7-3.png){ loading=lazy }
 </figure>
 
@@ -388,7 +388,7 @@ pop-up dialog “**Click Finish to save your changes.**”
     deployed, it shows **Deployment Pending** and the tunnel shows Amber
     color.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s7-4.png){ loading=lazy }
 </figure>
 
@@ -406,19 +406,19 @@ pop-up dialog “**Click Finish to save your changes.**”
     4.  Click **OK** and then click **Cancel** to revert to Site-to-Site
         VPN Listing page
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s7-5.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s7-6-1.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s7-6-2.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s7-6-3.png){ loading=lazy }
 </figure>
 
@@ -454,7 +454,7 @@ number as mentioned in SD-WAN Topology.
 1.  Edit the device **NGFW-HUB** by navigating to **Devices \> Device
     Management \> Edit NGFW-HUB**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t3-s1-1.png){ loading=lazy }
 </figure>
 
@@ -466,7 +466,7 @@ number as mentioned in SD-WAN Topology.
     2.  **Autonomous System Number:** Enter **64512** as BGP AS number,
         same as specified in SD-WAN Topology
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t3-s1-2.png){ loading=lazy }
 </figure>
 
@@ -474,7 +474,7 @@ number as mentioned in SD-WAN Topology.
 
     1.  **Enable IPv4**, review the AS Number defaults to **64512**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t3-s1-3.png){ loading=lazy }
 </figure>
 
@@ -486,7 +486,7 @@ into BGP. These routes will then be advertised to the SD-WAN peers.
 1.  In **BGP IPv4** settings click on **Redistribution** tab and then
     **Add**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t3-s2-1.png){ loading=lazy }
 </figure>
 
@@ -502,7 +502,7 @@ into BGP. These routes will then be advertised to the SD-WAN peers.
 
     4.  Click **OK** to save the settings
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t3-s2-2.png){ loading=lazy }
 </figure>
 
@@ -526,13 +526,13 @@ into BGP. These routes will then be advertised to the SD-WAN peers.
 
     4.  Click **OK** to save the settings
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:6.0cm;">
   ![screenshot](assets/screens/s1-t3-s3-1.png){ loading=lazy }
 </figure>
 
 3.  Click **Save** on top right to complete the configuration.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t3-s3-1-1.png){ loading=lazy }
 </figure>
 
@@ -546,7 +546,7 @@ same autonomous number as mentioned in SD-WAN Topology.
 1.  Edit the device **NGFW-B1** by navigating to **Devices \> Device
     Management \> Edit NGFW-B1**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t4-s1-1.png){ loading=lazy }
 </figure>
 
@@ -558,7 +558,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     2.  **Autonomous System Number:** Enter **64512** as BGP AS number,
         same as specified in SD-WAN Topology
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t4-s1-2.png){ loading=lazy }
 </figure>
 
@@ -566,7 +566,7 @@ same autonomous number as mentioned in SD-WAN Topology.
 
     1.  **Enable IPv4**, review the AS Number defaults to **64512**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t4-s1-3.png){ loading=lazy }
 </figure>
 
@@ -578,7 +578,7 @@ BGP. These routes will then be advertised to the SD-WAN peers.
 1.  In **BGP IPv4** settings click on **Redistribution** tab and then
     **Add**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t4-s2-1.png){ loading=lazy }
 </figure>
 
@@ -592,13 +592,13 @@ BGP. These routes will then be advertised to the SD-WAN peers.
 
     3.  Click **OK** to save the settings
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t4-s2-2.png){ loading=lazy }
 </figure>
 
 3.  Click **Save** on top right to complete the configuration.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t4-s2-3.png){ loading=lazy }
 </figure>
 
@@ -612,7 +612,7 @@ same autonomous number as mentioned in SD-WAN Topology.
 1.  Edit the device **NGFW-B2** by navigating to **Devices \> Device
     Management \> Edit NGFW-B2**
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t5-s1-1.png){ loading=lazy }
 </figure>
 
@@ -624,7 +624,7 @@ same autonomous number as mentioned in SD-WAN Topology.
     2.  **Autonomous System Number:** Enter **64512** as BGP AS number,
         same as specified in SD-WAN Topology
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t5-s1-2.png){ loading=lazy }
 </figure>
 
@@ -632,7 +632,7 @@ same autonomous number as mentioned in SD-WAN Topology.
 
     1.  **Enable IPv4**, review the AS Number defaults to **64512**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t5-s1-3.png){ loading=lazy }
 </figure>
 
@@ -644,7 +644,7 @@ These routes will then be advertised to the SD-WAN peers.
 1.  In **BGP IPv4** settings click on **Redistribution** tab and then
     **Add**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t5-s2-1.png){ loading=lazy }
 </figure>
 
@@ -660,13 +660,13 @@ These routes will then be advertised to the SD-WAN peers.
 
     4.  Click **OK** to save the settings
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t5-s2-2.png){ loading=lazy }
 </figure>
 
 3.  Click **Save** on top right to complete the configuration.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t5-s2-3.png){ loading=lazy }
 </figure>
 
@@ -704,7 +704,7 @@ Check that the tunnels are up as shown below. You may use **Refresh**
 to reload the tunnels status if tunnel has not come up yet. Wait for
 few seconds for tunnel status to be updated fully.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t7-s1-1.png){ loading=lazy }
 </figure>
 
@@ -713,7 +713,7 @@ and Check that the tunnels are up as shown below. You can also click
 **View All Connections** within **VPN Topology** widget in **SD-WAN
 Summary** dashboard to view this page:
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t7-s1-2.png){ loading=lazy }
 </figure>
 
@@ -739,7 +739,7 @@ BGP and other configured and learnt routes at the Hub.
     10.1.2.0/255.255.255.0) from the Spokes that got re-distributed over
     BGP
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t7-s2-1.png){ loading=lazy }
 </figure>
 
@@ -770,7 +770,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.102.0/24 with a host
     Taskbar and click on **B1H** which is present under **Linux VM
     Access.** This opens **B1H’s** SSH session.
 
-<figure markdown style="max-width:16.1cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t7-s3-2.png){ loading=lazy }
 </figure>
 
@@ -784,7 +784,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.102.0/24 with a host
         Hub device NGFW-HUB and verify that you are getting the
         response.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t7-s3-3.png){ loading=lazy }
 </figure>
 
@@ -794,7 +794,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.102.0/24 with a host
         verify SSH access works. After successful connection, you may
         **exit**.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t7-s3-4.png){ loading=lazy }
 </figure>
 
@@ -818,7 +818,7 @@ Network behind spoke (**NGFW-B2**) – 192.168.2.0/24 with a host
     Launch** and click on **B1H** which is present under **Linux VM
     Access.** This opens **B1H’s** SSH session.
 
-<figure markdown style="max-width:16.1cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t7-s3-2.png){ loading=lazy }
 </figure>
 
@@ -828,7 +828,7 @@ Network behind spoke (**NGFW-B2**) – 192.168.2.0/24 with a host
         spoke device NGFW-B2 and verify that you are getting the
         response.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t7-s4-1.png){ loading=lazy }
 </figure>
 
@@ -842,7 +842,7 @@ Note: For any prompt, “Are you sure you want to continue connecting
 
 2.  After successful connection, you may **exit**.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t7-s4-2.png){ loading=lazy }
 </figure>
 

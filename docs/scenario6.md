@@ -9,7 +9,7 @@ these location-based criteria are blocked before authentication.
 
 ## Network Diagram
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-edited.png){ loading=lazy }
 </figure>
 
@@ -28,7 +28,7 @@ access from regions and countries of your own choice.
 1.  Navigate to **Objects \> Access List \> Service Access** and Click
     **Add Service Access Object**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t1-s1-1.png){ loading=lazy }
 </figure>
 
@@ -38,7 +38,7 @@ access from regions and countries of your own choice.
 
     2.  Click **Add Rule**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t1-s1-2.png){ loading=lazy }
 </figure>
 
@@ -54,7 +54,7 @@ access from regions and countries of your own choice.
 
     4.  Click **Add** to create the rule
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t1-s1-3.png){ loading=lazy }
 </figure>
 
@@ -64,11 +64,11 @@ access from regions and countries of your own choice.
 
 5.  Click **Save** to save the Service Access Rule.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t1-s1-4.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t1-s1-5.png){ loading=lazy }
 </figure>
 
@@ -82,7 +82,7 @@ access from regions and countries of your own choice.
 
 3.  Click **pencil** icon at the middle to edit it
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t1-s2-1.png){ loading=lazy }
 </figure>
 
@@ -91,11 +91,11 @@ access from regions and countries of your own choice.
 5.  In the **Service Access Control** section, Select the service access
     object that was just created **Corp-RA-Locations**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t1-s2-2-1.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t1-s2-2-2.png){ loading=lazy }
 </figure>
 
@@ -103,7 +103,7 @@ access from regions and countries of your own choice.
     action. Ensure this is correct and click **Save** on top right to
     save the configuration.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t1-s2-3.png){ loading=lazy }
 </figure>
 
@@ -140,14 +140,14 @@ the Hub and Spoke devices and deploy the configuration to the devices.
       
     Login using Credentials **admin/C1sco12345**.
 
-<figure markdown style="max-width:16.1cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t3-s1-2.png){ loading=lazy }
 </figure>
 
 2.  Click on Windows Start Button and Open Cisco Secure Client
     application by clicking on pinned Icon.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t3-s1-3.png){ loading=lazy }
 </figure>
 
@@ -155,7 +155,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     **Connect Anyway** on Security Warning dialog. The connection
     attempt must have failed.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t3-s1-4.png){ loading=lazy }
 </figure>
 
@@ -163,7 +163,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     navigate on FMC to **Troubleshooting \> Advanced \>
     Troubleshooting Logs**. Click on **View All**.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6.png){ loading=lazy }
 </figure>
 

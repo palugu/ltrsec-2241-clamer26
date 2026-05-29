@@ -121,5 +121,29 @@ in `docs/stylesheets/extra.css` then:
 - uses a lighter border color in dark mode for visibility, and
 - strips the border from inline UI icons via the `.inline-icon` class.
 
-To re-tune the size policy edit `MIN_FIGURE_CM` / `MAX_FIGURE_CM` near the top
-of `process_markdown.py`.
+### Figure sizing (`resize_figures.py`)
+
+`process_markdown.py` initially seeds `max-width` from the DOCX width. That
+preserves the source intent but produces an uneven rhythm in the rendered
+HTML/PDF (portrait dialog screenshots inflate to full page width). After the
+markdown is generated, run
+
+```bash
+python scripts/resize_figures.py
+```
+
+to normalize every `<figure>` based on the underlying PNG's pixel aspect
+ratio:
+
+- **landscape** (aspect ≥ 1.3) → `max-width: 16cm`
+- **square-ish** (1.0 ≤ aspect < 1.3) → `max-width: 12cm`
+- **portrait** (aspect < 1.0) → target rendered height ≈ 11 cm, so
+  `max-width = round(11 × aspect, 1)` clamped to 6–12 cm
+
+Any figure currently below 13 cm is treated as intentional ("deploy" / inline
+snippet) and left alone. The script is idempotent — running it twice is a
+no-op. Pass `--dry-run` (or `-n`) to preview changes without writing.
+
+To re-tune the size policy edit the constants near the top of
+`scripts/resize_figures.py` (`LANDSCAPE_CM`, `SQUAREISH_CM`,
+`PORTRAIT_TARGET_HEIGHT_CM`, etc.).

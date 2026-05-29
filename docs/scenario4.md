@@ -11,7 +11,7 @@ configure a new SD-WAN Topology for ISP2.
 
 ## Network Diagram
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-edited.png){ loading=lazy }
 </figure>
 
@@ -26,7 +26,7 @@ link up in real-time for the lab.
 1.  Edit the device **NGFW-B3** by navigating to **Devices \> Device
     Management \> Edit NGFW-B3**
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t1-s1-1.png){ loading=lazy }
 </figure>
 
@@ -34,7 +34,7 @@ link up in real-time for the lab.
     **GigabitEthernet0/1** interface which has logical name
     **outside_2**. This opens the Edit Physical Interface dialogue
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t1-s1-2.png){ loading=lazy }
 </figure>
 
@@ -46,7 +46,7 @@ link up in real-time for the lab.
 
 4.  This brings us back to Interfaces Tab, Click **Save** on top right.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/s4-t1-s1-3.png){ loading=lazy }
 </figure>
 
@@ -69,7 +69,7 @@ Enter the following details in the pop-up:
 
 3)  Click **Create**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t2-s1-1.png){ loading=lazy }
 </figure>
 
@@ -110,11 +110,11 @@ Enter the following details in the pop-up:
     7.  **Tunnel Source IP Address –** Select the IP Address
         **20.1.101.101** in the drop down
 
-<figure markdown style="max-width:13.6cm;">
+<figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/s4-t2-s2-1-1.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:13.6cm;">
+<figure markdown style="max-width:9.6cm;">
   ![screenshot](assets/screens/s4-t2-s2-1-2.png){ loading=lazy }
 </figure>
 
@@ -143,15 +143,15 @@ Enter the following details in the pop-up:
     confirming **Virtual Tunnel Interface Added** successfully. Click
     **OK.**
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:9.6cm;">
   ![screenshot](assets/screens/s4-t2-s2-2-1.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:10.7cm;">
   ![screenshot](assets/screens/s4-t2-s2-2-2.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/s4-t2-s2-2-3.png){ loading=lazy }
 </figure>
 
@@ -211,7 +211,7 @@ Enter the following details in the pop-up:
     **Hubs** section of the **SD-WAN Topology Wizard**. Click **Next**
     to proceed.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t2-s2-4.png){ loading=lazy }
 </figure>
 
@@ -222,7 +222,7 @@ steps.
 
 Click on **Add Spoke** button in spokes step.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t2-s3-1.png){ loading=lazy }
 </figure>
 
@@ -239,11 +239,11 @@ Enter the following details in the **Add Spoke** dialog box:
 
 5)  Click on **Next** button to proceed
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:8.9cm;">
   ![screenshot](assets/screens/s4-t2-s3-2-1.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t2-s3-2-2.png){ loading=lazy }
 </figure>
 
@@ -262,7 +262,7 @@ selection.
 
 4.  Click on **Next** button to save the settings
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t2-s4-1.png){ loading=lazy }
 </figure>
 
@@ -271,7 +271,7 @@ selection.
 Click on the **Spoke Tunnel Interface Security Zone** drop-down and
 select **Tunnel_Zone**.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t2-s5-1.png){ loading=lazy }
 </figure>
 
@@ -303,7 +303,7 @@ Enter the following in **SD-WAN Settings**
 6.  **Next**: Click on **Next** button to save the changes in SD-WAN
     Settings.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t2-s6-1.png){ loading=lazy }
 </figure>
 
@@ -313,7 +313,7 @@ Now, we are done with all the configuration in the SD-WAN Topology.
 Click on **Finish** button to save the topology. Click **OK** for the
 pop-up dialog “**Click Finish to save your changes.**”
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t2-s7-1.png){ loading=lazy }
 </figure>
 
@@ -321,7 +321,7 @@ pop-up dialog “**Click Finish to save your changes.**”
     SD-WAN topology on the same page i.e. on **Secure Connections \>
     Site-to-Site VPN & SD-WAN.**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t2-s7-2.png){ loading=lazy }
 </figure>
 
@@ -329,7 +329,7 @@ pop-up dialog “**Click Finish to save your changes.**”
     topology. Since the configuration has not been deployed, it shows
     **Deployment Pending** and the spoke tunnel shows in Amber color.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t2-s7-3.png){ loading=lazy }
 </figure>
 
@@ -345,7 +345,7 @@ VPN traffic.
     Click on the **Routing** tab -\> Click on **ECMP** on the left Table
     of Contents view.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t3-s1-1.png){ loading=lazy }
 </figure>
 
@@ -367,7 +367,7 @@ VPN traffic.
 6)  View the ZONE_INET and ZONE_VTI zone listed on the ECMP page. Click
     on the top **Save** to save the changes.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t3-s1-3.png){ loading=lazy }
 </figure>
 
@@ -403,7 +403,7 @@ Dashboard as shown. You may use **Refresh** to reload the tunnels
 status if tunnel has not come up yet. Wait for few seconds for tunnel
 status to be updated fully.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t5-s1-1.png){ loading=lazy }
 </figure>
 
@@ -439,17 +439,17 @@ navigate to **Events & Logs \> Analysis \> Unified Events.**
     If required, try adjusting the Column widths to fit the view by
     adjusting separation line on each of the column headers.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t5-s2-1.png){ loading=lazy }
 </figure>
 
 3.  Click on **Go Live** to enter Live View
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t5-s2-2.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t5-s2-3.png){ loading=lazy }
 </figure>
 
@@ -467,11 +467,11 @@ navigate to **Events & Logs \> Analysis \> Unified Events.**
 2.  Run **ping command 3 to 5 times** until you see more connections
     events popping up**.**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t5-s2-4.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t5-s2-5.png){ loading=lazy }
 </figure>
 

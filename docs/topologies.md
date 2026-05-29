@@ -8,7 +8,7 @@ summarise the state of the network as you progress.
 Initial deployment: two spokes (NGFW-B1, NGFW-B2) connected to a single
 Hub (NGFW-HUB) through SD-WAN tunnels.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![Scenario 1 topology](assets/screens/s1.png){ loading=lazy }
 </figure>
 
@@ -17,7 +17,7 @@ Hub (NGFW-HUB) through SD-WAN tunnels.
 A new protected network is added behind the Hub and redistributed through
 BGP to the existing spokes.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![Scenario 2 topology](assets/screens/s2.png){ loading=lazy }
 </figure>
 
@@ -25,7 +25,7 @@ BGP to the existing spokes.
 
 A new branch (NGFW-B3) joins the SD-WAN deployment.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![Scenario 3 topology](assets/screens/s3-edited.png){ loading=lazy }
 </figure>
 
@@ -34,7 +34,7 @@ A new branch (NGFW-B3) joins the SD-WAN deployment.
 NGFW-B3 gains a second ISP uplink and ECMP balances traffic across both
 paths.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![Scenario 4 topology](assets/screens/s4-edited.png){ loading=lazy }
 </figure>
 
@@ -43,7 +43,7 @@ paths.
 A new branch (NGFW-B4) is acquired whose protected network overlaps with an
 existing branch; the overlap is resolved using Pre-encryption NAT.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![Scenario 5 topology](assets/screens/s5-edited.png){ loading=lazy }
 </figure>
 
@@ -51,6 +51,6 @@ existing branch; the overlap is resolved using Pre-encryption NAT.
 
 Remote Access VPN sessions are gated by geolocation rules at the Hub.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![Scenario 6 topology](assets/screens/s6-edited.png){ loading=lazy }
 </figure>

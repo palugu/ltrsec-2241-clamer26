@@ -7,7 +7,7 @@ to configure and redistribute it into BGP overlay routing section.
 
 ## Network Diagram
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s2.png){ loading=lazy }
 </figure>
 
@@ -24,18 +24,18 @@ to Hub (**NGFW-HUB**) through the internal router (**CSRHR2**).
 
 2.  You may minimize Cisco Secure Firewall Quick Launch Window
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s2-t1-s1-1.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s2-t1-s1-2.png){ loading=lazy }
 </figure>
 
 3.  Verify the current configuration of OSPF by executing **show run \|
     s router ospf**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s2-t1-s1-3.png){ loading=lazy }
 </figure>
 
@@ -58,7 +58,7 @@ Commands all at once for copy-paste purpose –
 
 4.  You may **close** the **CSRHR2** terminal now
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s2-t1-s1-4.png){ loading=lazy }
 </figure>
 
@@ -95,7 +95,7 @@ In this step, you will learn to advertise this new network at Hub
 
 3.  **Edit** (pencil icon) object-group named **Hub-Protected-Networks**
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s2-t2-s1-1.png){ loading=lazy }
 </figure>
 
@@ -103,11 +103,11 @@ In this step, you will learn to advertise this new network at Hub
 
     1.  Click on **Save** to update the object-group
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:10.7cm;">
   ![screenshot](assets/screens/s2-t2-s1-2-1.png){ loading=lazy }
 </figure>
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:10.7cm;">
   ![screenshot](assets/screens/s2-t2-s1-2-2.png){ loading=lazy }
 </figure>
 
@@ -195,7 +195,7 @@ New network behind hub (**NGFW-HUB**) – 192.168.103.0/24 with host
     Launch** and click on **B1H** which is present under **Linux VM
     Access.** This opens up **B1H**’s SSH session.
 
-<figure markdown style="max-width:16.1cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t7-s3-2.png){ loading=lazy }
 </figure>
 
@@ -205,7 +205,7 @@ New network behind hub (**NGFW-HUB**) – 192.168.103.0/24 with host
         Hub device NGFW-HUB and verify that you are getting the
         response.
 
-<figure markdown style="max-width:16.4cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s2-t4-s3-1.png){ loading=lazy }
 </figure>
 
@@ -219,7 +219,7 @@ Note: For any prompt, “Are you sure you want to continue connecting
 
 2.  After successful connection, you may **exit**.
 
-<figure markdown style="max-width:16.5cm;">
+<figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s2-t4-s3-2.png){ loading=lazy }
 </figure>
 
