@@ -217,42 +217,45 @@ In this step, a new NAT policy is created.
 In this step, you will configure NAT rule to hide protected network
 using NATed network.
 
-1.  Click on Add **Rule**
+1.  Click on **Add Rule**
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s5.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s5-t5-s2-1.png){ loading=lazy }
+    </figure>
 
-2.  The **Add NAT Rule** dialog opens. Fill it in as follows:
+2.  The **Add NAT Rule** dialog opens. In the General section, set:
 
     1.  **NAT Rule**: Select **Auto NAT Rule** from the drop-down.
     2.  **Type**: Select **Static**.
 
     Click the **Interface Objects** tab and set:
 
-    1.  **Source Interface Objects**: Pick **Inside_Zone** from **Available Interface Objects** and click **Add to Source**.
+    1.  **Source Interface Objects**: Pick **Inside_Zone** from
+        **Available Interface Objects** and click **Add to Source**.
     2.  **Destination Interface Objects**: Leave as **any** (default).
 
-<figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/extracted/image194.jpeg){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:12.0cm;">
+      ![screenshot](assets/screens/s5-t5-s2-2.png){ loading=lazy }
+    </figure>
 
-4.  Click the **Translation** tab and set:
+3.  Click the **Translation** tab and set:
 
-    1.  **Original Source**: Pick **Branch-4-Protected-Network** from the drop-down.
-    2.  **Translated Source**: Select **Address**, then pick **Branch-4-NAT-Network** from the drop-down.
+    1.  **Original Source**: Pick **Branch-4-Protected-Network** from
+        the drop-down.
+    2.  **Translated Source**: Select **Address**, then pick
+        **Branch-4-NAT-Network** from the drop-down.
     3.  Click **OK** to add the rule.
 
-<figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/extracted/image197.jpeg){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:12.0cm;">
+      ![screenshot](assets/screens/s5-t5-s2-3.png){ loading=lazy }
+    </figure>
 
-5.  You are back to NAT Policies page, Click on **Save** to save the
-    policy
+4.  You are back to NAT Policies page, click on **Save** to save the
+    policy.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/extracted/image198.jpeg){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s5-t5-s2-4.png){ loading=lazy }
+    </figure>
 
 ## 5.6 Deploy to Spoke Device
 

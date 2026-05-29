@@ -138,15 +138,11 @@ the Hub and Spoke devices and deploy the configuration to the devices.
       ![screenshot](assets/screens/s6-t3-s1-1.png){ loading=lazy }
     </figure>
 
-    <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s6-t3-s1-2.png){ loading=lazy }
-    </figure>
-
 2.  Click on Windows Start Button and Open Cisco Secure Client
     application by clicking on pinned Icon.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s6-t3-s1-3.png){ loading=lazy }
+      ![screenshot](assets/screens/s6-t3-s1-2.png){ loading=lazy }
     </figure>
 
 3.  Click on **Connect** with **Hub (SSL) IPv4** Profile. Wait for a
@@ -154,7 +150,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     dialog. The connection attempt must have failed.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s6-t3-s1-4.png){ loading=lazy }
+      ![screenshot](assets/screens/s6-t3-s1-3.png){ loading=lazy }
     </figure>
 
 4.  Verify with Troubleshooting Logs. To validate blocked connections,
@@ -162,7 +158,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     Troubleshooting Logs**. Click on **View All**.
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/s6.png){ loading=lazy }
+      ![screenshot](assets/screens/s6-t3-s1-4.png){ loading=lazy }
     </figure>
 
 Observe the Log –
