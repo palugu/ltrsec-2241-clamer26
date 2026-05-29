@@ -54,20 +54,19 @@ link up in real-time for the lab.
 
 ### Step 1: Create SD-WAN Topology
 
-Go to **Secure Connections \> Site-to-Site VPN & SD-WAN** Click
+Go to **Secure Connections \> Site-to-Site VPN & SD-WAN** Click
 **Add** button at top right
 
 Enter the following details in the pop-up:
 
-1)  **Topology Name**: **Corp-SD-WAN-2**
+1.  **Topology Name**: **Corp-SD-WAN-2**.
 
-2)  Ensure the following are selected
+2.  Ensure the following are selected:
 
-    1.  VPN Type**: SD-WAN Topology** 
+    1.  **VPN Type**: SD-WAN Topology
+    2.  **VPN Topology**: Hub and Spoke
 
-    2.  VPN Topology: **Hub and Spoke**
-
-3)  Click **Create**
+3.  Click **Create**.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s4-t2-s1-1.png){ loading=lazy }
@@ -78,142 +77,117 @@ Enter the following details in the pop-up:
 Once the SD-WAN Topology is created, SD-WAN Wizard page will open.
 Click the **Add Hub** button in Hubs section to add the Hub device.
 
-Enter the following details in the pop-up:
+Enter the following details in the **Add Hub** dialog:
 
-1)  **Device: **Select the Hub FTD from the dropdown **– NGFW-HUB**
+1.  **Device**: select the Hub FTD from the dropdown &mdash; **NGFW-HUB**.
 
-2)  **Dynamic Virtual Tunnel Interface (DVTI):** Click on the **+**
-    beside the Drop-down selector to create an inline Dynamic Virtual
-    Tunnel interface. This launches the **Add Virtual Tunnel
-    Interface** pop-up dialog with the following details.
+2.  **Dynamic Virtual Tunnel Interface (DVTI)**: click **+** beside
+    the drop-down to create an inline DVTI. The **Add Virtual Tunnel
+    Interface** dialog opens. Fill it in:
 
-    1.  **Tunnel Type** is pre-selected to **Dynamic** and greyed out.
+    1.  **Tunnel Type**: pre-selected to *Dynamic* (greyed out).
+    2.  **Name**: pre-filled as `outside_dynamic_vti_2` &mdash; keep
+        the default.
+    3.  **Enabled**: enabled by default &mdash; leave as-is.
+    4.  **Security Zone**: select **Tunnel_Zone** from the drop-down.
+    5.  **Template ID**: unique ID for the DVTI, already pre-filled
+        with `2`.
+    6.  **Tunnel Source**: pre-populated with **outside**. If not,
+        pick **outside** from the drop-down.
+    7.  **Tunnel Source IP Address**: pick `20.1.101.101` from the
+        drop-down.
 
-    2.  **Name** of the tunnel is pre-filled as
-        **outside_dynamic_vti_2** but can be changed. In this step, we
-        will keep it as default.
+    <figure markdown style="max-width:12.0cm;">
+      ![screenshot](assets/screens/s4-t2-s2-1-1.png){ loading=lazy }
+    </figure>
 
-    3.  **Enabled** field is to enable the DVTI. It is enabled by
-        default.
+    <figure markdown style="max-width:9.6cm;">
+      ![screenshot](assets/screens/s4-t2-s2-1-2.png){ loading=lazy }
+    </figure>
 
-    4.  **Security Zone** – Click on drop down menu and select
-        **Tunnel_Zone** as security zone for this tunnel interface**.**
+    8.  **IPsec Tunnel Mode**: leave as IPv4 (default).
+    9.  **IP Address**: click **+** next to the **Select Interface**
+        drop-down to create a loopback &mdash; the **Add Loopback
+        Interface** dialog opens:
 
-    5.  **Template ID –** Unique ID for DVTI interface already
-        pre-filled with value ‘2’ for this step.
+        1.  In the **General** tab:
 
-    6.  **Tunnel Source** – Physical interface that is the Source of the
-        DVTI interface. It is prepopulated by default with **outside**.
-        If not, Click on the drop-down and select the interface
-        **outside**.
+            1.  **Name**: `Hub_Tunnel_IP_2`
+            2.  **Loopback ID**: `2`
 
-    7.  **Tunnel Source IP Address –** Select the IP Address
-        **20.1.101.101** in the drop down
+        2.  In the **IPv4** tab:
 
-<figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s4-t2-s2-1-1.png){ loading=lazy }
-</figure>
+            1.  **IP Type**: Use Static IP
+            2.  **IP Address**: `169.254.20.1/32`
 
-<figure markdown style="max-width:9.6cm;">
-  ![screenshot](assets/screens/s4-t2-s2-1-2.png){ loading=lazy }
-</figure>
+        3.  Click **OK** to save the loopback.
 
-8.  **IPsec Tunnel Mode** – It is set to IPv4 as default. Please do not
-    change.
+    10. Back on the **Add Virtual Tunnel Interface** dialog, set
+        **Borrow IP (IP unnumbered)** to **Loopback2 (Hub_Tunnel_IP_2)**
+        that you just created, then click **OK** to save the DVTI. You
+        will see a dialog confirming **Virtual Tunnel Interface Added**
+        successfully &mdash; click **OK**.
 
-9.  **IP Address** – Click **+** beside the **Select Interface**
-    drop-down to create a Loopback Interface. The **+** button launches
-    **Add Loopback Interface** dialog.
+    <figure markdown style="max-width:9.6cm;">
+      ![screenshot](assets/screens/s4-t2-s2-2-1.png){ loading=lazy }
+    </figure>
 
-    1.  In the **General** Tab, provide:
+    <figure markdown style="max-width:10.7cm;">
+      ![screenshot](assets/screens/s4-t2-s2-2-2.png){ loading=lazy }
+    </figure>
 
-        1.  Name – Provide a name **Hub_Tunnel_IP_2**
+    <figure markdown style="max-width:12.0cm;">
+      ![screenshot](assets/screens/s4-t2-s2-2-3.png){ loading=lazy }
+    </figure>
 
-        2.  **Loopback ID –** Select as **2**
+    <figure markdown style="max-width:8.1cm;">
+      ![screenshot](assets/screens/s4-t2-s2-2-4.png){ loading=lazy }
+    </figure>
 
-    2.  In the **IPv4** tab, within **IP Address** tab, enter Loopback
-        interface IP as **169.254.20.1/32**
+3.  Back in the **Add Hub** dialog, confirm the DVTI is automatically
+    populated. Otherwise, select the dropdown in the **Dynamic Virtual
+    Tunnel Interface (DVTI)** field and pick the generated DVTI
+    &mdash; **outside_dynamic_vti_2**.
 
-10. Now, back on the Add Virtual Interface dialog, click drop-down on
-    **Borrow IP (IP unnumbered)** field and select the
-    **Loopback2(Hub_Tunnel_IP_2)** that you just created.
+4.  **Hub Gateway IP Address**: shows the Tunnel Source IP &mdash; do
+    not change.
 
-11. Click OK below the above section on the **Add Virtual Tunnel
-    Interface** dialog to save the DVTI. You will see a dialog
-    confirming **Virtual Tunnel Interface Added** successfully. Click
-    **OK.**
+5.  **Spoke Tunnel IP Address Pool**: click the **+** icon next to the
+    field to add a new IPv4 Pool. The **New IPv4 Pool** dialog opens.
+    Fill it in:
 
-<figure markdown style="max-width:9.6cm;">
-  ![screenshot](assets/screens/s4-t2-s2-2-1.png){ loading=lazy }
-</figure>
+    1.  **Name**: `NGFW_Hub_IPv4_Pool_2`
+    2.  **IPv4 Address Range**: `169.254.20.3-169.254.20.100`. FMC
+        assigns IPs from this range to the static VTI interfaces on
+        the spoke devices.
+    3.  **Mask**: `255.255.255.0`
+    4.  **Allow Override**: leave disabled (default).
+    5.  Click **Save** to create the pool.
 
-<figure markdown style="max-width:10.7cm;">
-  ![screenshot](assets/screens/s4-t2-s2-2-2.png){ loading=lazy }
-</figure>
+6.  Back in the **Add Hub** dialog, click the dropdown in the **Spoke
+    Tunnel IP Address Pool** field to select the IPv4 Address Pool
+    Object **NGFW_Hub_IPv4_Pool_2**.
 
-<figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s4-t2-s2-2-3.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:11.9cm;">
+      ![screenshot](assets/screens/s4-t2-s2-3-1.png){ loading=lazy }
+    </figure>
 
-<figure markdown style="max-width:8.1cm;">
-  ![screenshot](assets/screens/s4-t2-s2-2-4.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:10.8cm;">
+      ![screenshot](assets/screens/s4-t2-s2-3-2.png){ loading=lazy }
+    </figure>
 
-3)  Now you are back to the **Add Hub** dialog. The required value will
-    be auto-populated but if not, select the dropdown in the **Dynamic
-    Virtual Tunnel Interface (DVTI)** field to select the generated
-    DVTI – **outside_dynamic_vti_2**
+    <figure markdown style="max-width:10.8cm;">
+      ![screenshot](assets/screens/s4-t2-s2-3-3.png){ loading=lazy }
+    </figure>
 
-4)  **Hub Gateway IP Address:** This field will show the Tunnel Source
-    IP. Please do not change it.
+7.  All Hub inputs are now filled in. Click **Add** on the **Add Hub**
+    dialog to save the Hub and add it to the SD-WAN topology. The row
+    for **NGFW-HUB** appears in the **Hubs** section of the **SD-WAN
+    Topology Wizard**. Click **Next** to proceed.
 
-5)  **Spoke Tunnel IP Address Pool:**
-
-    1.  **Click** **+** icon next to **Spoke Tunnel IP Address Pool** to
-        add a new IPv4 Address Pool
-
-    2.  Enter the following details in the IPv4 Address Pool Add Dialog
-
-        1.  **Name:** Enter **NGFW_Hub_IPv4_Pool_2** as the name of the
-            IPv4 Pool Object
-
-        2.  **IPv4 Address Range:** Enter the IP range
-            **169.254.20.3-169.254.20.100**. FMC will assign IP
-            addresses from this range to the static VTI interfaces on
-            the spoke devices.
-
-        3.  **Mask:** Enter **255.255.255.0** as subnet mask
-
-        4.  **Allow Override:** By default, allow override is disabled.
-            Please keep it unchecked.
-
-        5.  Click on **Save**
-
-6)  Now you are back to the **Add Hub** dialog. Click on the dropdown in
-    the **Spoke Tunnel IP Address Pool** field to select the IPv4
-    Address Pool Object **NGFW_Hub_IPv4_Pool_2**
-
-<figure markdown style="max-width:11.9cm;">
-  ![screenshot](assets/screens/s4-t2-s2-3-1.png){ loading=lazy }
-</figure>
-
-<figure markdown style="max-width:10.8cm;">
-  ![screenshot](assets/screens/s4-t2-s2-3-2.png){ loading=lazy }
-</figure>
-
-<figure markdown style="max-width:10.8cm;">
-  ![screenshot](assets/screens/s4-t2-s2-3-3.png){ loading=lazy }
-</figure>
-
-7)  You have successfully added all inputs for the Hub. Click on **Add**
-    button on the **Add Hub** dialog to save the Hub and add to the
-    SD-WAN topology. You can see the row for **NGFW-HUB** Hub now in
-    **Hubs** section of the **SD-WAN Topology Wizard**. Click **Next**
-    to proceed.
-
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s4-t2-s2-4.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s4-t2-s2-4.png){ loading=lazy }
+    </figure>
 
 ### Step 3: SD-WAN Topology – Add Spoke Configuration
 
@@ -228,9 +202,9 @@ Click on **Add Spoke** button in spokes step.
 
 Enter the following details in the **Add Spoke** dialog box:
 
-1)  **Devices**: Select **NGFW-B3** from the **Available Devices**.
+1)  **Devices**: Select **NGFW-B3** from the **Available Devices**.
 
-2)  **VPN Interface:** Select **outside_2** from the list of available
+2)  **VPN Interface:** Select **outside_2** from the list of available
     interfaces.
 
 3)  **Identity Type:** Nothing to change and Keep the default values.
@@ -279,22 +253,20 @@ select **Tunnel_Zone**.
 
 Enter the following in **SD-WAN Settings**
 
-1.  **Enable BGP on the VPN Overlay Topology**: Enable the checkbox to
+1.  **Enable BGP on the VPN Overlay Topology**: Enable the checkbox to
     enable BGP for the overlay network.
 
-2.  **Autonomous System Number:** Enter **64512** as BGP AS number in
+2.  **Autonomous System Number:** Enter **64512** as BGP AS number in
     **Autonomous System Number** field.
 
 3.  **Community Tag for Local Routes:** Enter **9901** in as **Community
     Tag** which will be used to tag connected and redistributed local
     routes.
 
-4.  **Redistribute Connected Interfaces**: Connected inside or LAN
-    interfaces for redistribution of BGP on the overlay topology
-
-    1.  Enable **Redistribute Connected Interfaces** checkbox
-
-    2.  Leave the default value **Default Inside** in the drop-down
+4.  **Redistribute Connected Interfaces:** Enable the checkbox to
+    redistribute the connected inside / LAN interfaces over the
+    BGP overlay. Leave the default value **Default Inside** in the
+    drop-down.
 
 5.  **Enable Multiple Paths for BGP**: Enable multipath load sharing
     using BGP routes. This checkbox is **enabled** by default. Leave the
@@ -475,24 +447,19 @@ navigate to **Events & Logs \> Analysis \> Unified Events.**
   ![screenshot](assets/screens/s4-t5-s2-5.png){ loading=lazy }
 </figure>
 
-1)  Navigate to FMC for viewing the events:
+Navigate to FMC for viewing the events. Observe the following:
 
-    1.  You can view the events with VPN Action as Encrypt. They are
-        sourced from Device NGFW-B3, and Egress Interface is load
-        balanced between Tunnel Interfaces.
+- Events with **VPN Action** = *Encrypt* are sourced from device
+  **NGFW-B3**, with the egress interface load-balanced between the
+  tunnel interfaces.
+- Some connections leave via **outside_1_static_vti_1** (over ISP1:
+  **outside_1**); others via **outside_2_static_vti_2** (over ISP2:
+  **outside_2**).
+- If you don't see events on *both* tunnel interfaces, run the `ping`
+  command a few more times until events appear from both.
 
-    2.  Some of the connections are sent out via
-        **outside_1_static_vti_1** (via ISP1: **outside_1**) and some
-        are sent out via **outside_2_static_vti_2** (via ISP2:
-        **outside_2)**
-
-    3.  In case of no events from both the tunnel interfaces, run the
-        **ping** command few more times until you see events from both
-        the interfaces.
-
-2)  Click on **Live** to Leave Live View
-
-1.  You may close all opened the **PuTTY** sessions
+Click **Live** to leave the Live View, then close all open **PuTTY**
+sessions.
 
 You have successfully verified the traffic load balancing between ISP1
 & ISP2 on spoke NGFW-B3!!!

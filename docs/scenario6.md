@@ -32,27 +32,20 @@ access from regions and countries of your own choice.
   ![screenshot](assets/screens/s6-t1-s1-1.png){ loading=lazy }
 </figure>
 
-2.  This opens Add Service Access Object dialog –
-
-    1.  **Name** – Enter **Corp-RA-Locations**
-
-    2.  Click **Add Rule**
+2.  The **Add Service Access Object** dialog opens. Enter the
+    **Name** as `Corp-RA-Locations`, then click **Add Rule**.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t1-s1-2.png){ loading=lazy }
 </figure>
 
-3.  This opens Add Service Access Rule dialog –
+3.  The **Add Service Access Rule** dialog opens. Fill it in as
+    follows:
 
-    1.  **Action** of the rule – Ensure it is set to **Deny**
-
-    2.  Select **United States** from Available Countries list
-
-    3.  Add it to Selected Geolocation using
-        ![icon](assets/extracted/image217.png){ .inline-icon .off-glb }
-        option
-
-    4.  Click **Add** to create the rule
+    1.  **Action**: Ensure it is set to **Deny**.
+    2.  **Available Countries**: Select **United States** from the list.
+    3.  **Selected Geolocation**: Add the country using ![icon](assets/extracted/image217.png){ .inline-icon .off-glb }.
+    4.  Click **Add** to create the rule.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s6-t1-s1-3.png){ loading=lazy }

@@ -16,7 +16,7 @@ redistribute its routes into BGP overlay routing.
 
 ### Step 1: Edit SD-WAN Topology
 
-To edit SD-WAN Topology, go to **Secure Connections \> Site-to-Site
+To edit SD-WAN Topology, go to **Secure Connections \> Site-to-Site
 VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
 
 <figure markdown style="max-width:16.0cm;">
@@ -39,10 +39,10 @@ Click on **Add Spoke**.
 
 Enter the following details in the **Add Spoke** dialog box:
 
-1)  **Devices**: Click drop down to select **NGFW-B3** from **Available
+1)  **Devices**: Click drop down to select **NGFW-B3** from **Available
     Devices**.
 
-2)  **VPN Interface:** Select **outside_1** from the list of available
+2)  **VPN Interface:** Select **outside_1** from the list of available
     interfaces.
 
 3)  **Identity Type:** Use the prepopulated default value.
@@ -122,13 +122,11 @@ same autonomous number as mentioned in SD-WAN Topology.
   ![screenshot](assets/screens/s3-t3-s1-1.png){ loading=lazy }
 </figure>
 
-2.  Click on the **Routing** tab \> Click **BGP** button on the
-    **General** **Settings**
+2.  Click on the **Routing** tab \> click the **BGP** button under
+    **General Settings**, then fill in:
 
-    1.  **Enable BGP**: Enable the checkbox to enable BGP.
-
-    2.  **Autonomous System Number:** Enter **64512** as BGP AS number,
-        same as specified in SD-WAN Topology
+    1.  **Enable BGP**: Check the checkbox to enable BGP.
+    2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s3-t3-s1-2.png){ loading=lazy }
@@ -154,20 +152,19 @@ These routes will then be advertised to the SD-WAN peers.
   ![screenshot](assets/screens/s3-t3-s2-1.png){ loading=lazy }
 </figure>
 
-2.  This launches the **Add Redistribution** dialog with the following
-    details.
+2.  This launches the **Add Redistribution** dialog. Fill it in as
+    follows:
 
-    1.  **Source Protocol** – Click on drop down menu and select OSPF
+    1.  **Source Protocol**: Pick **OSPF** from the drop-down.
+    2.  **Process ID**: `1`
+    3.  **Route Map**: **Advertise-Branch-Protected-Networks**
 
-    2.  **Process ID** – Choose ‘1’
+    !!! note
+        The route-map uses an object with overrides so the same
+        object can be reused across different branch FTDs with
+        different values.
 
-    3.  **Route Map** – Click on drop down and select
-        **Advertise-Branch-Protected-Networks  
-        Note:** Route-map is configured to use object with overrides
-        which allows same object to be used for different branch FTDs
-        using different values.
-
-    4.  Click **OK** to save the settings
+    Click **OK** to save the settings.
 
 <figure markdown style="max-width:6.0cm;">
   ![screenshot](assets/screens/s3-t3-s2-2.png){ loading=lazy }
@@ -228,15 +225,14 @@ and Check that the tunnels are up as shown below.
 
 In this step, you can verify the BGP and other routes at the Hub.
 
-1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**
+1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**.
 
-2.  This launches the **CLI Troubleshoot** dialog.
+2.  This launches the **CLI Troubleshoot** dialog. Fill it in as
+    follows:
 
-    1.  **Device** – **NGFW-HUB**
-
-    2.  **Command** – show
-
-    3.  **Parameter** – Type the argument **route bgp**
+    1.  **Device**: **NGFW-HUB**
+    2.  **Command**: `show`
+    3.  **Parameter**: Type the argument `route bgp`
 
 3.  Click **Execute** and review the routes, scroll down output if
     required

@@ -23,15 +23,14 @@ BGP overlay network.
 In this step, you can verify the protected network at spoke NGFW-B4
 overlaps with other spoke NGFW-B3.
 
-1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**
+1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**.
 
-2.  This launches the **CLI Troubleshoot** dialog.
+2.  This launches the **CLI Troubleshoot** dialog. Fill it in as
+    follows:
 
-    1.  **Device** – **NGFW-B4**
-
-    2.  **Command** – show
-
-    3.  **Parameter** – Type the argument **route ospf**
+    1.  **Device**: **NGFW-B4**
+    2.  **Command**: `show`
+    3.  **Parameter**: Type the argument `route ospf`
 
 3.  Click on **Execute** and review the routes. Notice this has same LAN
     (192.168.3.0) as **NGFW-B3**
@@ -72,18 +71,13 @@ network that will be used to NAT 192.168.3.0/24. In this scenario,
   ![screenshot](assets/screens/s5-t2-s1-2.png){ loading=lazy }
 </figure>
 
-3.  This opens the Add Static Route Configuration dialogue
+3.  The **Add Static Route Configuration** dialog opens. Fill it in
+    as follows:
 
-    1.  **Type** – IPv4, do not change
-
-    2.  **Interface** – Select **Null0**, since we originate this
-        network
-
-    3.  **Available Network** – Select **Branch-4-NAT-Network**, which
-        is pre-configured with 192.168.33.0/24 (You may hover over the
-        object to see its value)
-
-    4.  Click **OK** to add the route
+    1.  **Type**: IPv4 (don't change).
+    2.  **Interface**: **Null0** (since we originate this network).
+    3.  **Available Network**: **Branch-4-NAT-Network** (pre-configured as `192.168.33.0/24` &mdash; hover the object to verify).
+    4.  Click **OK** to add the route.
 
 <figure markdown style="max-width:7.0cm;">
   ![screenshot](assets/screens/s5-t2-s1-3.png){ loading=lazy }
@@ -99,7 +93,7 @@ network that will be used to NAT 192.168.3.0/24. In this scenario,
 
 ### Step 1: Edit SD-WAN Topology
 
-To edit SD-WAN Topology, go to **Secure Connections \> Site-to-Site
+To edit SD-WAN Topology, go to **Secure Connections \> Site-to-Site
 VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
 
 <figure markdown style="max-width:16.0cm;">
@@ -122,9 +116,9 @@ Click on **Add Spoke**.
 
 Enter the following details in the **Add Spoke** dialog box:
 
-1)  **Devices**: Select **NGFW-B4** from the **Available Devices**.
+1)  **Devices**: Select **NGFW-B4** from the **Available Devices**.
 
-2)  **VPN Interface:** Select **outside** from the list of available
+2)  **VPN Interface:** Select **outside** from the list of available
     interfaces.
 
 3)  **Identity Type:** Retain the default values.
@@ -208,14 +202,11 @@ In this step, a new NAT policy is created.
   ![screenshot](assets/screens/s5-t5-s1-2.png){ loading=lazy }
 </figure>
 
-3.  This opens New Policy dialogue
+3.  The **New Policy** dialog opens. Fill it in as follows:
 
-    1.  **Name** – Enter **NGFW-B4-NAT-Policies**
-
-    2.  **Available Devices and Templates** – Select NGFW-B4 and Click
-        on **Add to Policy**
-
-    3.  Click on **Save**
+    1.  **Name**: `NGFW-B4-NAT-Policies`
+    2.  **Available Devices and Templates**: Select **NGFW-B4**, then click **Add to Policy**.
+    3.  Click **Save**.
 
 <figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/s5-t5-s1-3.png){ loading=lazy }
@@ -232,33 +223,25 @@ using NATed network.
   ![screenshot](assets/screens/s5.png){ loading=lazy }
 </figure>
 
-2.  This opens Add NAT Rule dialogue
+2.  The **Add NAT Rule** dialog opens. Fill it in as follows:
 
-    1.  **NAT Rule** – Select Auto NAT Rule from drop down
+    1.  **NAT Rule**: Select **Auto NAT Rule** from the drop-down.
+    2.  **Type**: Select **Static**.
 
-    2.  **Type** – Select Static
+    Click the **Interface Objects** tab and set:
 
-    3.  Click on **Interface Objects** Tab –
-
-        1.  **Source Interface Objects** – Select **Inside_Zone** from
-            **Available Interface Objects** and Click on **Add to
-            Source**
-
-        2.  **Destination Interface Objects** – No changes, Keep **any**
+    1.  **Source Interface Objects**: Pick **Inside_Zone** from **Available Interface Objects** and click **Add to Source**.
+    2.  **Destination Interface Objects**: Leave as **any** (default).
 
 <figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/extracted/image194.jpeg){ loading=lazy }
 </figure>
 
-4.  Click on **Translation** Tab –
+4.  Click the **Translation** tab and set:
 
-    1.  **Original Source** – Click on drop down and Select
-        **Branch-4-Protected-Network**
-
-    2.  **Translated Source** – Select **Address** and below Choose
-        **Branch-4-NAT-Network** from drop down
-
-    3.  Click **OK** to add the rule
+    1.  **Original Source**: Pick **Branch-4-Protected-Network** from the drop-down.
+    2.  **Translated Source**: Select **Address**, then pick **Branch-4-NAT-Network** from the drop-down.
+    3.  Click **OK** to add the rule.
 
 <figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/extracted/image197.jpeg){ loading=lazy }
@@ -307,13 +290,11 @@ same autonomous number as mentioned in SD-WAN Topology.
   ![screenshot](assets/screens/s5-t7-s1-1.png){ loading=lazy }
 </figure>
 
-2.  Click on the **Routing** tab \> Click on **BGP** button on the
-    **General** **Settings**
+2.  Click on the **Routing** tab \> click on the **BGP** button under
+    **General Settings**, then fill in:
 
-    1.  **Enable BGP**: Enable the checkbox to enable BGP.
-
-    2.  **Autonomous System Number:** Enter **64512** as BGP AS number,
-        same as specified in SD-WAN Topology
+    1.  **Enable BGP**: Check the checkbox to enable BGP.
+    2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s5-t7-s1-2.png){ loading=lazy }
@@ -339,16 +320,12 @@ BGP. These routes will then be advertised to the SD-WAN peers.
   ![screenshot](assets/screens/s5-t7-s2-1.png){ loading=lazy }
 </figure>
 
-2.  This launches the **Add Redistribution** dialog with the following
-    details.
+2.  This launches the **Add Redistribution** dialog. Fill it in as
+    follows:
 
-    1.  **Source Protocol** – Click on drop down menu and select
-        **Static**
-
-    2.  **Route Map** – Click on drop down and select
-        **Advertise-Branch-Protected-Networks**
-
-    3.  Click **OK** to save the settings
+    1.  **Source Protocol**: Pick **Static** from the drop-down.
+    2.  **Route Map**: **Advertise-Branch-Protected-Networks**
+    3.  Click **OK** to save the settings.
 
 <figure markdown style="max-width:6.0cm;">
   ![screenshot](assets/screens/s5-t7-s2-2.png){ loading=lazy }
@@ -409,15 +386,14 @@ and Check that the tunnels are up as shown below.
 
 In this step, you can verify the BGP and other routes at the Hub.
 
-1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**
+1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**.
 
-2.  This launches the **CLI Troubleshoot** dialog.
+2.  This launches the **CLI Troubleshoot** dialog. Fill it in as
+    follows:
 
-    1.  **Device** – **NGFW-HUB**
-
-    2.  **Command** – show
-
-    3.  **Parameter** – Enter the argument **route bgp**
+    1.  **Device**: **NGFW-HUB**
+    2.  **Command**: `show`
+    3.  **Parameter**: Enter the argument `route bgp`
 
 3.  Click on **Execute** and review the routes, scroll down output if
     required

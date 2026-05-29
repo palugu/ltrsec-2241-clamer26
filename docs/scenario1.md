@@ -45,7 +45,7 @@ Enter the credentials (admin/dCloud123!).
 
 ### Step 1: Create SD-WAN Topology
 
-To configure a new SD-WAN Topology, go to **Secure Connections \>
+To configure a new SD-WAN Topology, go to **Secure Connections \>
 Site-to-Site VPN & SD-WAN**
 
 <figure markdown style="max-width:12.0cm;">
@@ -67,15 +67,14 @@ Prerequisites in Create VPN Topology Dialog to view the information.
 
 Enter the following details in the pop-up:
 
-1)  **Topology Name**: Name the VPN topology as **Corp-SD-WAN-1**
+1.  **Topology Name**: name the VPN topology as **Corp-SD-WAN-1**.
 
-2)  Ensure the following are selected
+2.  Ensure the following are selected:
 
-    1.  VPN Type**: SD-WAN Topology** 
+    1.  **VPN Type**: SD-WAN Topology
+    2.  **VPN Topology**: Hub and Spoke
 
-    2.  VPN Topology: **Hub and Spoke**
-
-3)  Click **Create**
+3.  Click **Create**.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t1-s1-3.png){ loading=lazy }
@@ -91,156 +90,125 @@ device.
   ![screenshot](assets/screens/s1-t1-s2-1.png){ loading=lazy }
 </figure>
 
-Enter the following details:
+Enter the following details in the **Add Hub** dialog:
 
-1)  **Device: **Click the dropdown and select the FTD **NGFW-HUB**
+1.  **Device**: click the dropdown and select the FTD **NGFW-HUB**.
 
-2)  **Dynamic Virtual Tunnel Interface (DVTI):** Click on **+** adjacent
-    to the Drop-down selector to create a Dynamic Virtual Tunnel
-    (DVTI) interface.  
-      
-    This launches the **Add Virtual Tunnel Interface** pop-up dialog
-    with the following details.
+2.  **Dynamic Virtual Tunnel Interface (DVTI)**: click **+** adjacent
+    to the drop-down to create a DVTI. The **Add Virtual Tunnel
+    Interface** dialog opens. Fill it in:
 
-    1.  **Tunnel Type -** pre-selected to **Dynamic** and greyed out.
+    1.  **Tunnel Type**: pre-selected to *Dynamic* (greyed out).
+    2.  **Name**: pre-filled as `outside_dynamic_vti_1` &mdash; keep
+        the default.
+    3.  **Enabled**: enabled by default &mdash; leave as-is.
+    4.  **Security Zone**: select **Tunnel_Zone** from the drop-down.
+    5.  **Template ID**: unique ID for the DVTI, already pre-filled.
+    6.  **Tunnel Source**: defaults to **outside**. If not, pick
+        **outside** from the drop-down. Set the **Tunnel Source IP
+        Address** to `20.1.101.101`.
 
-    2.  **Name -** Tunnel name pre-filled as **outside_dynamic_vti_1**
-        but can be changed. In this step, we will keep it as default.
+    <figure markdown style="max-width:6.6cm;">
+      ![screenshot](assets/screens/s1-t1-s2-2-1.png){ loading=lazy }
+    </figure>
 
-    3.  **Enabled -** Field to enable the DVTI. It is enabled by
-        default.
+    <figure markdown style="max-width:7.7cm;">
+      ![screenshot](assets/screens/s1-t1-s2-2-2.png){ loading=lazy }
+    </figure>
 
-    4.  **Security Zone -** Click the drop-down menu and select
-        **Tunnel_Zone** as security zone for this tunnel interface**.**
+    7.  **IPsec Tunnel Mode**: leave as IPv4 (default).
+    8.  **IP Address**: DVTI is a template interface and can't have a
+        static IP &mdash; it must **Borrow IP (IP unnumbered)** from
+        another interface (Cisco recommends a loopback, which never
+        goes down). Click **+** next to the **Select Interface**
+        drop-down to create one &mdash; the **Add Loopback Interface**
+        dialog opens:
 
-    5.  **Template ID –** Unique ID for DVTI interface already
-        pre-filled.
+        1.  In the **General** tab:
 
-    6.  **Tunnel Source** – Physical interface to be the source of the
-        DVTI interface.  
-        It is selected as **outside** interface as default
+            1.  **Name**: `Hub_Tunnel_IP_1`
+            2.  **Loopback ID**: `1`
 
-        1.  If not, click on the drop-down and select the interface
-            **outside** and select the **Tunnel Source IP Address** as
-            **20.1.101.101** in the drop down.
+        2.  In the **IPv4** tab:
 
-<figure markdown style="max-width:6.6cm;">
-  ![screenshot](assets/screens/s1-t1-s2-2-1.png){ loading=lazy }
-</figure>
+            1.  **IP Type**: Use Static IP
+            2.  **IP Address**: `169.254.10.1/32`
 
-<figure markdown style="max-width:7.7cm;">
-  ![screenshot](assets/screens/s1-t1-s2-2-2.png){ loading=lazy }
-</figure>
+        3.  Click **OK** to save the loopback.
 
-7.  **IPsec Tunnel Mode** – Defaults to IPv4. Please do not change.
+    9.  Back on the **Add Virtual Tunnel Interface** dialog, confirm
+        **Borrow IP (IP unnumbered)** is now set to
+        **Loopback1 (Hub_Tunnel_IP_1)**.
 
-8.  **IP Address** – DVTI being a template interface, it cannot be
-    assigned a static IP address. DVTI needs to **Borrow IP (IP
-    unnumbered)** from an interface. Cisco recommends borrowing IP from
-    a Loopback interface as that interface never goes down. Click **+**
-    beside the **Select Interface** drop-down to create a Loopback
-    Interface. This launches **Add Loopback Interface** dialog.
+3.  Click **OK** on the **Add Virtual Tunnel Interface** dialog to
+    save the DVTI. You will see a dialog confirming **Virtual Tunnel
+    Interface Added** successfully &mdash; click **OK**.
 
-    1.  In the **General** Tab, enter these details:
+    <figure markdown style="max-width:9.6cm;">
+      ![screenshot](assets/screens/s1-t1-s2-3-1.png){ loading=lazy }
+    </figure>
 
-        1.  Name – **Hub_Tunnel_IP_1**
+    <figure markdown style="max-width:10.6cm;">
+      ![screenshot](assets/screens/s1-t1-s2-3-2.png){ loading=lazy }
+    </figure>
 
-        2.  **Loopback ID –** Set as **1**
+    <figure markdown style="max-width:12.0cm;">
+      ![screenshot](assets/screens/s1-t1-s2-3-3.png){ loading=lazy }
+    </figure>
 
-    2.  In the **IPv4** tab, ensure **IP type** is **Use Static IP** and
-        **IP Address** is set to **169.254.10.1/32**
+    <figure markdown style="max-width:9.6cm;">
+      ![screenshot](assets/screens/s1-t1-s2-3-4.png){ loading=lazy }
+    </figure>
 
-    3.  Click **OK** to save.
+    <figure markdown style="max-width:9.8cm;">
+      ![screenshot](assets/screens/s1-t1-s2-3-5.png){ loading=lazy }
+    </figure>
 
-9.  Now, back on the Add Virtual Interface dialog, ensure **Borrow IP
-    (IP unnumbered)** is set to **Loopback1(Hub_Tunnel_IP_1)** that you
-    just created.
+4.  Back in the **Add Hub** dialog, confirm the DVTI is automatically
+    populated. Otherwise, select **outside_dynamic_vti_1** from the
+    **Dynamic Virtual Tunnel Interface (DVTI)** drop-down.
 
-3)  Click **OK** on the **Add Virtual Tunnel Interface** dialog to save
-    the DVTI. You will see a dialog confirming **Virtual Tunnel
-    Interface Added** successfully. Click **OK.**
+5.  **Hub Gateway IP Address**: shows the Tunnel Source IP &mdash; do
+    not change.
 
-<figure markdown style="max-width:9.6cm;">
-  ![screenshot](assets/screens/s1-t1-s2-3-1.png){ loading=lazy }
-</figure>
+6.  **Spoke Tunnel IP Address Pool**: FMC auto-generates the static
+    VTI interfaces on the spoke devices. This pool defines the IP
+    range FMC draws from when assigning addresses to those sVTI
+    interfaces. Click the **+** icon next to the field to create a
+    new pool &mdash; the **New IPv4 Pool** dialog opens. Fill it in:
 
-<figure markdown style="max-width:10.6cm;">
-  ![screenshot](assets/screens/s1-t1-s2-3-2.png){ loading=lazy }
-</figure>
+    1.  **Name**: `NGFW_Hub_IPv4_Pool_1`
+    2.  **IPv4 Address Range**: `169.254.10.3-169.254.10.100`. FMC
+        assigns IPs from this range to the static VTI interfaces on
+        the spoke devices.
+    3.  **Mask**: `255.255.255.0`
+    4.  **Allow Override**: leave disabled (default).
+    5.  Click **Save** to create the pool.
 
-<figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s1-t1-s2-3-3.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:9.6cm;">
+      ![screenshot](assets/screens/s1-t1-s2-4-1.png){ loading=lazy }
+    </figure>
 
-<figure markdown style="max-width:9.6cm;">
-  ![screenshot](assets/screens/s1-t1-s2-3-4.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:12.0cm;">
+      ![screenshot](assets/screens/s1-t1-s2-4-2.png){ loading=lazy }
+    </figure>
 
-<figure markdown style="max-width:9.8cm;">
-  ![screenshot](assets/screens/s1-t1-s2-3-5.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:9.5cm;">
+      ![screenshot](assets/screens/s1-t1-s2-4-3.png){ loading=lazy }
+    </figure>
 
-4)  Now in the **Add Hub** dialog. Ensure it is automatically populated
-    with DVTI interface just created. Otherwise, Select the dropdown
-    in the **Dynamic Virtual Tunnel Interface (DVTI)** field to select
-    the generated DVTI – **outside_dynamic_vti_1**
+    Back on the **Add Hub** dialog, set **Spoke Tunnel IP Address
+    Pool** to the pool you just created &mdash; **NGFW_Hub_IPv4_Pool_1**
+    (use the drop-down if it isn't auto-populated).
 
-5)  **Hub Gateway IP Address:** This field will show the Tunnel Source
-    IP. Please do not change it.
+7.  All Hub inputs are now filled in. Click **Add** on the **Add Hub**
+    dialog to save it and add the Hub to the SD-WAN topology. The row
+    for **NGFW-HUB** appears in the **Hubs** section of the **SD-WAN
+    Topology Wizard**. Click **Next** to proceed.
 
-6)  **Spoke Tunnel IP Address Pool:** FMC auto-generates the Static VTI
-    interfaces on the spoke devices in SD-WAN Topology. To assign
-    Tunnel IP Address to those sVTI interfaces, this step configures
-    pool/range of IP addresses that can be used.
-
-7)  **Click** **+** icon next to **Spoke Tunnel IP Address Pool** to add
-    a new IPv4 Address Pool. Enter the following details:
-
-    1.  **Name:** **NGFW_Hub_IPv4_Pool_1** as the name of the IPv4 Pool
-        Object
-
-    2.  **IPv4 Address Range:** Enter **169.254.10.3-169.254.10.100**.
-        FMC assigns IP addresses from this range to the static VTI
-        interfaces on the spoke devices.
-
-    3.  **Mask:** Set to **255.255.255.0**
-
-    4.  **Allow Override:** By default, allow override is disabled. No
-        change required.
-
-    5.  Click **Save**
-
-8)  
-
-<figure markdown style="max-width:9.6cm;">
-  ![screenshot](assets/screens/s1-t1-s2-4-1.png){ loading=lazy }
-</figure>
-
-<figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/s1-t1-s2-4-2.png){ loading=lazy }
-</figure>
-
-<figure markdown style="max-width:9.5cm;">
-  ![screenshot](assets/screens/s1-t1-s2-4-3.png){ loading=lazy }
-</figure>
-
-Within **Add Hub’s**
-    dialog **Spoke Tunnel IP Address Pool,** select the IPv4 Address
-    Pool Object **NGFW_Hub_IPv4_Pool_1** (Click drop down menu if not
-    auto populated)
-
-**  
-**
-
-9)  You have successfully added all inputs for the Hub. Click **Add**
-    button on the **Add Hub** dialog to save the Hub and add to the
-    SD-WAN topology. You can see the row for **NGFW-HUB** now in
-    **Hubs** section of the **SD-WAN Topology Wizard**. Click **Next**
-    to proceed.
-
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/s1-t1-s2-5.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/s1-t1-s2-5.png){ loading=lazy }
+    </figure>
 
 ### Step 3: SD-WAN Topology – Bulk Spoke Configuration
 
@@ -255,11 +223,11 @@ Click **Add Spokes (Bulk Addition)** button in spokes step.
 
 Enter the following details in the **Add Bulk Spokes** dialog box:
 
-1)  **Devices**: Select **NGFW-B1** and **NGFW-B2** from the **Available
+1)  **Devices**: Select **NGFW-B1** and **NGFW-B2** from the **Available
     Devices**, click on **Add** button to move the devices to
     **Selected Devices**.
 
-2)  **Interface Name Pattern:** Ensure Interface Name Pattern field is
+2)  **Interface Name Pattern:** Ensure Interface Name Pattern field is
     set to **outside**. Using this name pattern, FMC automatically
     searches the devices for a matching interface, and these
     interfaces are selected as VPN interface for the selected spoke
@@ -335,20 +303,18 @@ deployed to all the Hubs and Spokes.
 
 Enter the following in **SD-WAN Settings**
 
-1)  **Enable BGP on the VPN Overlay Topology**: Enable the checkbox to
+1)  **Enable BGP on the VPN Overlay Topology**: Enable the checkbox to
     enable BGP.
 
-2)  **Autonomous System Number:** Ensure BGP AS is set to **64512**.
+2)  **Autonomous System Number:** Ensure BGP AS is set to **64512**.
 
 3)  **Community Tag for Local Routes:** Enter **9901** as Community Tag
     which will be used to tag local routes when redistributed.
 
-4)  **Redistribute Connected Interfaces**: Connected inside or LAN
-    interfaces for redistribution of BGP on the overlay topology
-
-    1.  Enable **Redistribute Connected Interfaces** checkbox
-
-    2.  Leave the default value **Default Inside** in the drop-down
+4)  **Redistribute Connected Interfaces:** Enable the checkbox to
+    redistribute the connected inside / LAN interfaces over the
+    BGP overlay. Leave the default value **Default Inside** in the
+    drop-down.
 
 5)  **Enable Multiple Paths for BGP**: Enable multipath load sharing
     using BGP routes. This checkbox is **enabled** by default. Leave
@@ -458,13 +424,11 @@ number as mentioned in SD-WAN Topology.
   ![screenshot](assets/screens/s1-t3-s1-1.png){ loading=lazy }
 </figure>
 
-2.  Click on the **Routing** tab \> Scroll down left menu and Click on
-    **BGP** button on the **General** **Settings**
+2.  Click on the **Routing** tab \> scroll down the left menu and click on the
+    **BGP** button under **General Settings**, then fill in:
 
-    1.  **Enable BGP**: Enable the checkbox to enable BGP.
-
-    2.  **Autonomous System Number:** Enter **64512** as BGP AS number,
-        same as specified in SD-WAN Topology
+    1.  **Enable BGP**: Check the checkbox to enable BGP.
+    2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t3-s1-2.png){ loading=lazy }
@@ -490,17 +454,13 @@ into BGP. These routes will then be advertised to the SD-WAN peers.
   ![screenshot](assets/screens/s1-t3-s2-1.png){ loading=lazy }
 </figure>
 
-2.  This launches the **Add Redistribution** dialog with the following
-    details.
+2.  This launches the **Add Redistribution** dialog. Fill it in as
+    follows:
 
-    1.  **Source Protocol** – Click drop down menu and select **OSPF**
-
-    2.  **Process ID** – Select ‘1’
-
-    3.  **Route Map** – Click on drop down and select
-        **Advertise-Hub-Protected-Networks**
-
-    4.  Click **OK** to save the settings
+    1.  **Source Protocol**: Pick **OSPF** from the drop-down.
+    2.  **Process ID**: `1`
+    3.  **Route Map**: **Advertise-Hub-Protected-Networks**
+    4.  Click **OK** to save the settings.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t3-s2-2.png){ loading=lazy }
@@ -514,17 +474,13 @@ into BGP. These routes will then be advertised to the SD-WAN peers.
 1.  In **BGP IPv4** settings click on **Redistribution** tab (you are
     already here with previous step) and then **Add**
 
-2.  This launches the **Add Redistribution** dialog with the following
-    details.
+2.  This launches the **Add Redistribution** dialog. Fill it in as
+    follows:
 
-    1.  **Source Protocol** – Click drop down menu and select **EIGRP**
-
-    2.  **AS Number** – Enter ‘1’
-
-    3.  **Route Map** – Click on drop down and select
-        **Advertise-Hub-Protected-Networks**
-
-    4.  Click **OK** to save the settings
+    1.  **Source Protocol**: Pick **EIGRP** from the drop-down.
+    2.  **AS Number**: `1`
+    3.  **Route Map**: **Advertise-Hub-Protected-Networks**
+    4.  Click **OK** to save the settings.
 
 <figure markdown style="max-width:6.0cm;">
   ![screenshot](assets/screens/s1-t3-s3-1.png){ loading=lazy }
@@ -550,13 +506,11 @@ same autonomous number as mentioned in SD-WAN Topology.
   ![screenshot](assets/screens/s1-t4-s1-1.png){ loading=lazy }
 </figure>
 
-2.  Click on the **Routing** tab \> Click on **BGP** button on the
-    **General** **Settings**
+2.  Click on the **Routing** tab \> click on the **BGP** button under
+    **General Settings**, then fill in:
 
-    1.  **Enable BGP**: Enable the checkbox to enable BGP.
-
-    2.  **Autonomous System Number:** Enter **64512** as BGP AS number,
-        same as specified in SD-WAN Topology
+    1.  **Enable BGP**: Check the checkbox to enable BGP.
+    2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t4-s1-2.png){ loading=lazy }
@@ -582,15 +536,12 @@ BGP. These routes will then be advertised to the SD-WAN peers.
   ![screenshot](assets/screens/s1-t4-s2-1.png){ loading=lazy }
 </figure>
 
-2.  This launches the **Add Redistribution** dialog. Enter the details:
+2.  This launches the **Add Redistribution** dialog. Fill it in as
+    follows:
 
-    1.  **Source Protocol** – Click on drop down menu and select
-        **Static**
-
-    2.  **Route Map** – Click on drop down and select
-        **Advertise-Branch-Protected-Networks**
-
-    3.  Click **OK** to save the settings
+    1.  **Source Protocol**: Pick **Static** from the drop-down.
+    2.  **Route Map**: **Advertise-Branch-Protected-Networks**
+    3.  Click **OK** to save the settings.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t4-s2-2.png){ loading=lazy }
@@ -616,13 +567,11 @@ same autonomous number as mentioned in SD-WAN Topology.
   ![screenshot](assets/screens/s1-t5-s1-1.png){ loading=lazy }
 </figure>
 
-2.  Click on the **Routing** tab \> Click on **BGP** button on the
-    **General** **Settings**
+2.  Click on the **Routing** tab \> click on the **BGP** button under
+    **General Settings**, then fill in:
 
-    1.  **Enable BGP**: Enable the checkbox to enable BGP.
-
-    2.  **Autonomous System Number:** Enter **64512** as BGP AS number,
-        same as specified in SD-WAN Topology
+    1.  **Enable BGP**: Check the checkbox to enable BGP.
+    2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t5-s1-2.png){ loading=lazy }
@@ -648,17 +597,13 @@ These routes will then be advertised to the SD-WAN peers.
   ![screenshot](assets/screens/s1-t5-s2-1.png){ loading=lazy }
 </figure>
 
-2.  This launches the **Add Redistribution** dialog with the following
-    details.
+2.  This launches the **Add Redistribution** dialog. Fill it in as
+    follows:
 
-    1.  **Source Protocol** – Click on drop down menu and select EIGRP
-
-    2.  **AS Number** – Choose ‘1’
-
-    3.  **Route Map** – Click on drop down and select
-        **Advertise-Branch-Protected-Networks**
-
-    4.  Click **OK** to save the settings
+    1.  **Source Protocol**: Pick **EIGRP** from the drop-down.
+    2.  **AS Number**: `1`
+    3.  **Route Map**: **Advertise-Branch-Protected-Networks**
+    4.  Click **OK** to save the settings.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/s1-t5-s2-2.png){ loading=lazy }
@@ -723,15 +668,14 @@ When SD-WAN Topology is deployed to Hubs and Spokes, BGP commands are
 auto generated and deployed to the devices. In this step, verify the
 BGP and other configured and learnt routes at the Hub.
 
-1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**
+1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**.
 
-2.  This launches the **CLI Troubleshoot** dialog.
+2.  This launches the **CLI Troubleshoot** dialog. Fill it in as
+    follows:
 
-    1.  **Device** – Select **NGFW-HUB** from the drop down
-
-    2.  **Command** – Select the command **show**
-
-    3.  **Parameter** – Type the argument **route**
+    1.  **Device**: **NGFW-HUB**
+    2.  **Command**: `show`
+    3.  **Parameter**: Type the argument `route`
 
 3.  Click on **Execute** and review the routes
 

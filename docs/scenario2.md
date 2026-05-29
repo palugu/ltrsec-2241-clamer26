@@ -62,20 +62,16 @@ Commands all at once for copy-paste purpose –
   ![screenshot](assets/screens/s2-t1-s1-4.png){ loading=lazy }
 </figure>
 
-5.  Verify the Hub device learnt this new network
+5.  Verify the Hub device learnt this new network.
 
-    1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**
+    Go to **Troubleshooting \> Tools \> Threat Defense CLI**. The
+    **CLI Troubleshoot** dialog opens &mdash; fill it in as follows:
 
-    2.  This launches the **CLI Troubleshoot** dialog.
-
-        1.  **Device** – **NGFW-HUB**
-
-        2.  **Command** – show
-
-        3.  **Parameter** – Type the argument **route ospf**
-
-    3.  Click on **Execute** and review the new route (192.168.103.0)
-        learnt from adjacent CSRHR2 router as an OSPF route
+    1.  **Device**: **NGFW-HUB**
+    2.  **Command**: `show`
+    3.  **Parameter**: Type the argument `route ospf`
+    4.  Click **Execute** and review the new route (192.168.103.0)
+    learnt from adjacent CSRHR2 router as an OSPF route.
 
 <figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/extracted/image93.jpeg){ loading=lazy }
@@ -140,15 +136,14 @@ the Hub and Spoke devices and deploy the configuration to the devices.
 In this step, you will verify the BGP and other connected and
 redistributed routes at the Hub.
 
-1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**
+1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**.
 
-2.  This launches the **CLI Troubleshoot** dialog.
+2.  This launches the **CLI Troubleshoot** dialog. Fill it in as
+    follows:
 
-    1.  **Device** – **NGFW-B1**
-
-    2.  **Command** – show
-
-    3.  **Parameter** – Type the argument **route bgp**
+    1.  **Device**: **NGFW-B1**
+    2.  **Command**: `show`
+    3.  **Parameter**: Type the argument `route bgp`
 
 3.  Click **Execute** and review the routes, you may scroll down a bit
     if required
@@ -162,15 +157,14 @@ redistributed routes at the Hub.
 
 ### Step 2: Verify Routes on Spoke, NGFW-B2
 
-1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**
+1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**.
 
-2.  This launches the **CLI Troubleshoot** dialog.
+2.  This launches the **CLI Troubleshoot** dialog. Fill it in as
+    follows:
 
-    1.  **Device** – **NGFW-B2**
-
-    2.  **Command** – show
-
-    3.  **Parameter** – Type the argument **route bgp**
+    1.  **Device**: **NGFW-B2**
+    2.  **Command**: `show`
+    3.  **Parameter**: Type the argument `route bgp`
 
 3.  Click **Execute** and review the routes, you may scroll down a bit
     if required
