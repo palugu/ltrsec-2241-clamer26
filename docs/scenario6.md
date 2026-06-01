@@ -25,45 +25,51 @@ access from regions and countries of your own choice.
 
 ### 6.1.1 Create Service Access Object
 
-1.  Navigate to **Objects \> Access List \> Service Access** and Click
-    **Add Service Access Object**
+1.  Click on the **Objects** menu &mdash; it opens at **Network**
+    objects by default.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/6.1.1.1.png){ loading=lazy }
-</figure>
+2.  In the left sidebar, click **Access List &rarr; Service Access**.
 
-2.  The **Add Service Access Object** dialog opens. Enter the
+3.  Click **Add Service Access Object** at the top right.
+
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/6.1.1.1.png){ loading=lazy }
+    </figure>
+
+4.  The **Add Service Access Object** dialog opens. Enter the
     **Name** as `Corp-RA-Locations`, then click **Add Rule**.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/6.1.1.2.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/6.1.1.2.png){ loading=lazy }
+    </figure>
 
-3.  The **Add Service Access Rule** dialog opens. Fill it in as
+5.  The **Add Service Access Rule** dialog opens. Fill it in as
     follows:
 
     1.  **Action**: Ensure it is set to **Deny**.
     2.  **Available Countries**: Select **United States** from the list.
-    3.  **Selected Geolocation**: Add the country using ![icon](assets/extracted/image217.png){ .inline-icon .off-glb }.
+    3.  **Selected Geolocation**: Use the ==right-move arrow==
+        ![icon](assets/extracted/image217.png){ .inline-icon .off-glb }
+        to move **United States** into **Selected Geolocation**.
     4.  Click **Add** to create the rule.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/6.1.1.3.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/6.1.1.3.png){ loading=lazy }
+    </figure>
 
-4.  Choose the Default Action: **Allow All Countries**. This action
+6.  Choose the Default Action: **Allow All Countries**. This action
     applies to connections that do not match any of the configured
     service access rules.
 
-5.  Click **Save** to save the Service Access Rule.
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/6.1.1.4.png){ loading=lazy }
+    </figure>
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/6.1.1.4.png){ loading=lazy }
-</figure>
+7.  Click **Save** to save the Service Access Rule.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/6.1.1.5.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![screenshot](assets/screens/6.1.1.5.png){ loading=lazy }
+    </figure>
 
 ### 6.1.2 Apply the Service Object Configuration in RAVPN
 
@@ -96,6 +102,12 @@ access from regions and countries of your own choice.
 6.  The service access object now displays the rules summary and default
     action. Ensure this is correct and click **Save** on top right to
     save the configuration.
+
+    !!! note "Save may already be auto-saved"
+        You may see **Save** greyed out &mdash; the configuration can
+        get auto-saved as soon as the **Service Access** object is
+        selected. Click **Save** anyway just to be sure the
+        configuration is persisted.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/6.1.2.3.png){ loading=lazy }

@@ -295,8 +295,9 @@ same autonomous number as mentioned in SD-WAN Topology.
   ![screenshot](assets/screens/5.7.1.1.png){ loading=lazy }
 </figure>
 
-2.  Click on the **Routing** tab \> click on the **BGP** button under
-    **General Settings**, then fill in:
+2.  Click on the **Routing** tab and **scroll down** to find
+    **General Settings**; click the **BGP** option there, then
+    fill in:
 
     1.  **Enable BGP**: Check the checkbox to enable BGP.
     2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
