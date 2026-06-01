@@ -22,23 +22,22 @@ to Hub (**NGFW-HUB**) through the internal router (**CSRHR2**).
     and click on **CSRHR2** which is present under **CSR Access.**
     This opens a PuTTY window of **CSRHR2** (SSH session).
 
-2.  You may minimize Cisco Secure Firewall Quick Launch Window.
-
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/2.1.1.1.png){ loading=lazy }
+      ![Quick Launch &mdash; CSRHR2](assets/screens/2.1.1.1.png){ loading=lazy }
     </figure>
 
-3.  Verify the current configuration of OSPF by executing
+2.  Verify the current configuration of OSPF by executing
     `show run | s router ospf`.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/2.1.1.2.png){ loading=lazy }
     </figure>
 
-4.  Add the new network in the router; the Hub device will then learn
+3.  Add the new network in the router; the Hub device will then learn
     it through OSPF.
 
-    Commands all at once for copy/paste convenience &mdash;
+    Commands all at once for copy/paste convenience &mdash; make sure
+    to press **Enter** after the last command:
 
     ```text
     configure terminal
@@ -55,10 +54,11 @@ to Hub (**NGFW-HUB**) through the internal router (**CSRHR2**).
       ![screenshot](assets/screens/2.1.1.3.png){ loading=lazy }
     </figure>
 
-5.  Verify the Hub device learnt this new network.
+4.  Verify the Hub device learnt this new network.
 
-    Go to **Troubleshooting \> Tools \> Threat Defense CLI**. The
-    **CLI Troubleshoot** dialog opens &mdash; fill it in as follows:
+    Back to **FMC**, go to **Troubleshooting &rarr; Tools &rarr;
+    Threat Defense CLI**. The **CLI Troubleshoot** dialog opens
+    &mdash; fill it in as follows:
 
     1.  **Device**: **NGFW-HUB**
     2.  **Command**: `show`
@@ -77,28 +77,36 @@ In this step, you will learn to advertise this new network at Hub
 
 ### 2.2.1 Edit Redistribution of OSPF on Hub device
 
-1.  BGP Configuration uses object-group **Hub-Protected-Networks** which
-    should be edited with new network.
+1.  BGP Configuration uses object-group **Hub-Protected-Networks**
+    which should be edited with the new network.
 
-2.  Navigate to **Objects \> Network**
+2.  Click on the **Objects** menu &mdash; it opens at **Network**
+    objects by default.
 
-3.  **Edit** (pencil icon) object-group named **Hub-Protected-Networks**
+3.  Click the **Edit** (pencil) icon next to the object-group named
+    **Hub-Protected-Networks**. Scroll down if required to find the
+    object.
 
-<figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/2.2.1.1.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:16.0cm;">
+      ![Edit Hub-Protected-Networks](assets/screens/2.2.1.1.png){ loading=lazy }
+    </figure>
 
-4.  Enter network **192.168.103.0/24** and Click **Add**
+4.  In the **Edit Network Object** dialog, type the network in the
+    **Network** field and click **Add**:
 
-    1.  Click on **Save** to update the object-group
+    ```text
+    192.168.103.0/24
+    ```
 
-<figure markdown style="max-width:10.0cm;">
-  ![screenshot](assets/screens/2.2.1.2.1.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:10.0cm;">
+      ![Add network to object-group](assets/screens/2.2.1.2.1.png){ loading=lazy }
+    </figure>
 
-<figure markdown style="max-width:10.0cm;">
-  ![screenshot](assets/screens/2.2.1.2.2.png){ loading=lazy }
-</figure>
+5.  Click **Save** to update the object-group.
+
+    <figure markdown style="max-width:10.0cm;">
+      ![Save object-group](assets/screens/2.2.1.2.2.png){ loading=lazy }
+    </figure>
 
 ## 2.3 Deploy to Hub and Spoke Devices
 
@@ -130,7 +138,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
 In this step, you will verify the BGP and other connected and
 redistributed routes at the Hub.
 
-1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**.
+1.  Go to **Troubleshooting &rarr; Tools &rarr; Threat Defense CLI**.
 
 2.  This launches the **CLI Troubleshoot** dialog. Fill it in as
     follows:
@@ -139,19 +147,20 @@ redistributed routes at the Hub.
     2.  **Command**: `show`
     3.  **Parameter**: Type the argument `route bgp`
 
-3.  Click **Execute** and review the routes, you may scroll down a bit
-    if required
+3.  Click **Execute** and review the routes.
 
-4.  Verify the new network (192.168.103.0) at Hub is redistributed over
-    BGP
+4.  Verify the new network (192.168.103.0) at Hub is redistributed
+    over BGP. Scroll down in the output if required to find the
+    `192.168.103.0` route.
 
-<figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/2.4.1.1.png){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:12.0cm;">
+      ![NGFW-B1 BGP routes](assets/screens/2.4.1.1.png){ loading=lazy }
+    </figure>
 
 ### 2.4.2 Verify Routes on Spoke, NGFW-B2
 
-1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**.
+1.  Go to **Troubleshooting &rarr; Tools &rarr; Threat Defense CLI**
+    *(you should already be here from the previous step)*.
 
 2.  This launches the **CLI Troubleshoot** dialog. Fill it in as
     follows:
@@ -160,15 +169,15 @@ redistributed routes at the Hub.
     2.  **Command**: `show`
     3.  **Parameter**: Type the argument `route bgp`
 
-3.  Click **Execute** and review the routes, you may scroll down a bit
-    if required
+3.  Click **Execute** and review the routes.
 
-4.  Verify the new network (192.168.103.0) at Hub is redistributed over
-    BGP
+4.  Verify the new network (192.168.103.0) at Hub is redistributed
+    over BGP. Scroll down in the output if required to find the
+    `192.168.103.0` route.
 
-<figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/extracted/image99.jpeg){ loading=lazy }
-</figure>
+    <figure markdown style="max-width:12.0cm;">
+      ![NGFW-B2 BGP routes](assets/extracted/image99.jpeg){ loading=lazy }
+    </figure>
 
 ### 2.4.3 Verify traffic between protected networks behind spoke (NGFW-B1) and hub (NGFW-HUB)
 
@@ -187,27 +196,32 @@ New network behind hub (**NGFW-HUB**) – 192.168.103.0/24 with host
       ![screenshot](assets/screens/2.4.3.1.png){ loading=lazy }
     </figure>
 
-2.  **Verify Ping**
+2.  **Verify Ping** &mdash; ping the host behind **NGFW-HUB**
+    (`192.168.103.141`) and verify that you get a response:
 
-    1.  `ping 192.168.103.141 -c 5` which is the host behind the
-        Hub device NGFW-HUB &mdash; verify that you are getting a
-        response.
-
-    <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/2.4.3.2.png){ loading=lazy }
-    </figure>
-
-3.  **Verify SSH Connection**
-
-    1.  **SSH** to **192.168.103.141** (`ssh 192.168.103.141`) using
-        password **C1sco12345** and verify SSH access works.
-    2.  After a successful connection, you may **exit**.
+    ```bash
+    ping 192.168.103.141 -c 5
+    ```
 
     <figure markdown style="max-width:16.0cm;">
-      ![screenshot](assets/screens/2.4.3.3.png){ loading=lazy }
+      ![Ping response](assets/screens/2.4.3.2.png){ loading=lazy }
     </figure>
 
-4.  You may close all opened **PuTTY** sessions.
+3.  **Verify SSH Connection** &mdash; SSH to **192.168.103.141**
+    using password **C1sco12345** and verify SSH access works:
+
+    ```bash
+    ssh 192.168.103.141
+    ```
+
+    After a successful connection, you may **exit**.
+
+    <figure markdown style="max-width:16.0cm;">
+      ![SSH connection](assets/screens/2.4.3.3.png){ loading=lazy }
+    </figure>
+
+4.  You may close all opened **PuTTY** sessions and minimize the
+    **Cisco Secure Firewall Quick Launch** window.
 
 !!! success "Scenario 2 complete"
     You have successfully **configured and verified the SD-WAN topology
