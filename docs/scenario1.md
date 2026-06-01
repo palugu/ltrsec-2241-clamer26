@@ -708,7 +708,11 @@ When SD-WAN Topology is deployed to Hubs and Spokes, BGP commands are
 auto generated and deployed to the devices. In this step, verify the
 BGP and other configured and learnt routes at the Hub.
 
-1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**.
+1.  Go to **Troubleshooting &rarr; Tools &rarr; Threat Defense CLI**.
+
+    <figure markdown style="max-width:8.0cm;">
+      ![Threat Defense CLI menu navigation](assets/screens/1.7.2.1.png){ loading=lazy }
+    </figure>
 
 2.  This launches the **CLI Troubleshoot** dialog. Fill it in as
     follows:
@@ -724,7 +728,7 @@ BGP and other configured and learnt routes at the Hub.
     BGP
 
 <figure markdown style="max-width:16.0cm;">
-  ![screenshot](assets/screens/1.7.2.1.png){ loading=lazy }
+  ![screenshot](assets/screens/1.7.2.2.png){ loading=lazy }
 </figure>
 
 5.  Scroll through routes output and Verify internal routes learnt from
@@ -736,7 +740,7 @@ BGP and other configured and learnt routes at the Hub.
     and 192.168.2.0/255.255.255.0) got distributed over BGP (**B**)
 
 <figure markdown style="max-width:12.0cm;">
-  ![screenshot](assets/screens/1.7.2.2.png){ loading=lazy }
+  ![screenshot](assets/screens/1.7.2.3.png){ loading=lazy }
 </figure>
 
 ### 1.7.3 Verify traffic between protected networks behind spoke (NGFW-B1) and hub (NGFW-HUB)
