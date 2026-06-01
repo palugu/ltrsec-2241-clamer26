@@ -45,6 +45,10 @@ Enter the following details in the **Add Spoke** dialog box:
 2)  **VPN Interface:** Select **outside_1** from the list of available
     interfaces.
 
+    !!! warning "Important"
+        Make sure **outside_1** is selected &mdash; not `outside` or
+        `outside_2`.
+
 3)  **Identity Type:** Use the prepopulated default value.
 
 4)  Click **Save** to add the Spoke into SD-WAN Topology
@@ -123,8 +127,9 @@ same autonomous number as mentioned in SD-WAN Topology.
   ![screenshot](assets/screens/3.3.1.1.png){ loading=lazy }
 </figure>
 
-2.  Click on the **Routing** tab \> click the **BGP** button under
-    **General Settings**, then fill in:
+2.  Click on the **Routing** tab and scroll down to find
+    **General Settings**; click the **BGP** option there, then
+    fill in:
 
     1.  **Enable BGP**: Check the checkbox to enable BGP.
     2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
@@ -280,7 +285,8 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
       ![screenshot](assets/screens/3.5.3.3.png){ loading=lazy }
     </figure>
 
-4.  You may **close all** opened **PuTTY** sessions.
+4.  You may **close all** opened **PuTTY** sessions and minimize
+    the **Cisco Secure Firewall Quick Launch** window.
 
 !!! success "Scenario 3 complete"
     You have successfully **configured and verified the SD-WAN topology
