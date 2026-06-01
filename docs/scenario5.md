@@ -169,7 +169,8 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     on the top right on FMC.
 
 2)  This brings up the list of devices that are Ready for Deployment.
-    Select the ![icon](assets/extracted/image54.png){ .inline-icon .off-glb }and
+    Select the **Deploy-All**
+    ![icon](assets/extracted/image54.png){ .inline-icon .off-glb } checkbox and
     click on **ignore warnings (if any)**
     ![icon](assets/extracted/image55.png){ .inline-icon .off-glb } button to trigger the
     deployment.
@@ -267,7 +268,8 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     on the top right on FMC.
 
 2)  This brings up the list of devices that are Ready for Deployment.
-    Select the ![icon](assets/extracted/image54.png){ .inline-icon .off-glb }and
+    Select the **Deploy-All**
+    ![icon](assets/extracted/image54.png){ .inline-icon .off-glb } checkbox and
     click on **ignore warnings (if any)**
     ![icon](assets/extracted/image55.png){ .inline-icon .off-glb } button to trigger the
     deployment.
@@ -350,7 +352,8 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     on the top right on FMC.
 
 2)  This brings up the list of devices that are Ready for Deployment.
-    Select the ![icon](assets/extracted/image54.png){ .inline-icon .off-glb }and
+    Select the **Deploy-All**
+    ![icon](assets/extracted/image54.png){ .inline-icon .off-glb } checkbox and
     click on **ignore warnings (if any)**
     ![icon](assets/extracted/image55.png){ .inline-icon .off-glb } button to trigger the
     deployment.
@@ -435,13 +438,9 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
 
 3.  **Verify SSH Connection**
 
-    1.  **SSH** to **192.168.101.131** using password **C1sco12345** and
-        verify SSH access works. After successful connection, you may
-        **exit**.
-
-    !!! note
-        For any prompt &mdash; *"Are you sure you want to continue
-        connecting…?"* &mdash; type `yes`.
+    1.  **SSH** to **192.168.101.131** (`ssh 192.168.101.131`) using
+        password **C1sco12345** and verify SSH access works. After
+        successful connection, you may **exit**.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/5.9.3.3.png){ loading=lazy }
@@ -458,8 +457,9 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
       ![screenshot](assets/screens/5.9.3.4.png){ loading=lazy }
     </figure>
 
-5.  You may close all opened the **PuTTY** sessions
+5.  You may close all opened **PuTTY** sessions.
 
-You have successfully onboarded a new branch with overlap network to
-existing branch in SD-WAN Topology!!!
+!!! success "Scenario 5 complete"
+    You have successfully **onboarded a new branch with an overlapping
+    network into the existing SD-WAN Topology!**
 

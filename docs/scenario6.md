@@ -111,7 +111,8 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     on the top right on FMC.
 
 2)  This brings up the list of devices that are Ready for Deployment.
-    Select the ![icon](assets/extracted/image54.png){ .inline-icon .off-glb }and
+    Select the **Deploy-All**
+    ![icon](assets/extracted/image54.png){ .inline-icon .off-glb } checkbox and
     click on **ignore warnings (if any)**
     ![icon](assets/extracted/image55.png){ .inline-icon .off-glb } button to trigger the
     deployment.
@@ -171,8 +172,10 @@ Observe the Log –
     Please wait for few minutes after testing RAVPN in step 3 above
     to ensure the deny events are populated on the FMC.
 
-**Congratulations!! You have successfully completed all the scenarios of
-the Lab!**
+!!! success "Scenario 6 complete &mdash; Lab complete!"
+    Congratulations! You have successfully **completed all the
+    scenarios of this Lab.** Thank you for participating &mdash; we
+    hope you enjoyed it!
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/extracted/image230.png){ loading=lazy }

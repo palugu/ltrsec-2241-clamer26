@@ -1,6 +1,10 @@
 # Overview
 
-**Cisco Secure Firewall SD-WAN — Hands-on Lab (LTRSEC-2241)**
+!!! tip "Theme preference"
+    Use the light/dark mode toggle in the top bar to pick whichever is
+    easier on your eyes &mdash; the setting persists across pages.
+
+**Cisco Secure Firewall SD-WAN &mdash; Hands-on Lab (LTRSEC-2241)**
 
 Welcome to the Cisco Secure Firewall SD-WAN hands-on lab. Across the six
 scenarios in this guide you will design, deploy and validate an
@@ -11,15 +15,15 @@ Remote Access VPN with geolocation controls.
 
 !!! info "Speakers"
 
-    - **Prema Chand Alugu** — Engineering Technical Leader
-    - **Raghu Ram** — Principal Software Engineer
-    - **Jesus Medina** — Escalation Engineer
+    - **Prema Chand Alugu** &mdash; Engineering Technical Leader
+    - **Raghu Ram** &mdash; Principal Software Engineer
+    - **Jesus Medina** &mdash; Escalation Engineer
 
 ## Learning Objectives
 
 Upon completion of this lab you will be able to:
 
-1. **Bring up a hub-and-spoke SD-WAN deployment** — Configure end-to-end
+1. **Bring up a hub-and-spoke SD-WAN deployment** &mdash; Configure end-to-end
    secure connectivity between a Branch and Hub Secure Firewall using the
    **SD-WAN Topology** wizard. You will:
     - Simplify **single hub with multiple spokes** configuration using SD-WAN Topology
@@ -28,20 +32,20 @@ Upon completion of this lab you will be able to:
     - **Automate BGP** neighbour configuration and **redistribute IGP / Static routes** via BGP
     - Automatically add the generated VTIs to the Security Zone for Access Control Policy
 
-2. **Expand the Hub network** — Add a new protected network behind the Hub and
+2. **Expand the Hub network** &mdash; Add a new protected network behind the Hub and
    redistribute it through BGP.
 
-3. **Expand branches** — Add new branches to an existing SD-WAN deployment using
+3. **Expand branches** &mdash; Add new branches to an existing SD-WAN deployment using
    the **Add Spoke** option and redistribute their protected networks through BGP.
 
-4. **Add a secondary ISP link to a branch** — Configure dual-ISP spokes with
+4. **Add a secondary ISP link to a branch** &mdash; Configure dual-ISP spokes with
    SD-WAN Topology and apply Equal-Cost Multi-Path (**ECMP**) zones for load
    balancing.
 
-5. **Acquire a branch with overlapping addressing (optional)** — Resolve overlapping
+5. **Acquire a branch with overlapping addressing (optional)** &mdash; Resolve overlapping
    networks using **Pre-encryption NAT** and redistribute the NAT network via BGP.
 
-6. **Control Remote Access VPN by geolocation (optional)** — Configure Service
+6. **Control Remote Access VPN by geolocation (optional)** &mdash; Configure Service
    Access policies to define allowed regions and verify access is denied for
    restricted geolocations.
 
@@ -60,13 +64,13 @@ devices.
 All NGFW devices run **Cisco Secure Firewall release 10.0**. The lab uses the
 following devices:
 
-- **FMC** — Firewall Management Center
-- **NGFW-HUB** — Hub device
-- **NGFW-B1**, **NGFW-B2**, **NGFW-B3**, **NGFW-B4** — Branch devices
-- **B1H**, **B2H** — workstations behind NGFW-B1 / NGFW-B2
-- **B3H**, **B4H** — workstations behind NGFW-B3 / NGFW-B4
-- **H1**, **H2**, **H3** — workstations behind NGFW-HUB
-- **Wkst5** — Secure Client user
+- **FMC** &mdash; Firewall Management Center
+- **NGFW-HUB** &mdash; Hub device
+- **NGFW-B1**, **NGFW-B2**, **NGFW-B3**, **NGFW-B4** &mdash; Branch devices
+- **B1H**, **B2H** &mdash; workstations behind NGFW-B1 / NGFW-B2
+- **B3H**, **B4H** &mdash; workstations behind NGFW-B3 / NGFW-B4
+- **H1**, **H2**, **H3** &mdash; workstations behind NGFW-HUB
+- **Wkst5** &mdash; Secure Client user
 
 <figure markdown style="max-width:16.0cm;">
   ![Lab topology](assets/extracted/image3.png){ loading=lazy }
@@ -105,52 +109,27 @@ Launch application from which all the devices can be opened and accessed.
   ![Cisco Secure Firewall Quick Launch](assets/extracted/image5.png){ loading=lazy }
 </figure>
 
-## Pre-configured Objects and Access Control Rules
+## Lab Tips
 
-There are pre-configured Objects and Access Control rules on the FMC and the
-Hub device to ensure the connected networks can communicate over the SD-WAN
-tunnels.
+A few conventions you will see throughout the scenarios &mdash; please keep
+them in mind so the steps go smoothly:
 
-An object **Branch-Protected-Network** is defined with the override option to
-hold the protected networks. Scroll down on the object to see all the values
-configured behind each NGFW.
+!!! tip "Host key prompt &mdash; SSH"
+    Whenever you SSH to a host for the first time you will see
+    **_"Are you sure you want to continue connecting...?"_** &mdash;
+    type **`yes`** and press Enter.
 
-<figure markdown style="max-width:8.0cm;">
-  ![Branch-Protected-Network object](assets/screens/pre-configured-branch-protected-network.png){ loading=lazy }
-</figure>
+!!! tip "Browser certificate warning &mdash; FMC"
+    If the FMC web page shows **"Your connection is not private"**, click
+    **Advanced** and select **Proceed to 198.18.133.201 (unsafe)** to
+    continue. This is expected in the lab environment.
 
-This object is in turn used in the pre-configured route map
-**Advertise-Branch-Protected-Networks**. The Hub uses an equivalent route map
-**Advertise-Hub-Protected-Networks**. Both can be found under **Objects → Route
-Map**. The route maps are used when configuring propagation of protected
-network routes to SD-WAN peers.
+!!! tip "Device access starts from the Jumpbox"
+    All device access in the lab starts from the **Cisco Secure Firewall
+    Quick Launch** app on the Jumpbox desktop. Devices are grouped by role
+    (FMC, NGFW CLI, Linux VM Access, etc.).
 
-<figure markdown style="max-width:16.0cm;">
-  ![Pre-configured route maps](assets/extracted/image7.jpeg){ loading=lazy }
-</figure>
-
-The Access Control rules pre-configured at the **Hub** are:
-
-- **Rule 1** — Permit outbound traffic from networks behind Hub to any Spokes through tunnel
-- **Rule 2** — Permit inbound traffic from any Spokes to networks behind Hub through tunnel
-- **Rule 3** — Permit any traffic between Spokes
-- **Rule 4** — Remote access users' traffic accessing networks behind Hub
-
-<figure markdown style="max-width:16.0cm;">
-  ![Hub Access Control rules](assets/screens/pre-configured-hub-ac.png){ loading=lazy }
-</figure>
-
-The Access Control rules pre-configured at the **Spokes** are:
-
-- **Rule 1** — Permit outbound traffic from networks behind Spokes to any through tunnel
-- **Rule 2** — Permit inbound traffic from any to networks behind Spokes through tunnel
-- **Rule 3** — Permit any traffic between Spokes
-
-<figure markdown style="max-width:16.0cm;">
-  ![Spoke Access Control rules](assets/screens/pre-configured-spokes-ac.png){ loading=lazy }
-</figure>
-
-## You're All Set — Let's Begin
+## You're All Set &mdash; Let's Begin
 
 The lab environment is ready and the supporting objects are in place. From
 here, head into the scenarios &mdash; each one builds on the previous, so
@@ -163,4 +142,52 @@ behaves differently in your pod, please flag it. Your feedback &mdash; even
 the small details &mdash; goes directly back into the next revision of this
 guide.
 
-Happy labbing!
+==Please proceed to **Scenario 1** and have fun labbing!==
+
+---
+
+## Reference: Pre-configured Objects and Access Control Rules
+
+The following objects and Access Control rules are pre-configured on the
+FMC and the Hub device so the protected networks can communicate over
+the SD-WAN tunnels. You don't need to configure them &mdash; this section
+is here for reference whenever a scenario points back to it.
+
+An object **Branch-Protected-Network** is defined with the override option to
+hold the protected networks. Scroll down on the object to see all the values
+configured behind each NGFW.
+
+<figure markdown style="max-width:8.0cm;">
+  ![Branch-Protected-Network object](assets/screens/pre-configured-branch-protected-network.png){ loading=lazy }
+</figure>
+
+This object is in turn used in the pre-configured route map
+**Advertise-Branch-Protected-Networks**. The Hub uses an equivalent route map
+**Advertise-Hub-Protected-Networks**. Both can be found under **Objects &rarr; Route
+Map**. The route maps are used when configuring propagation of protected
+network routes to SD-WAN peers.
+
+<figure markdown style="max-width:16.0cm;">
+  ![Pre-configured route maps](assets/extracted/image7.jpeg){ loading=lazy }
+</figure>
+
+The Access Control rules pre-configured at the **Hub** are:
+
+- **Rule 1** &mdash; Permit outbound traffic from networks behind Hub to any Spokes through tunnel
+- **Rule 2** &mdash; Permit inbound traffic from any Spokes to networks behind Hub through tunnel
+- **Rule 3** &mdash; Permit any traffic between Spokes
+- **Rule 4** &mdash; Remote access users' traffic accessing networks behind Hub
+
+<figure markdown style="max-width:16.0cm;">
+  ![Hub Access Control rules](assets/screens/pre-configured-hub-ac.png){ loading=lazy }
+</figure>
+
+The Access Control rules pre-configured at the **Spokes** are:
+
+- **Rule 1** &mdash; Permit outbound traffic from networks behind Spokes to any through tunnel
+- **Rule 2** &mdash; Permit inbound traffic from any to networks behind Spokes through tunnel
+- **Rule 3** &mdash; Permit any traffic between Spokes
+
+<figure markdown style="max-width:16.0cm;">
+  ![Spoke Access Control rules](assets/screens/pre-configured-spokes-ac.png){ loading=lazy }
+</figure>

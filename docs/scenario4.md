@@ -89,15 +89,25 @@ Enter the following details in the **Add Hub** dialog:
 
 2.  **Dynamic Virtual Tunnel Interface (DVTI)**: ==click the **+** icon
     adjacent to the drop-down== to create an inline DVTI. The **Add
-    Virtual Tunnel Interface** dialog opens. Fill it in:
+    Virtual Tunnel Interface** dialog opens.
 
-    1.  **Tunnel Type**: pre-selected to *Dynamic* (greyed out).
-    2.  **Name**: pre-filled as `outside_dynamic_vti_2` &mdash; keep
-        the default.
-    3.  **Enabled**: enabled by default &mdash; leave as-is.
+    !!! tip "Fields you actually configure"
+        Most fields in this dialog are auto-populated. You only need to set:
+
+        - **Security Zone** (item d) &mdash; choose `Tunnel_Zone`
+        - **Tunnel Source IP Address** (item f) &mdash; set to `20.1.101.101`
+        - **IP Address &rarr; Borrow IP** (item h) &mdash; create a Loopback
+
+        The rest can be left at their defaults.
+
+    1.  **Tunnel Type**: pre-selected to **Dynamic**, greyed out
+        &mdash; *no change*.
+    2.  **Name**: pre-filled as `outside_dynamic_vti_2` &mdash;
+        *keep the default*.
+    3.  **Enabled**: enabled by default &mdash; *leave as-is*.
     4.  **Security Zone**: select **Tunnel_Zone** from the drop-down.
-    5.  **Template ID**: unique ID for the DVTI, already pre-filled
-        with `2`.
+    5.  **Template ID**: a unique ID, pre-filled with `2` &mdash;
+        *no change*.
     6.  **Tunnel Source**: defaults to **outside**. If not, pick
         **outside** from the drop-down. Set the **Tunnel Source IP
         Address** to `20.1.101.101`.
@@ -106,13 +116,17 @@ Enter the following details in the **Add Hub** dialog:
       ![screenshot](assets/screens/4.2.2.1.2.png){ loading=lazy }
     </figure>
 
-    7.  **IPsec Tunnel Mode**: leave as IPv4 (default).
+    !!! info "Scroll down"
+        Scroll down in the **Add Virtual Tunnel Interface** dialog to
+        see the remaining fields below.
+
+    7.  **IPsec Tunnel Mode**: defaults to **IPv4** &mdash;
+        *leave as-is*.
     8.  **IP Address**: DVTI is a template interface and can't have a
         static IP &mdash; it must **Borrow IP (IP unnumbered)** from
-        another interface (Cisco recommends a loopback, which never
-        goes down). ==Click the **+** icon next to the **Select Interface**
-        drop-down== to create one &mdash; the **Add Loopback Interface**
-        dialog opens:
+        another interface (Cisco recommends a **Loopback**). ==Click
+        the **+** icon next to the **Select Interface** drop-down== to
+        create one &mdash; the **Add Loopback Interface** dialog opens:
 
         <figure markdown style="max-width:10.0cm;">
           ![screenshot](assets/screens/4.2.2.2.1.png){ loading=lazy }
@@ -181,16 +195,16 @@ Enter the following details in the **Add Hub** dialog:
 
 6.  Back in the **Add Hub** dialog, set **Spoke Tunnel IP Address
     Pool** to the pool you just created &mdash; **NGFW_Hub_IPv4_Pool_2**
-    (use the drop-down if it isn't auto-populated).
+    (use the drop-down if it isn't auto-populated). All Hub inputs are
+    now filled in &mdash; click **Add** on the **Add Hub** dialog to
+    save and add the Hub to the SD-WAN topology.
 
     <figure markdown style="max-width:10.0cm;">
       ![screenshot](assets/screens/4.2.2.3.3.png){ loading=lazy }
     </figure>
 
-7.  All Hub inputs are now filled in. Click **Add** on the **Add Hub**
-    dialog to save it and add the Hub to the SD-WAN topology. The row
-    for **NGFW-HUB** appears in the **Hubs** section of the **SD-WAN
-    Topology Wizard**. Click **Next** to proceed.
+7.  The row for **NGFW-HUB** appears in the **Hubs** section of the
+    **SD-WAN Topology Wizard**. Click **Next** to proceed.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/4.2.2.4.png){ loading=lazy }
@@ -361,7 +375,8 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     on the top right on FMC.
 
 2)  This brings up the list of devices that are Ready for Deployment.
-    Select the ![icon](assets/extracted/image54.png){ .inline-icon .off-glb }and
+    Select the **Deploy-All**
+    ![icon](assets/extracted/image54.png){ .inline-icon .off-glb } checkbox and
     click on **ignore warnings (if any)**
     ![icon](assets/extracted/image55.png){ .inline-icon .off-glb } button to trigger the
     deployment.
@@ -475,6 +490,7 @@ Network behind Hub (**NGFW-HUB**) &mdash; 192.168.101.0/24 with a host
     Click **Live** to leave the Live View, then close all open
     **PuTTY** sessions.
 
-You have successfully verified the traffic load balancing between ISP1
-& ISP2 on spoke NGFW-B3!!!
+!!! success "Scenario 4 complete"
+    You have successfully **verified traffic load balancing between
+    ISP1 & ISP2 on spoke NGFW-B3!**
 

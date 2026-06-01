@@ -109,14 +109,25 @@ Enter the following details in the **Add Hub** dialog:
 
 2.  **Dynamic Virtual Tunnel Interface (DVTI)**: ==click the **+** icon
     adjacent to the drop-down== to create a DVTI. The **Add Virtual Tunnel
-    Interface** dialog opens. Fill it in:
+    Interface** dialog opens.
 
-    1.  **Tunnel Type**: pre-selected to *Dynamic* (greyed out).
-    2.  **Name**: pre-filled as `outside_dynamic_vti_1` &mdash; keep
-        the default.
-    3.  **Enabled**: enabled by default &mdash; leave as-is.
+    !!! tip "Fields you actually configure"
+        Most fields in this dialog are auto-populated. You only need to set:
+
+        - **Security Zone** (item d) &mdash; choose `Tunnel_Zone`
+        - **Tunnel Source IP Address** (item f) &mdash; set to `20.1.101.101`
+        - **IP Address &rarr; Borrow IP** (item h) &mdash; create a Loopback
+
+        The rest can be left at their defaults.
+
+    1.  **Tunnel Type**: pre-selected to **Dynamic**, greyed out
+        &mdash; *no change*.
+    2.  **Name**: pre-filled as `outside_dynamic_vti_1` &mdash;
+        *keep the default*.
+    3.  **Enabled**: enabled by default &mdash; *leave as-is*.
     4.  **Security Zone**: select **Tunnel_Zone** from the drop-down.
-    5.  **Template ID**: unique ID for the DVTI, already pre-filled.
+    5.  **Template ID**: a unique ID, pre-filled by FMC &mdash;
+        *no change*.
     6.  **Tunnel Source**: defaults to **outside**. If not, pick
         **outside** from the drop-down. Set the **Tunnel Source IP
         Address** to `20.1.101.101`.
@@ -125,13 +136,17 @@ Enter the following details in the **Add Hub** dialog:
       ![screenshot](assets/screens/1.1.2.2.2.png){ loading=lazy }
     </figure>
 
-    7.  **IPsec Tunnel Mode**: leave as IPv4 (default).
+    !!! info "Scroll down"
+        Scroll down in the **Add Virtual Tunnel Interface** dialog to
+        see the remaining fields below.
+
+    7.  **IPsec Tunnel Mode**: defaults to **IPv4** &mdash;
+        *leave as-is*.
     8.  **IP Address**: DVTI is a template interface and can't have a
         static IP &mdash; it must **Borrow IP (IP unnumbered)** from
-        another interface (Cisco recommends a loopback, which never
-        goes down). ==Click the **+** icon next to the **Select Interface**
-        drop-down== to create one &mdash; the **Add Loopback Interface**
-        dialog opens:
+        another interface (Cisco recommends a **Loopback**). ==Click the
+        **+** icon next to the **Select Interface** drop-down== to
+        create one &mdash; the **Add Loopback Interface** dialog opens:
 
         <figure markdown style="max-width:10.0cm;">
           ![screenshot](assets/screens/1.1.2.3.1.png){ loading=lazy }
@@ -206,16 +221,16 @@ Enter the following details in the **Add Hub** dialog:
 
     Back on the **Add Hub** dialog, set **Spoke Tunnel IP Address
     Pool** to the pool you just created &mdash; **NGFW_Hub_IPv4_Pool_1**
-    (use the drop-down if it isn't auto-populated).
+    (use the drop-down if it isn't auto-populated). All Hub inputs are
+    now filled in &mdash; click **Add** on the **Add Hub** dialog to
+    save and add the Hub to the SD-WAN topology.
 
     <figure markdown style="max-width:10.0cm;">
       ![screenshot](assets/screens/1.1.2.4.3.png){ loading=lazy }
     </figure>
 
-7.  All Hub inputs are now filled in. Click **Add** on the **Add Hub**
-    dialog to save it and add the Hub to the SD-WAN topology. The row
-    for **NGFW-HUB** appears in the **Hubs** section of the **SD-WAN
-    Topology Wizard**. Click **Next** to proceed.
+7.  The row for **NGFW-HUB** appears in the **Hubs** section of the
+    **SD-WAN Topology Wizard**. Click **Next** to proceed.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/1.1.2.5.png){ loading=lazy }
@@ -415,7 +430,8 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     on the top right on FMC.
 
 2)  This brings up the list of devices that are Ready for Deployment.
-    Select the ![icon](assets/extracted/image54.png){ .inline-icon .off-glb }and
+    Select the **Deploy-All**
+    ![icon](assets/extracted/image54.png){ .inline-icon .off-glb } checkbox and
     click on **ignore warnings (if any)**
     ![icon](assets/extracted/image55.png){ .inline-icon .off-glb } button to trigger the
     deployment.
@@ -642,7 +658,8 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     on the top right on FMC.
 
 2)  This brings up the list of devices that are Ready for Deployment.
-    Select the ![icon](assets/extracted/image54.png){ .inline-icon .off-glb }and
+    Select the **Deploy-All**
+    ![icon](assets/extracted/image54.png){ .inline-icon .off-glb } checkbox and
     click on **ignore warnings (if any)**
     ![icon](assets/extracted/image55.png){ .inline-icon .off-glb } button to trigger the
     deployment.
@@ -674,6 +691,12 @@ Go to **Insights & Reports -\> VPN dashboards -\> Site-to-Site VPN**
 and Check that the tunnels are up as shown below. You can also click
 **View All Connections** within **VPN Topology** widget in **SD-WAN
 Summary** dashboard to view this page:
+
+!!! note "Node A and Node B may appear swapped"
+    On the **Site-to-Site VPN** page the **Node A** and **Node B**
+    columns may not always display the Hub on the left and the Spoke
+    on the right. This is purely a display ordering and does not
+    indicate any tunnel issue.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/1.7.1.2.png){ loading=lazy }
@@ -751,17 +774,17 @@ Network behind hub (**NGFW-HUB**) – 192.168.102.0/24 with a host
 
 3.  **Verify SSH Connection**
 
-    1.  **SSH** to **192.168.101.131** using password **C1sco12345** and
-        verify SSH access works. After successful connection, you may
-        **exit**.
+    1.  **SSH** to **192.168.101.131** (`ssh 192.168.101.131`) using
+        password **C1sco12345** and verify SSH access works. After
+        successful connection, you may **exit**.
 
         <figure markdown style="max-width:16.0cm;">
           ![screenshot](assets/screens/1.7.3.3.png){ loading=lazy }
         </figure>
 
-    2.  **SSH** to **192.168.102.132** using password **C1sco12345** and
-        verify SSH access works. After successful connection, you may
-        **exit**.
+    2.  **SSH** to **192.168.102.132** (`ssh 192.168.102.132`) using
+        password **C1sco12345** and verify SSH access works. After
+        successful connection, you may **exit**.
 
         <figure markdown style="max-width:16.0cm;">
           ![screenshot](assets/screens/1.7.3.4.png){ loading=lazy }
@@ -775,9 +798,14 @@ Network behind spoke (**NGFW-B1**) – 192.168.1.0/24 with a host
 Network behind spoke (**NGFW-B2**) – 192.168.2.0/24 with a host
 **192.168.2.134** (**B2H**)
 
-1.  **Connect to/Stay on B1H:** Open **Cisco Secure Firewall Quick
-    Launch** and click on **B1H** which is present under **Linux VM
-    Access.** This opens **B1H's** SSH session.
+1.  **Connect to / Stay on B1H:** If you still have **B1H's** SSH
+    session open from the previous step, you can continue using it.
+    Otherwise, open **Cisco Secure Firewall Quick Launch** and click
+    on **B1H** under **Linux VM Access** to reopen the SSH session.
+
+    !!! tip "Reuse the existing B1H session"
+        You should already be on **B1H** from the previous step
+        unless the **PuTTY** window was closed.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/1.7.4.1.png){ loading=lazy }
@@ -795,12 +823,8 @@ Network behind spoke (**NGFW-B2**) – 192.168.2.0/24 with a host
 
 3.  **Verify SSH Connection**
 
-    1.  **SSH** to **192.168.2.134** using password **C1sco12345** and
-        verify SSH access works.
-
-        !!! note "Host key prompt"
-            For any prompt **"Are you sure you want to continue
-            connecting...?"**, type **yes**.
+    1.  **SSH** to **192.168.2.134** (`ssh 192.168.2.134`) using
+        password **C1sco12345** and verify SSH access works.
 
     2.  After successful connection, you may **exit**.
 
@@ -808,8 +832,9 @@ Network behind spoke (**NGFW-B2**) – 192.168.2.0/24 with a host
           ![screenshot](assets/screens/1.7.4.3.png){ loading=lazy }
         </figure>
 
-4.  You may close all opened the **PuTTY** sessions.
+4.  You may close all opened **PuTTY** sessions.
 
-You have successfully configured and verified the SD-WAN topology with
-one hub and multiple spokes!
+!!! success "Scenario 1 complete"
+    You have successfully **configured and verified the SD-WAN topology
+    with one Hub and multiple Spokes!**
 
