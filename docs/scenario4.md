@@ -60,7 +60,7 @@ Go to **Secure Connections \> Site-to-Site VPN & SD-WAN** Click
 
 Enter the following details in the pop-up:
 
-1.  **Topology Name**: **Corp-SD-WAN-2**.
+1.  **Topology Name**: name the VPN topology as **Corp-SD-WAN-2**.
 
 2.  Ensure the following are selected:
 
@@ -228,6 +228,12 @@ Enter the following details in the **Add Spoke** dialog box:
 2.  **VPN Interface:** Select **outside_2** from the list of available
     interfaces.
 
+    !!! warning "Pick the right VPN interface"
+        Make sure ==**outside_2**== is selected &mdash; not `outside`
+        or `outside_1`. This second topology must be built on
+        **outside_2** (ISP2) to enable dual-ISP load sharing on
+        **NGFW-B3**.
+
 3.  **Identity Type:** Nothing to change &mdash; keep the default values.
 
 4.  **Save:** Click on **Save** to add the Spoke into SD-WAN Topology.
@@ -393,10 +399,14 @@ the Hub and Spoke devices and deploy the configuration to the devices.
 ### 4.5.1 Verify Site-to-Site VPN Tunnels
 
 Go to **Insights & Reports -\> VPN dashboards -\> Site-to-Site VPN**
-and Check that the tunnels are up in the Site-to-Site Monitoring
-Dashboard as shown. You may use **Refresh** to reload the tunnels
-status if tunnel has not come up yet. Wait for few seconds for tunnel
-status to be updated fully.
+and check that the tunnels are up in the Site-to-Site Monitoring
+Dashboard as shown.
+
+!!! info "Tunnel-up may take a few seconds"
+    Use ==**Refresh**== to reload the tunnel status if a tunnel has
+    not come up yet. The second SD-WAN topology over **ISP2** can
+    take a few extra seconds to converge &mdash; click ==**Refresh**==
+    a few times until both spoke tunnels show as **UP**.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/4.5.1.1.png){ loading=lazy }
@@ -455,9 +465,11 @@ Network behind Hub (**NGFW-HUB**) &mdash; 192.168.101.0/24 with a host
 2.  **Connect to B3H:** Open **Cisco Secure Firewall Quick Launch**
     and click **B3H** under **Linux VM Access**.
 
-    You may minimize the **Quick Launch** window and keep the FMC UI
-    in the background while keeping the **B3H** SSH window in the
-    foreground.
+    !!! tip "Window layout"
+        Minimize the **Quick Launch** window and keep the FMC UI in
+        the background while keeping the **B3H** SSH window in the
+        foreground &mdash; that way you can ping from **B3H** and
+        watch events appear in FMC in real time.
 
 3.  **Send periodic pings to 192.168.101.131**
 
