@@ -100,7 +100,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     on the top right on FMC.
 
 2)  This brings up the list of devices that are Ready for Deployment.
-    Select the **Deploy-All**
+    Select the **Deploy All**
     ![icon](assets/extracted/image54.png){ .inline-icon .off-glb } checkbox and
     click on **ignore warnings (if any)**
     ![icon](assets/extracted/image55.png){ .inline-icon .off-glb } button to trigger the
@@ -192,7 +192,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     on the top right on FMC.
 
 2)  This brings up the list of devices that are Ready for Deployment.
-    Select the **Deploy-All**
+    Select the **Deploy All**
     ![icon](assets/extracted/image54.png){ .inline-icon .off-glb } checkbox and
     click on **ignore warnings (if any)**
     ![icon](assets/extracted/image55.png){ .inline-icon .off-glb } button to trigger the
