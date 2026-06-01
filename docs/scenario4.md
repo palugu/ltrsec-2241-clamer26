@@ -434,10 +434,6 @@ Network behind Hub (**NGFW-HUB**) &mdash; 192.168.101.0/24 with a host
         ![icon](assets/extracted/image169.png){ .inline-icon .off-glb }
         icon at the top right of the **Events** table.
 
-        <figure markdown style="max-width:16.0cm;">
-          ![screenshot](assets/screens/4.5.2.2.png){ loading=lazy }
-        </figure>
-
         The Columns are arranged in alphabetical order. By scrolling,
         select **Decrypt Peer**, **Egress Interface**, **Encrypt
         Peer**, **Ingress Interface** and **VPN Action**.
@@ -447,13 +443,17 @@ Network behind Hub (**NGFW-HUB**) &mdash; 192.168.101.0/24 with a host
             of the column picker to search for these and select them.
             After all selections are made, click **Apply**.
 
+        <figure markdown style="max-width:16.0cm;">
+          ![screenshot](assets/screens/4.5.2.1.png){ loading=lazy }
+        </figure>
+
     2.  Adjust the view by using the horizontal scroll to the end so
         the new columns appear along with **Access Control Policy**
         and **Device**. If required, adjust the column widths by
         dragging the separation line on each column header.
 
         <figure markdown style="max-width:16.0cm;">
-          ![screenshot](assets/screens/4.5.2.1.png){ loading=lazy }
+          ![screenshot](assets/screens/4.5.2.2.png){ loading=lazy }
         </figure>
 
     3.  Click **Go Live** to enter Live View.
