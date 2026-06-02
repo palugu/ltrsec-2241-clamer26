@@ -78,10 +78,10 @@ following devices:
 
 ### Lab credentials
 
-| **Device**    | **URL / IP**              | **Username**  | **Password** |
-| ------------- | ------------------------- | ------------- | ------------ |
-| Jumpbox (RDP) | 198.18.133.50             | Administrator | C1sco12345   |
-| FMC (UI)      | <https://198.18.133.201/> | admin         | dCloud123!   |
+| **Device**    | **URL / IP**                                        | **Username**  | **Password** |
+| ------------- | --------------------------------------------------- | ------------- | ------------ |
+| Jumpbox (RDP) | 198.18.133.50 ([rdp://198.18.133.50/](rdp://198.18.133.50/)) | Administrator | C1sco12345   |
+| FMC (UI)      | <https://198.18.133.201/>                           | admin         | dCloud123!   |
 | B1H           | 198.18.133.133            | root          | C1sco12345   |
 | B2H           | 198.18.133.134            | admin         | C1sco12345   |
 | B3H           | 198.18.133.155            | admin         | C1sco12345   |
@@ -142,11 +142,12 @@ them in mind so the steps go smoothly:
 
 ## You're All Set &mdash; Let's Begin
 
-The lab environment is ready and the supporting objects are in place. From
-here, head into the scenarios &mdash; each one builds on the previous, so
-working through them in order will give you the best picture of how the
-SD-WAN Wizard fits together end-to-end. Scenarios 5 and 6 are optional
-and can be tackled if time permits.
+Once you are connected via **RDP to the Jumpbox**, the lab environment is
+ready and the supporting objects are in place. From here, head into the
+scenarios &mdash; each one builds on the previous, so working through them
+in order will give you the best picture of how the SD-WAN Wizard fits
+together end-to-end. Scenarios 5 and 6 are optional and can be tackled if
+time permits.
 
 If anything is unclear, a screenshot doesn't match what you see, or a step
 behaves differently in your pod, please flag it. Your feedback &mdash; even
