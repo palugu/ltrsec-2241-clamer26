@@ -384,8 +384,15 @@ pop-up dialog “**Click Finish to save your changes.**”
   ![screenshot](assets/screens/1.1.7.4.png){ loading=lazy }
 </figure>
 
-3.  Verify the Name and IP address of auto generated Static VTI Tunnels
-    on Spoke devices using the following steps:
+3.  *(Optional)* Verify the Name and IP address of auto-generated Static
+    VTI Tunnels on Spoke devices.
+
+    !!! info "Optional &mdash; sanity check only"
+        This sub-step is purely for verification of what the SD-WAN Wizard
+        auto-generated. Skipping it has no effect on the rest of the lab.
+        If you want to confirm the static VTIs that FMC created on the
+        spokes, follow the steps below; otherwise jump ahead to
+        **1.2 Deploy to Hub and Spoke Devices**.
 
     1.  Click **pencil/edit icon** in Site-to-Site VPN Listing page
         which will open the SD-WAN Topology Wizard.
@@ -415,10 +422,10 @@ pop-up dialog “**Click Finish to save your changes.**”
         </figure>
 
     !!! warning "Stay on track"
-        After reviewing the **Spoke Static VTI Summary**, click **OK** on
-        the dialog and then **Cancel** to return to the **Site-to-Site
-        VPN Listing** page. Do not click **Finish** or **Save**
-        &mdash; we don't want to alter the topology at this point.
+        After reviewing the **Spoke Static VTI Summary**, **scroll down**
+        and click **OK** on the dialog and then **Cancel** to return to
+        the **Site-to-Site VPN Listing** page. Do not click **Finish** or
+        **Save** &mdash; we don't want to alter the topology at this point.
 
 ## 1.2 Deploy to Hub and Spoke Devices
 
@@ -462,6 +469,20 @@ number as mentioned in SD-WAN Topology.
 
     1.  **Enable BGP**: Check the checkbox to enable BGP.
     2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
+
+    !!! warning "Rare UI glitch &mdash; AS Number may drop when moving to BGP IPv4 with copy-paste from guide"
+        In some sessions the FMC UI loses the **Autonomous System Number**
+        `64512` when you move to the **BGP IPv4** option below. This is
+        more common when **copy-paste** is used to enter `64512`. If you
+        notice the AS Number missing on the **BGP IPv4** page, do the
+        following:
+
+        1. Click **Cancel** to exit the current BGP settings.
+        2. Re-open the device and navigate back to
+           **Routing &rarr; General Settings &rarr; BGP**.
+        3. **Type** `64512` manually in the **Autonomous System Number**
+           field (do not copy-paste). The value will be preserved when
+           you switch to **BGP IPv4**.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/1.3.1.2.png){ loading=lazy }

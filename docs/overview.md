@@ -129,6 +129,17 @@ them in mind so the steps go smoothly:
     Quick Launch** app on the Jumpbox desktop. Devices are grouped by role
     (FMC, NGFW CLI, Linux VM Access, etc.).
 
+!!! tip "Dismiss FMC notifications"
+    Internal traffic and health checks in the lab pod can trigger FMC
+    notifications similar to the one shown below. These are **not**
+    related to the steps you are running &mdash; click the **X** on each
+    notification to dismiss them, or click **Dismiss All** if FMC offers
+    it. They will not affect any verification later in the lab.
+
+<figure markdown style="max-width:12.0cm;">
+  ![Dismiss FMC notifications](assets/screens/dismiss-notifications.png){ loading=lazy }
+</figure>
+
 ## You're All Set &mdash; Let's Begin
 
 The lab environment is ready and the supporting objects are in place. From
