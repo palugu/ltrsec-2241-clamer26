@@ -302,7 +302,9 @@ with the same autonomous system number as mentioned in SD-WAN Topology.
     fill in:
 
     1.  **Enable BGP**: Check the checkbox to enable BGP.
-    2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
+    2.  **Autonomous System Number**: type `64512` manually using the
+        keyboard (same value as specified in the SD-WAN Topology).
+        Avoid copy-pasting from this guide.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/5.7.1.2.png){ loading=lazy }
@@ -406,6 +408,11 @@ In this step, you can verify the BGP and other routes at the Hub.
 
 3.  Click **Execute** and review the routes. Scroll down the output if
     required.
+
+    !!! tip "Routes may take a moment to appear"
+        BGP convergence can take a few seconds to a minute after a
+        deployment. If the new route isn't visible immediately, wait
+        briefly and click **Execute** again to refresh the output.
 
 4.  Verify the route for 192.168.33.0 from spoke **NGFW-B4** that was
     redistributed over BGP.

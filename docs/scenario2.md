@@ -151,6 +151,11 @@ network &mdash; have been received over BGP.
 
 3.  Click **Execute** and review the routes.
 
+    !!! tip "Routes may take a moment to appear"
+        BGP convergence can take a few seconds to a minute after a
+        deployment. If the new route isn't visible immediately, wait
+        briefly and click **Execute** again to refresh the output.
+
 4.  Verify the new network (192.168.103.0) at Hub is redistributed
     over BGP. Scroll down in the output if required to find the
     `192.168.103.0` route.
@@ -172,6 +177,11 @@ network &mdash; have been received over BGP.
     3.  **Parameter**: Type the argument `route bgp`
 
 3.  Click **Execute** and review the routes.
+
+    !!! tip "Routes may take a moment to appear"
+        BGP convergence can take a few seconds to a minute after a
+        deployment. If the new route isn't visible immediately, wait
+        briefly and click **Execute** again to refresh the output.
 
 4.  Verify the new network (192.168.103.0) at Hub is redistributed
     over BGP. Scroll down in the output if required to find the

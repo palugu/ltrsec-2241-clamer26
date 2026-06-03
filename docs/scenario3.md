@@ -47,7 +47,7 @@ Enter the following details in the **Add Spoke** dialog box:
     interfaces.
 
     !!! warning "Pick the right VPN interface"
-        Make sure ==**outside_1**== is selected &mdash; not `outside`
+        Make sure ==**outside_1**== is selected &mdash; not `inside`
         or `outside_2`.
 
 3.  **Identity Type:** Use the prepopulated default value.
@@ -132,7 +132,9 @@ with the same autonomous system number as mentioned in SD-WAN Topology.
     fill in:
 
     1.  **Enable BGP**: Check the checkbox to enable BGP.
-    2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
+    2.  **Autonomous System Number**: type `64512` manually using the
+        keyboard (same value as specified in the SD-WAN Topology).
+        Avoid copy-pasting from this guide.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/3.3.1.2.png){ loading=lazy }
@@ -241,8 +243,13 @@ In this step, you can verify the BGP and other routes at the Hub.
     2.  **Command**: `show`
     3.  **Parameter**: Type the argument `route bgp`
 
-3.  Click **Execute** and review the routes, scroll down output if
-    required
+3.  Click **Execute** and review the routes. Scroll down the output
+    if required.
+
+    !!! tip "Routes may take a moment to appear"
+        BGP convergence can take a few seconds to a minute after a
+        deployment. If the new route isn't visible immediately, wait
+        briefly and click **Execute** again to refresh the output.
 
 4.  Verify the new route from the spoke (**NGFW-B3**) is redistributed over BGP
 

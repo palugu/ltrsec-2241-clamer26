@@ -115,7 +115,6 @@ Enter the following details in the **Add Hub** dialog:
         Most fields in this dialog are auto-populated. You only need to set:
 
         - **Security Zone** (item d) &mdash; choose `Tunnel_Zone`
-        - **Tunnel Source IP Address** (item f) &mdash; set to `20.1.101.101`
         - **IP Address &rarr; Borrow IP** (item h) &mdash; create a Loopback
 
         The rest can be left at their defaults.
@@ -468,7 +467,10 @@ autonomous system number as mentioned in SD-WAN Topology.
     **BGP** button under **General Settings**, then fill in:
 
     1.  **Enable BGP**: Check the checkbox to enable BGP.
-    2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
+    2.  **Autonomous System Number**: type `64512` manually using the
+        keyboard (same value as specified in the SD-WAN Topology).
+        Avoid copy-pasting from this guide &mdash; copy-paste can
+        trigger a rare UI glitch (see warning below).
 
     !!! warning "Rare UI glitch &mdash; AS Number may drop when moving to BGP IPv4 with copy-paste from guide"
         In some sessions the FMC UI loses the **Autonomous System Number**
@@ -564,7 +566,9 @@ with the same autonomous system number as mentioned in SD-WAN Topology.
     **General Settings**, then fill in:
 
     1.  **Enable BGP**: Check the checkbox to enable BGP.
-    2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
+    2.  **Autonomous System Number**: type `64512` manually using the
+        keyboard (same value as specified in the SD-WAN Topology).
+        Avoid copy-pasting from this guide.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/1.4.1.2.png){ loading=lazy }
@@ -625,7 +629,9 @@ with the same autonomous system number as mentioned in SD-WAN Topology.
     **General Settings**, then fill in:
 
     1.  **Enable BGP**: Check the checkbox to enable BGP.
-    2.  **Autonomous System Number**: `64512` (same as specified in the SD-WAN Topology).
+    2.  **Autonomous System Number**: type `64512` manually using the
+        keyboard (same value as specified in the SD-WAN Topology).
+        Avoid copy-pasting from this guide.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/1.5.1.2.png){ loading=lazy }
@@ -742,7 +748,12 @@ BGP and other configured and learnt routes at the Hub.
     2.  **Command**: `show`
     3.  **Parameter**: Type the argument `route`
 
-3.  Click on **Execute** and review the routes
+3.  Click on **Execute** and review the routes.
+
+    !!! tip "Routes may take a moment to appear"
+        BGP convergence can take a few seconds to a minute after a
+        deployment. If a route isn't visible immediately, wait briefly
+        and click **Execute** again to refresh the output.
 
 4.  Verify the connected routes (10.1.1.0/255.255.255.0 and
     10.1.2.0/255.255.255.0) from the Spokes that got redistributed over

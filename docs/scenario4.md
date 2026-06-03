@@ -95,7 +95,6 @@ Enter the following details in the **Add Hub** dialog:
         Most fields in this dialog are auto-populated. You only need to set:
 
         - **Security Zone** (item d) &mdash; choose `Tunnel_Zone`
-        - **Tunnel Source IP Address** (item f) &mdash; set to `20.1.101.101`
         - **IP Address &rarr; Borrow IP** (item h) &mdash; create a Loopback
 
         The rest can be left at their defaults.
@@ -229,7 +228,7 @@ Enter the following details in the **Add Spoke** dialog box:
     interfaces.
 
     !!! warning "Pick the right VPN interface"
-        Make sure ==**outside_2**== is selected &mdash; not `outside`
+        Make sure ==**outside_2**== is selected &mdash; not `inside`
         or `outside_1`. This second topology must be built on
         **outside_2** (ISP2) to enable dual-ISP load sharing on
         **NGFW-B3**.
