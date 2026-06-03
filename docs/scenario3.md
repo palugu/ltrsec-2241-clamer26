@@ -40,19 +40,19 @@ Click on **Add Spoke**.
 
 Enter the following details in the **Add Spoke** dialog box:
 
-1)  **Devices**: Click drop down to select **NGFW-B3** from **Available
-    Devices**.
+1.  **Devices**: Click drop down to select **NGFW-B3** from
+    **Available Devices**.
 
-2)  **VPN Interface:** Select **outside_1** from the list of available
+2.  **VPN Interface:** Select **outside_1** from the list of available
     interfaces.
 
-    !!! warning "Important"
-        Make sure **outside_1** is selected &mdash; not `outside` or
-        `outside_2`.
+    !!! warning "Pick the right VPN interface"
+        Make sure ==**outside_1**== is selected &mdash; not `outside`
+        or `outside_2`.
 
-3)  **Identity Type:** Use the prepopulated default value.
+3.  **Identity Type:** Use the prepopulated default value.
 
-4)  Click **Save** to add the Spoke into SD-WAN Topology
+4.  Click **Save** to add the Spoke into SD-WAN Topology.
 
 <figure markdown style="max-width:10.0cm;">
   ![screenshot](assets/screens/3.1.2.3.1.png){ loading=lazy }
