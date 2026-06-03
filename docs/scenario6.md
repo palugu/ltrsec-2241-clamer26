@@ -146,7 +146,7 @@ the Hub and Spoke devices and deploy the configuration to the devices.
     **Remote Access.** This opens a Remote Desktop Connection (RDP)
     window of **Wkst5**.  
       
-    Login using Credentials **admin/C1sco12345**.
+    Log in using credentials `admin / C1sco12345`.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/6.3.1.1.png){ loading=lazy }

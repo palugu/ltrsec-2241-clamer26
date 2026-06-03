@@ -212,17 +212,17 @@ the Hub and Spoke devices and deploy the configuration to the devices.
 In this step, you will verify the VTI tunnels between the spokes and
 hub devices.
 
-Go to **Insights & Reports -\> VPN dashboards -\> SD-WAN Summary** and
-Check that the tunnels are up as shown below. You may use **Refresh**
-to reload the tunnels status if tunnel has not come up yet. Wait for
-few seconds for tunnel status to be updated fully.
+Go to **Insights & Reports &rarr; VPN dashboards &rarr; SD-WAN
+Summary** and check that the tunnels are up as shown below. You may
+use **Refresh** to reload the tunnel status if the tunnel has not come
+up yet. Wait for a few seconds for tunnel status to be updated fully.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/3.5.1.1.png){ loading=lazy }
 </figure>
 
-Go to **Insights & Reports -\> VPN dashboards -\> Site-to-Site VPN**
-and Check that the tunnels are up as shown below.
+Go to **Insights & Reports &rarr; VPN dashboards &rarr; Site-to-Site
+VPN** and check that the tunnels are up as shown below.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/3.5.1.2.png){ loading=lazy }
@@ -269,7 +269,7 @@ Network behind hub (**NGFW-HUB**) &mdash; 192.168.101.0/24 with a host
 2.  **Verify Ping**
 
     1.  `ping 192.168.101.131 -c 5` &mdash; the host behind the Hub
-        device NGFW-HUB. Verify that you are getting a response.
+        device NGFW-HUB. Verify that you get a response.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/3.5.3.2.png){ loading=lazy }

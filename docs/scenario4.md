@@ -364,7 +364,7 @@ VPN traffic.
       ![screenshot](assets/screens/4.3.1.2.png){ loading=lazy }
     </figure>
 
-6.  View the **ZONE_INET** and **ZONE_VTI** zones listed on the ECMP
+6.  View the **Zone_INET** and **Zone_VTI** zones listed on the ECMP
     page. Click the top **Save** button to save the changes.
 
     <figure markdown style="max-width:16.0cm;">

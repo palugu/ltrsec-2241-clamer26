@@ -699,19 +699,19 @@ the Hub and Spoke devices and deploy the configuration to the devices.
 In this step, verify the VTI tunnels between the spokes and hub
 devices.
 
-Go to **Insights & Reports -\> VPN dashboards -\> SD-WAN Summary** and
-Check that the tunnels are up as shown below. You may use **Refresh**
-to reload the tunnels status if tunnel has not come up yet. Wait for
-a few seconds for tunnel status to be updated fully.
+Go to **Insights & Reports &rarr; VPN dashboards &rarr; SD-WAN
+Summary** and check that the tunnels are up as shown below. You may
+use **Refresh** to reload the tunnel status if the tunnel has not come
+up yet. Wait for a few seconds for tunnel status to be updated fully.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/1.7.1.1.png){ loading=lazy }
 </figure>
 
-Go to **Insights & Reports -\> VPN dashboards -\> Site-to-Site VPN**
-and Check that the tunnels are up as shown below. You can also click
-**View All Connections** within **VPN Topology** widget in **SD-WAN
-Summary** dashboard to view this page:
+Go to **Insights & Reports &rarr; VPN dashboards &rarr; Site-to-Site
+VPN** and check that the tunnels are up as shown below. You can also
+click **View All Connections** within the **VPN Topology** widget in
+the **SD-WAN Summary** dashboard to view this page:
 
 !!! note "Node A and Node B may appear swapped"
     On the **Site-to-Site VPN** page the **Node A** and **Node B**
@@ -745,20 +745,20 @@ BGP and other configured and learnt routes at the Hub.
 3.  Click on **Execute** and review the routes
 
 4.  Verify the connected routes (10.1.1.0/255.255.255.0 and
-    10.1.2.0/255.255.255.0) from the Spokes that got re-distributed over
+    10.1.2.0/255.255.255.0) from the Spokes that got redistributed over
     BGP
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/1.7.2.2.png){ loading=lazy }
 </figure>
 
-5.  Scroll through routes output and Verify internal routes learnt from
-    OSPF (**O**) and EIGRP (**D**)
+5.  Scroll through the routes output and verify internal routes learnt
+    from OSPF (**O**) and EIGRP (**D**)
 
 6.  Verify VPN routes (**V**), the Spokes Tunnel IP addresses
 
 7.  Verify the protected networks at Spokes (192.168.1.0/255.255.255.0
-    and 192.168.2.0/255.255.255.0) got distributed over BGP (**B**)
+    and 192.168.2.0/255.255.255.0) were distributed over BGP (**B**)
 
 <figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/1.7.2.3.png){ loading=lazy }
