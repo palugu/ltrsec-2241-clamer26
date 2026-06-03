@@ -236,6 +236,41 @@
     article {
         min-height: 0 !important;
     }
+
+    /* ----------------------------------------------------------------
+     * Suppress empty "part-divider" pages.
+     *
+     * When the nav has a grouping section (our `Lab:` group in
+     * `.nav.yml`), `mkdocs-with-pdf` wraps all child pages inside an
+     * outer `<article>` and injects a synthesised `<h1>` for the
+     * section title ("1. Lab"). That outer wrapper inherits the
+     * plugin's `article { page-break-before: always; min-height:
+     * 100vh; }` rule, which produced two near-empty pages in the
+     * earlier build:
+     *   - page 3: completely blank (carry-over from the TOC break
+     *             plus the wrapper article's own forced break);
+     *   - page 4: just the words "1. Lab" filling an A4 page.
+     *
+     * The Lab wrapper is the only article whose direct children are
+     * `<section>` elements (each scenario gets converted from
+     * `<article>` to `<section>` by the plugin). Leaf-page articles
+     * such as the cover, TOC and `topologies.md` contain inline
+     * content directly, not sections, so they keep their original
+     * page-break behaviour and chapter title page.
+     *
+     * Targeting `article:has(> section)` therefore matches *only*
+     * the Lab grouping wrapper. We let it flow inline with the
+     * previous content (no forced break, no full-viewport min-height)
+     * so the "1. Lab" heading appears at the top of page 3 followed
+     * immediately by the Overview content.  Each scenario inside Lab
+     * still starts on its own page because of the `section + section`
+     * rule.  Requires WeasyPrint >= 59 (we use 68.1).
+     * ---------------------------------------------------------------- */
+    article:has(> section) {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        min-height: 0 !important;
+    }
     .md-typeset ul,
     .md-typeset ol,
     .md-typeset table,
