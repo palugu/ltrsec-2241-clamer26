@@ -29,7 +29,7 @@ Upon completion of this lab you will be able to:
     - Simplify **single hub with multiple spokes** configuration using SD-WAN Topology
     - Auto-generate **static Virtual Tunnel Interfaces (VTI)** on spoke devices
     - Add multiple spokes using the **Bulk Spoke** feature
-    - **Automate BGP** neighbour configuration and **redistribute IGP / Static routes** via BGP
+    - **Automate BGP** neighbor configuration and **redistribute IGP / Static routes** via BGP
     - Automatically add the generated VTIs to the Security Zone for Access Control Policy
 
 2. **Expand the Hub network** &mdash; Add a new protected network behind the Hub and

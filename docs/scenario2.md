@@ -1,9 +1,10 @@
 # Scenario 2: Hub Network Expansion
 
 
-In this lab activity, you will learn how to negotiate topology changes
-in Hub through SD-WAN. When a new network is expanded in Hub, you need
-to configure and redistribute it into BGP overlay routing section.
+In this lab activity, you will learn how to accommodate topology
+changes behind the Hub through SD-WAN. When a new network is added
+behind the Hub, you need to configure and redistribute it into the
+BGP overlay routing.
 
 ## Network Diagram
 
@@ -135,8 +136,9 @@ the Hub and Spoke devices and deploy the configuration to the devices.
 
 ### 2.4.1 Verify Routes on Spoke, NGFW-B1
 
-In this step, you will verify the BGP and other connected and
-redistributed routes at the Hub.
+In this step, you will verify on the Spoke (**NGFW-B1**) that the
+routes advertised by the Hub &mdash; including the newly added Hub
+network &mdash; have been received over BGP.
 
 1.  Go to **Troubleshooting &rarr; Tools &rarr; Threat Defense CLI**.
 
@@ -181,14 +183,14 @@ redistributed routes at the Hub.
 
 ### 2.4.3 Verify traffic between protected networks behind spoke (NGFW-B1) and hub (NGFW-HUB)
 
-Network behind spoke (**NGFW-B1**) – 192.168.1.0/24 with a host
+Network behind spoke (**NGFW-B1**) &mdash; 192.168.1.0/24 with a host
 **192.168.1.133** (**B1H**)
 
-New network behind hub (**NGFW-HUB**) – 192.168.103.0/24 with host
+New network behind hub (**NGFW-HUB**) &mdash; 192.168.103.0/24 with a host
 **192.168.103.141** (**H3**)
 
-1.  **Re/Connect to B1H:** Reopen the **B1H**'s SSH access from the
-    taskbar from the previous scenario, or open **Cisco Secure
+1.  **Connect / Reconnect to B1H:** Reopen **B1H**'s SSH session from
+    the taskbar from the previous scenario, or open **Cisco Secure
     Firewall Quick Launch** and click **B1H** under **Linux VM
     Access**. This opens **B1H**'s SSH session.
 

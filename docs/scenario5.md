@@ -1,14 +1,14 @@
-# Scenario 5: Branch Expansion with overlap network (Optional)
+# Scenario 5: Branch Expansion with Overlapping Network (Optional)
 
 
-In this lab activity, you will learn how to introduce a new branch
-acquisition into SD-WAN deployment with the LAN network that overlaps
-with protected network of an existing branch. When a new branch is
-added with overlapping networks, it can be configured in SD-WAN
-Topology using either VRF or Pre-Encryption NAT to allow seamless
-connectivity. In this scenario, you will configure a new branch in
-SD-WAN Topology, Pre-Encryption NAT and redistribute the routes into
-BGP overlay network.
+In this lab activity, you will learn how to onboard a new branch into
+an existing SD-WAN deployment when its LAN network overlaps with the
+protected network of an existing branch. When a new branch is added
+with overlapping networks, it can be configured in SD-WAN Topology
+using either VRF or Pre-Encryption NAT to allow seamless connectivity.
+In this scenario, you will configure a new branch in SD-WAN Topology,
+apply Pre-Encryption NAT, and redistribute the routes into the BGP
+overlay.
 
 ## Network Diagram
 
@@ -16,12 +16,13 @@ BGP overlay network.
   ![screenshot](assets/screens/5.png){ loading=lazy }
 </figure>
 
-## 5.1 Check spoke is having overlap network
+## 5.1 Verify the spoke has an overlapping network
 
-### 5.1.1 Verify Routes on Hub (NGFW-B4)
+### 5.1.1 Verify Routes on Spoke (NGFW-B4)
 
-In this step, you can verify the protected network at spoke NGFW-B4
-overlaps with other spoke NGFW-B3.
+In this step, you will confirm that the protected network behind
+spoke **NGFW-B4** overlaps with the protected network behind the
+existing spoke **NGFW-B3**.
 
 1.  Go to **Troubleshooting \> Tools \> Threat Defense CLI**.
 
@@ -32,8 +33,8 @@ overlaps with other spoke NGFW-B3.
     2.  **Command**: `show`
     3.  **Parameter**: Type the argument `route ospf`
 
-3.  Click on **Execute** and review the routes. Notice this has same LAN
-    (192.168.3.0) as **NGFW-B3**
+3.  Click on **Execute** and review the routes. Notice that it has the
+    same LAN (192.168.3.0) as **NGFW-B3**.
 
 <figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/5.1.1.1.png){ loading=lazy }
@@ -41,7 +42,7 @@ overlaps with other spoke NGFW-B3.
 
 ## 5.2 Choose a NAT network and Add Static Route for it
 
-The overlapping networking cannot be advertised to SD-WAN as they will
+The overlapping network cannot be advertised to SD-WAN as it will
 not be installed. For this lab section, choose a non-overlapping
 network that will be used to NAT 192.168.3.0/24. In this scenario,
 192.168.33.0/24 is chosen as the NAT network.
@@ -61,11 +62,11 @@ network that will be used to NAT 192.168.3.0/24. In this scenario,
           
         !!! note
 
-            This step adds a **Null** route for post NAT IP i.e.
-            192.168.33.0/24 on **NGFW-B4**, this allows the branch firewall
-            to be able to redistribute this network to other peers, in this
-            case Hub i.e. **NGFW-HUB** to which the hosts behind hub can
-            respond to.
+            This step adds a **Null** route for the post-NAT IP, i.e.
+            192.168.33.0/24, on **NGFW-B4**. This allows the branch
+            firewall to redistribute this network to other peers
+            &mdash; in this case the Hub (**NGFW-HUB**) &mdash; so the
+            hosts behind the Hub can respond to it.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/5.2.1.2.png){ loading=lazy }
@@ -94,13 +95,14 @@ network that will be used to NAT 192.168.3.0/24. In this scenario,
 ### 5.3.1 Edit SD-WAN Topology
 
 To edit SD-WAN Topology, go to **Secure Connections \> Site-to-Site
-VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
+VPN & SD-WAN**, then click **Edit** on the topology
+**Corp-SD-WAN-1**.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/5.3.1.1.png){ loading=lazy }
 </figure>
 
-### 5.3.2 SD-WAN Topology – Add Spoke Configuration
+### 5.3.2 SD-WAN Topology &mdash; Add Spoke Configuration
 
 Click on **Edit** at **Spokes** step to add the new Spoke into SD-WAN.
 
@@ -133,7 +135,7 @@ Enter the following details in the **Add Spoke** dialog box:
   ![screenshot](assets/screens/5.3.2.3.2.png){ loading=lazy }
 </figure>
 
-### 5.3.3 SD-WAN Topology - Finish
+### 5.3.3 SD-WAN Topology &mdash; Finish
 
 **Scroll down** and click the **Finish** button to save the topology.
 Click **OK** for the pop-up dialog *"Click Finish to save your changes."*
@@ -153,7 +155,7 @@ Click **OK** for the pop-up dialog *"Click Finish to save your changes."*
     topology. It shows 4 tunnels, 3 of which are existing established
     tunnels. Scroll down to view all the tunnels information. Since the
     configuration has not been deployed, it shows **Deployment Pending**
-    and the new spoke tunnel shows in Amber color.
+    and the new spoke tunnel shows in amber.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/5.3.3.3.png){ loading=lazy }
@@ -251,8 +253,8 @@ using NATed network.
       ![screenshot](assets/screens/5.5.2.3.png){ loading=lazy }
     </figure>
 
-4.  You are back to NAT Policies page, click on **Save** to save the
-    policy.
+4.  You are back on the **NAT Policies** page &mdash; click **Save**
+    to save the policy.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/5.5.2.4.png){ loading=lazy }
@@ -285,8 +287,8 @@ the Hub and Spoke devices and deploy the configuration to the devices.
 
 ### 5.7.1 Enable BGP on Spoke device
 
-In this step, you will enable BGP on Spoke device (**NGFW-B4**) with
-same autonomous number as mentioned in SD-WAN Topology.
+In this step, you will enable BGP on the Spoke device (**NGFW-B4**)
+with the same autonomous system number as mentioned in SD-WAN Topology.
 
 1.  Edit the device **NGFW-B4** by navigating to **Devices \> Device
     Management \> Edit NGFW-B4**
@@ -402,11 +404,11 @@ In this step, you can verify the BGP and other routes at the Hub.
     2.  **Command**: `show`
     3.  **Parameter**: Enter the argument `route bgp`
 
-3.  Click on **Execute** and review the routes, scroll down output if
-    required
+3.  Click **Execute** and review the routes. Scroll down the output if
+    required.
 
-4.  Verify the route for 192.168.33.0 from spoke NGFW-B4 that was
-    redistributed over BGP
+4.  Verify the route for 192.168.33.0 from spoke **NGFW-B4** that was
+    redistributed over BGP.
 
 <figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/5.9.2.1.png){ loading=lazy }
@@ -414,10 +416,10 @@ In this step, you can verify the BGP and other routes at the Hub.
 
 ### 5.9.3 Verify traffic between protected networks behind spoke (NGFW-B4) and hub (NGFW-HUB)
 
-Network behind spoke (**NGFW-B4**) – 192.168.3.0/24 with a host
+Network behind spoke (**NGFW-B4**) &mdash; 192.168.3.0/24 with a host
 **192.168.3.166** (**B4H**)
 
-Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
+Network behind hub (**NGFW-HUB**) &mdash; 192.168.101.0/24 with a host
 **192.168.101.131** (**H1**)
 
 1.  **Connect to B4H:** Open **Cisco Secure Firewall Quick Launch** and
@@ -431,7 +433,7 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
 2.  **Verify Ping**
 
     1.  `ping 192.168.101.131 -c 5` which is the Host behind the
-        Hub device NGFW-HUB and verify that you are getting the response
+        Hub device NGFW-HUB and verify that you get a response
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/5.9.3.2.png){ loading=lazy }
@@ -450,9 +452,9 @@ Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
 4.  Launch the Unified Events Viewer (UEV) on FMC in a new tab and
     navigate to **Events & Logs \> Analysis \> Unified Events.** Check
     on Unified Events for this SSH connection and verify the Source IP
-    i.e 192.168.3.166 (magenta box below) at **NGFW-B4** is NATed as
-    an IP in 192.168.33.X/24 (blue box below) subnet as seen at Hub,
-    **NGFW-HUB**
+    (i.e. 192.168.3.166, magenta box below) at **NGFW-B4** is NATed as
+    an IP in 192.168.33.X/24 (blue box below) subnet as seen at the
+    Hub, **NGFW-HUB**.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/5.9.3.4.png){ loading=lazy }

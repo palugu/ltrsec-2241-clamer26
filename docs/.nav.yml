@@ -6,7 +6,7 @@ nav:
       - "Scenario 2: Hub Network Expansion": scenario2.md
       - "Scenario 3: Branch Expansion": scenario3.md
       - "Scenario 4: Adding Secondary ISP to Branch": scenario4.md
-      - "Scenario 5: Branch Expansion with Overlap Network (Optional)": scenario5.md
+      - "Scenario 5: Branch Expansion with Overlapping Network (Optional)": scenario5.md
       - "Scenario 6: Geolocation Service Access Policies (Optional)": scenario6.md
       - Conclusion: conclusion.md
   - Topologies: topologies.md

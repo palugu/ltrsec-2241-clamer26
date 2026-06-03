@@ -17,13 +17,14 @@ redistribute its routes into BGP overlay routing.
 ### 3.1.1 Edit SD-WAN Topology
 
 To edit SD-WAN Topology, go to **Secure Connections \> Site-to-Site
-VPN & SD-WAN** click **Edit** on the topology **Corp-SD-WAN-1**.
+VPN & SD-WAN**, then click **Edit** on the topology
+**Corp-SD-WAN-1**.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/3.1.1.1.png){ loading=lazy }
 </figure>
 
-### 3.1.2 SD-WAN Topology – Add Spoke Configuration
+### 3.1.2 SD-WAN Topology &mdash; Add Spoke Configuration
 
 Click on **Edit** at **Spokes** step to add the new Spoke into SD-WAN.
 
@@ -61,7 +62,7 @@ Enter the following details in the **Add Spoke** dialog box:
   ![screenshot](assets/screens/3.1.2.3.2.png){ loading=lazy }
 </figure>
 
-### 3.1.3 SD-WAN Topology - Finish
+### 3.1.3 SD-WAN Topology &mdash; Finish
 
 Now, we are done with all the configuration required to add the new
 branch in the SD-WAN Topology. **Scroll down** and click the
@@ -83,8 +84,7 @@ dialog *"Click Finish to save your changes."*
 2.  Expand the **Corp-SD-WAN-1** node to view all the tunnels in the
     topology. It shows 3 tunnels, 2 of which are existing established
     tunnels. Since the configuration has not been deployed, it shows
-    **Deployment Pending** and the new spoke tunnel shows in Amber
-    color.
+    **Deployment Pending** and the new spoke tunnel shows in amber.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/3.1.3.3.png){ loading=lazy }
@@ -117,8 +117,8 @@ the Hub and Spoke devices and deploy the configuration to the devices.
 
 ### 3.3.1 Enable BGP on Spoke device
 
-In this step, you will enable BGP on Spoke device (**NGFW-B3**) with
-same autonomous number as mentioned in SD-WAN Topology.
+In this step, you will enable BGP on the Spoke device (**NGFW-B3**)
+with the same autonomous system number as mentioned in SD-WAN Topology.
 
 1.  Edit the device **NGFW-B3** by navigating to **Devices \> Device
     Management \> Edit NGFW-B3**
@@ -244,7 +244,7 @@ In this step, you can verify the BGP and other routes at the Hub.
 3.  Click **Execute** and review the routes, scroll down output if
     required
 
-4.  Verify the new route from spoke is redistributed over BGP
+4.  Verify the new route from the spoke (**NGFW-B3**) is redistributed over BGP
 
 <figure markdown style="max-width:12.0cm;">
   ![screenshot](assets/screens/3.5.2.1.png){ loading=lazy }
@@ -252,10 +252,10 @@ In this step, you can verify the BGP and other routes at the Hub.
 
 ### 3.5.3 Verify traffic between protected networks behind spoke (NGFW-B3) and hub (NGFW-HUB)
 
-Network behind spoke (**NGFW-B3**) – 192.168.3.0/24 with a host
+Network behind spoke (**NGFW-B3**) &mdash; 192.168.3.0/24 with a host
 **192.168.3.141** (**B3H**)
 
-Network behind hub (**NGFW-HUB**) – 192.168.101.0/24 with a host
+Network behind hub (**NGFW-HUB**) &mdash; 192.168.101.0/24 with a host
 **192.168.101.131** (**H1**)
 
 1.  **Connect to B3H:** Open **Cisco Secure Firewall Quick Launch**

@@ -30,9 +30,9 @@ link up in real-time for the lab.
   ![screenshot](assets/screens/4.1.1.1.png){ loading=lazy }
 </figure>
 
-2.  On the **Interfaces** tab Click the **Edit** for
-    **GigabitEthernet0/1** interface which has logical name
-    **outside_2**. This opens the Edit Physical Interface dialogue
+2.  On the **Interfaces** tab, click the **Edit** icon for
+    **GigabitEthernet0/1** interface which has the logical name
+    **outside_2**. This opens the **Edit Physical Interface** dialog.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/4.1.1.2.png){ loading=lazy }
@@ -73,7 +73,7 @@ Enter the following details in the pop-up:
   ![screenshot](assets/screens/4.2.1.1.png){ loading=lazy }
 </figure>
 
-### 4.2.2 SD-WAN Topology – Hub Configuration
+### 4.2.2 SD-WAN Topology &mdash; Hub Configuration
 
 Once the SD-WAN Topology is created, SD-WAN Wizard page will open.
 Click the **Add Hub** button in Hubs section to add the Hub device.
@@ -210,12 +210,12 @@ Enter the following details in the **Add Hub** dialog:
       ![screenshot](assets/screens/4.2.2.4.png){ loading=lazy }
     </figure>
 
-### 4.2.3 SD-WAN Topology – Add Spoke Configuration
+### 4.2.3 SD-WAN Topology &mdash; Add Spoke Configuration
 
 **Add Spoke Dialog** assists you to add one Spoke Device with simple
 steps.
 
-Click on **Add Spoke** button in the spokes step.
+Click on **Add Spoke** button in the Spokes step.
 
 <figure markdown style="max-width:16.0cm;">
   ![screenshot](assets/screens/4.2.3.1.png){ loading=lazy }
@@ -248,7 +248,7 @@ Enter the following details in the **Add Spoke** dialog box:
       ![screenshot](assets/screens/4.2.3.2.2.png){ loading=lazy }
     </figure>
 
-### 4.2.4 SD-WAN Topology: Authentication Settings
+### 4.2.4 SD-WAN Topology &mdash; Authentication Settings
 
 In this step, you will configure pre-shared key authentication with
 manual key. Leave the Transform Sets and IKEv2 Policies as per default
@@ -267,7 +267,7 @@ selection.
   ![screenshot](assets/screens/4.2.4.1.png){ loading=lazy }
 </figure>
 
-### 4.2.5 SD-WAN Topology – Add Tunnel Interfaces to Security Zone
+### 4.2.5 SD-WAN Topology &mdash; Add Tunnel Interfaces to Security Zone
 
 Click on the **Spoke Tunnel Interface Security Zone** drop-down and
 select **Tunnel_Zone**.
@@ -276,7 +276,7 @@ select **Tunnel_Zone**.
   ![screenshot](assets/screens/4.2.5.1.png){ loading=lazy }
 </figure>
 
-### 4.2.6 SD-WAN Topology – Configure BGP routing
+### 4.2.6 SD-WAN Topology &mdash; Configure BGP routing
 
 Enter the following in **SD-WAN Settings**
 
@@ -286,7 +286,7 @@ Enter the following in **SD-WAN Settings**
 2.  **Autonomous System Number:** Enter **64512** as BGP AS number in
     **Autonomous System Number** field.
 
-3.  **Community Tag for Local Routes:** Enter **9901** in as **Community
+3.  **Community Tag for Local Routes:** Enter **9901** as **Community
     Tag** which will be used to tag connected and redistributed local
     routes.
 
@@ -306,7 +306,7 @@ Enter the following in **SD-WAN Settings**
   ![screenshot](assets/screens/4.2.6.1.png){ loading=lazy }
 </figure>
 
-### 4.2.7 SD-WAN Topology - Finish
+### 4.2.7 SD-WAN Topology &mdash; Finish
 
 Now, we are done with all the configuration in the SD-WAN Topology.
 **Scroll down** and click the **Finish** button to save the topology.
@@ -327,7 +327,7 @@ changes."*
 
 2.  Expand the **Corp-SD-WAN-2** node to view the tunnel in the
     topology. Since the configuration has not been deployed, it shows
-    **Deployment Pending** and the spoke tunnel shows in amber colour.
+    **Deployment Pending** and the spoke tunnel shows in amber.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/4.2.7.3.png){ loading=lazy }
@@ -342,8 +342,8 @@ VPN traffic.
 ### 4.3.1 Configure ECMP Zone on Spoke NGFW-B3
 
 1.  Navigate to **Devices \> Device Management \> Edit NGFW-B3**, click
-    the **Routing** tab, then click **ECMP** on the left Table of
-    Contents view.
+    the **Routing** tab, then click **ECMP** in the left navigation
+    pane.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/4.3.1.1.png){ loading=lazy }

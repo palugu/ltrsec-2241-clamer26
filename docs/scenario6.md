@@ -4,7 +4,7 @@
 Secure Firewall release 7.7 introduced rules to manage VPN access of
 remote users based on Geolocation. By setting rules to allow or block
 access from specific countries or regions, you can meet compliance
-requirements and enhance security. Remote sessions that don’t meet
+requirements and enhance security. Remote sessions that don't meet
 these location-based criteria are blocked before authentication.
 
 ## Network Diagram
@@ -18,10 +18,11 @@ these location-based criteria are blocked before authentication.
 In this activity you will learn to configure service access rules
 which define the controls for remote access sessions.  
   
-Since the lab pod and the test workstation is setup in the US region,
-lab section walks you through steps to restrict the access from the
-US. You can use the same steps in your production deployment to block
-access from regions and countries of your own choice.
+Since the lab pod and the test workstation are set up in the US
+region, this lab section walks you through the steps to restrict
+access from the US. You can use the same steps in your production
+deployment to block access from regions and countries of your own
+choice.
 
 ### 6.1.1 Create Service Access Object
 
@@ -77,15 +78,15 @@ access from regions and countries of your own choice.
     \> Remote Access VPN**
 
 2.  A remote access policy named **Remote-Access-via-Hub** is
-    preconfigured
+    pre-configured
 
-3.  Click **pencil** icon at the middle to edit it
+3.  Click the **pencil** icon in the middle to edit it
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/6.1.2.1.png){ loading=lazy }
     </figure>
 
-4.  Click on **Access Interfaces** tab
+4.  Click on the **Access Interfaces** tab
 
 5.  You may **scroll down** and in the **Service Access Control** section,
     select the service access object that was just created
@@ -151,16 +152,16 @@ the Hub and Spoke devices and deploy the configuration to the devices.
       ![screenshot](assets/screens/6.3.1.1.png){ loading=lazy }
     </figure>
 
-2.  Click on Windows Start Button and Open Cisco Secure Client
-    application by clicking on pinned Icon.
+2.  Click the Windows **Start** button and open the **Cisco Secure
+    Client** application by clicking the pinned icon.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/6.3.1.2.png){ loading=lazy }
     </figure>
 
 3.  Click on **Connect** with **Hub (SSL) IPv4** Profile. Wait for a
-    few seconds and choose **Connect Anyway** on Security Warning
-    dialog. The connection attempt must have failed.
+    few seconds and choose **Connect Anyway** on the Security Warning
+    dialog. The connection attempt should fail.
 
     <figure markdown style="max-width:16.0cm;">
       ![screenshot](assets/screens/6.3.1.3.png){ loading=lazy }
@@ -174,14 +175,14 @@ the Hub and Spoke devices and deploy the configuration to the devices.
       ![screenshot](assets/screens/6.3.1.4.png){ loading=lazy }
     </figure>
 
-Observe the Log –
+Observe the log entry:
 
 **Denied SSL remote access session for reqType SECURE CLIENT faddr
 20.1.1.170 by a geo-based rule (geo="United States", id=840)**
 
 !!! note
 
-    Please wait for few minutes after testing RAVPN in step 3 above
+    Please wait for a few minutes after testing RAVPN in step 3 above
     to ensure the deny events are populated on the FMC.
 
 !!! success "Scenario 6 complete &mdash; Lab complete!"
