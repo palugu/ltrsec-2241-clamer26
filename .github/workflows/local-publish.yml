@@ -1,0 +1,36 @@
+name: Publish Local Guide
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: local-guide-publish
+  cancel-in-progress: true
+
+jobs:
+  publish-local:
+    runs-on: [self-hosted, linux, ltrsec-local]
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          python3 -m venv .venv
+          . .venv/bin/activate
+          pip install --no-cache-dir -r requirements.txt
+
+      - name: Build
+        run: |
+          . .venv/bin/activate
+          mkdocs build --clean
+
+      - name: Publish to local web root
+        run: |
+          mkdir -p /var/www/html/ltrsec-2241
+          rsync -a --delete site/ /var/www/html/ltrsec-2241/

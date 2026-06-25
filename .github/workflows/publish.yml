@@ -12,7 +12,6 @@ jobs:
     container:
       image: ghcr.io/ciscodocs/ci-image-v2:latest
     permissions:
-      id-token: write
       contents: read
     steps:
       - name: Checkout Repository
